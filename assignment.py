@@ -13,6 +13,10 @@ db = bd.Database("con391")
 
 # %%
 
-act_list_ei = 
+act_list_ei = ["bacterial fermentation", "purification"] 
 
-db.search("")
+bac_ferm = db.search(act_list_ei[0])
+bac_pur = db.search(act_list_ei[1])
+
+print(bac_ferm)
+print(bac_pur)
