@@ -26,3 +26,8 @@ db.metadata
 
 # %%
 
+bio = bd.Database("biosphere3")
+
+ch4 = bio.search("methane")
+
+ch4.as_dict()
