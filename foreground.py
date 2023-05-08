@@ -4,35 +4,61 @@ import graphviz as gv
 
 #%% PARAMETERS
 
-x = 1
+x = 0
 
 steam_amount_total = 40.531
 water_amount_total = 0.273
 elec_amount_total = 0.197
 kerosene_amount_total = 0.273
 
+CO2_amount_total = x
+CH4_amount_total = x
+CrVI_amount_total = x
+As_amount_total = x
+PAH_amount_total = x
+NH3_amount_total = x
+NOx_amount_total = x
+SO2_amount_total = x
+
+
 bread_amount_feed_treat = x
 
-water_amount_feed_treat = x
-elec_amount_feed_treat = x
-kerosene_amount_feed_treat = x
-steam_amount_feed_treat = x
+water_amount_feed_treat = 117.142 # m3
+elec_amount_feed_treat = 1.01 # kWh
+kerosene_amount_feed_treat = 0
+steam_amount_feed_treat = 40.531 #kg,  shouldn't this be in MJ?
+CrVI_amount_feed_treat = 0.000074 # kg
+As_amount_feed_treat = 0.000477 # kg
+PAH_amount_feed_treat = 0.000421 # kg
+CH4_amount_feed_treat = 0.000441 # kg
+CH4_bio_amount_feed_treat = 0.03717 # kg
 
 ecoli_amount_bac_ferm = x
-steam_amount_bac_ferm = x
-water_amount_bac_ferm = x
-elec_amount_bac_ferm = x
-kerosene_amount_bac_ferm = x
+steam_amount_bac_ferm = 0 
+water_amount_bac_ferm = 0 # really?
+elec_amount_bac_ferm = 0.1 # kWh for CO2 capture?
+kerosene_amount_bac_ferm = 3.385 # kg
 biogas_amount_bac_ferm = x
+NH3_amount_bac_ferm = 0.000279 # kg
 
-CO2_amount_unalloc_bio = x
-CH4_amount_unalloc_bio = x
-NH3_amount_unalloc_bio = x
-NOx_amount_unalloc_bio = x
-SO2_amount_unalloc_bio = x
-CrVI_amount_unalloc_bio = x
-As_amount_unalloc_bio = x
-PAH_amount_unalloc_bio = x
+
+
+CO2_amount_bac_ferm = 0.72246 # kg
+CO2_bio_amount_bac_ferm = 0.036123 # kg
+CH4_amount_bac_ferm = x # why is there no data on this?
+SO2_amount_bac_ferm =  0.0264 # kg
+NOx_amount_bac_ferm = 0.02223 # kg
+
+
+
+CO2_amount_unalloc_bio = CO2_amount_total - CO2_amount_bac_ferm - CO2_bio_amount_bac_ferm
+CH4_amount_unalloc_bio = CH4_amount_total - CH4_amount_bac_ferm
+NH3_amount_unalloc_bio = NH3_amount_total - NH3_amount_bac_ferm
+NOx_amount_unalloc_bio = NOx_amount_total - NOx_amount_bac_ferm
+SO2_amount_unalloc_bio = SO2_amount_total - SO2_amount_bac_ferm
+CrVI_amount_unalloc_bio = CrVI_amount_total - CrVI_amount_feed_treat
+As_amount_unalloc_bio = As_amount_total - As_amount_feed_treat
+PAH_amount_unalloc_bio = PAH_amount_total - PAH_amount_feed_treat
 
 
 #%% ADD ACTIVITIES
@@ -182,6 +208,14 @@ CO2 = {
 }
 acts.append(CO2)
 
+CO2_bio = {
+    'name': 'Carbon dioxide, biogenic',
+    'code': 'CO2_bio',
+    'db' : 'biosphere3',
+    'type': 'emission',
+}
+acts.append(CO2_bio)
+
 CH4 = {
     'name': 'Methane, fossil',
     'code': 'CH4',
@@ -189,6 +223,14 @@ CH4 = {
     'type': 'emission',
 }
 acts.append(CH4)
+
+CH4_bio = {
+    'name': 'Methane, biogenic',
+    'code': 'CH4_bio',
+    'db' : 'biosphere3',
+    'type': 'emission',
+}
+acts.append(CH4_bio)
 
 NH3 = {
     'name': 'Ammonia',
@@ -308,7 +350,7 @@ edges.append(enz_mktTOfeed_treat)
 feed_treatTObac_ferm = {
     'from': 'feed_treat',
     'to': 'bact_ferm',
-    'amount': 10, # unknown
+    'amount': 1, # unknown?
     'unit': 'kg',
     'type': 'technosphere',
     'PFD_weight' : 3,
@@ -397,7 +439,7 @@ edges.append(bac_fermTObiogas_mkt)
 bac_fermTOpurif = {
     'from': 'bact_ferm',
     'to': 'SA_purif',
-    'amount': x,
+    'amount': 1,
     'unit': 'kg',
     'type': 'technosphere',
     'PFD_weight' : 3,
@@ -455,7 +497,99 @@ SA_purifTOSA_mkt = {
 edges.append(SA_purifTOSA_mkt)
 
 
-# unallocated biosphere3 flows
+# edges to biosphere3 flows
+
+feed_treatTOCH4_bio = {
+    'from': 'feed_treat',
+    'to': 'CH4_bio',
+    'amount': CH4_bio_amount_feed_treat,
+    'unit': 'kg',
+    'type': 'biosphere3'
+}
+edges.append(feed_treatTOCH4_bio)
+
+feed_treatTOCH4 = {
+    'from': 'feed_treat',
+    'to': 'CH4',
+    'amount': CH4_amount_feed_treat,
+    'unit': 'kg',
+    'type': 'biosphere3'
+}
+edges.append(feed_treatTOCH4)
+
+feed_treatTOCrIV = {
+    'from': 'feed_treat',
+    'to': 'CrVI',
+    'amount': CrVI_amount_feed_treat,
+    'unit': 'kg',
+    'type': 'biosphere3'
+}
+edges.append(feed_treatTOCrIV)
+
+feed_treatTOAs = {
+    'from': 'feed_treat',
+    'to': 'As',
+    'amount': As_amount_feed_treat,
+    'unit': 'kg',
+    'type': 'biosphere3'
+}
+edges.append(feed_treatTOAs)
+
+feed_treatTOPAH = {
+    'from': 'feed_treat',
+    'to': 'PAH',
+    'amount': PAH_amount_feed_treat,
+    'unit': 'kg',
+    'type': 'biosphere3'
+}
+edges.append(feed_treatTOPAH)
+
+bact_fermTOCO2 = {
+    'from': 'bact_ferm',
+    'to': 'CO2',
+    'amount': CO2_amount_bac_ferm,
+    'unit': 'kg',
+    'type': 'biosphere3'
+}
+edges.append(bact_fermTOCO2)
+
+bact_fermTOCO2_bio = {
+    'from': 'bact_ferm',
+    'to': 'CO2_bio',
+    'amount': CO2_bio_amount_bac_ferm,
+    'unit': 'kg',
+    'type': 'biosphere3'
+}
+edges.append(bact_fermTOCO2_bio)
+
+bact_fermTONH3 = {
+    'from': 'bact_ferm',
+    'to': 'NH3',
+    'amount': NH3_amount_bac_ferm,
+    'unit': 'kg',
+    'type': 'biosphere3'
+}
+edges.append(bact_fermTONH3)
+
+bact_fermTONOx = {
+    'from': 'bact_ferm',
+    'to': 'NOx',
+    'amount': NOx_amount_bac_ferm,
+    'unit': 'kg',
+    'type': 'biosphere3'
+}
+edges.append(bact_fermTONOx)
+
+bact_fermTOSO2 = {
+    'from': 'bact_ferm',
+    'to': 'SO2',
+    'amount': SO2_amount_bac_ferm,
+    'unit': 'kg',
+    'type': 'biosphere3'
+}
+edges.append(bact_fermTOSO2)
+
+
 
 # group to one node called unallocated biosphere3 flows
 # unalloc_biosphere3 = {
@@ -567,20 +701,20 @@ edges.append(SA_purifTOSA_mkt)
 # }
 # edges.append(unalloc_bioTOPAH)
 
-for act in acts:
-    if act['db'] == 'biosphere3':
-        for INPUT in acts:
-            if INPUT["code"] in ['feed_treat', 'bact_ferm', 'SA_purif']:
-                edge = {
-                    'from': INPUT['code'],
-                    'to': act['code'],
-                    'amount': 1, # unknown
-                    'unit': 'kg',
-                    'type': 'biosphere3'
-                }
-                edges.append(edge)
+# for act in acts:
+#     if act['db'] == 'biosphere3':
+#         for INPUT in acts:
+#             if INPUT["code"] in ['feed_treat', 'bact_ferm', 'SA_purif'] and INPUT["amount"] == :
+#                 edge = {
+#                     'from': INPUT['code'],
+#                     'to': act['code'],
+#                     'amount': 1, # unknown
+#                     'unit': 'kg',
+#                     'type': 'biosphere3'
+#                 }
+#                 edges.append(edge)
 
-        act['PFD_weight'] = 3
+#         act['PFD_weight'] = 3
 
 # %% Make process flow diagram
 
@@ -603,7 +737,8 @@ for act in acts:
     elif act['db'] == 'foreground':
         g.node(act['code'], color='red')
     elif act['db'] == 'biosphere3':
-        g.node(act['code'], color='green', label=act['code'], shape='ellipse')
+        g.node(act['code'], color='green', label=act['code'], shape='ellipse', style='filled', fontcolor='white',
+        )
     
     if act['code'] == 'SA_mkt':
         g.node(act['code'], color='pink', shape='ellipse', style='filled')
@@ -624,7 +759,7 @@ for edge in edges:
     #if edge['unit'] == 'm3': edge['unit'] = "m\u00B2" # wtf? 
 
     if 'PFD_weight' not in edge:
-        edge['PFD_weight'] = 1
+        edge['PFD_weight'] = 0
     
     g.edge(tail_name=edge['from'], 
             head_name=edge['to'], 
@@ -676,3 +811,5 @@ for a in fg:
         print(e.as_dict())
     for e in a.biosphere():
         print(e.as_dict())
+# %%
+g
