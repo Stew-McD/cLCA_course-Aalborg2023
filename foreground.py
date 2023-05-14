@@ -20,7 +20,6 @@ NH3_amount_total = x
 NOx_amount_total = x
 SO2_amount_total = x
 
-
 bread_amount_feed_treat = x
 
 water_amount_feed_treat = 117.142 # m3
@@ -65,7 +64,7 @@ PAH_amount_unalloc_bio = PAH_amount_total - PAH_amount_feed_treat
 
 acts = []
 
-# foreground activities
+#%% foreground activities
 
 bread_waste = {
     'name': 'bread waste market',
@@ -138,7 +137,7 @@ SA_mkt = {
 acts.append(SA_mkt)
 
 
-# ecoinvent activities
+#%% ecoinvent activities
 
 HCl_mkt = {
     'name': 'HCl market',
@@ -198,7 +197,7 @@ kerosene = {
 }
 acts.append(kerosene)
 
-# biosphere flows
+#%% biosphere activities
 
 CO2 = {
     'name': 'Carbon dioxide, fossil',
