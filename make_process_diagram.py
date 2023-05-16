@@ -1,5 +1,9 @@
+import graphviz as gv
+import bw2data as bd
+
+
 g = gv.Digraph(
-                filename="SuccinicAcidmarket", 
+                filename="SuccinicAcidmarket.svg", 
                 #engine='twopi', 
                 format='svg',
                 graph_attr={'rankdir':'LR',
