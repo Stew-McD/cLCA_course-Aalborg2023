@@ -63,12 +63,14 @@ def lci_to_bw2(db_df):
     
     return bw2_db # We have a dict to be used as database. Perfect.
 # %% Import the csv file and convert it to a database
-db_df = pd.read_csv('data/Inventory_data_brightway2.csv', header = 0, sep = ";")
+db_df = pd.read_excel('data/Inventory_data_brightway2_corn.xlsx', header = 0)
+
+# db_df = pd.read_csv('data/Inventory_data_brightway2.csv', header = 0, sep = ";")
 db_df.head()
 
 #%%
 # change names of databases to match  how they are in my project
-db_df.replace("exldb", "fg_csv", inplace=True)
+db_df.replace("exldb", "fg_corn", inplace=True)
 db_df.replace("HCL", "HCl", inplace=True) # fix spelling error
 db_df.replace("ecoinvent 3.9 conseq", "con391", inplace=True)
 
@@ -87,12 +89,12 @@ bd.databases
 
 # delete the database if it already exists
 try: 
-    del bd.databases['fg_csv']
+    del bd.databases['fg_corn']
 except:
     pass
 
 # write the database to the project
-fg = bd.Database('fg_csv')
+fg = bd.Database('fg_corn')
 fg.write(db)
 
 # check that it worked

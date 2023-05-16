@@ -59,7 +59,7 @@ for act in nodes:
     elif act['db'] == 'fg_csv':
         g.node(act['name'], color='red')
     elif act['db'] == 'biosphere3':
-        g.node(act['name'], color='green', label=act['name'], shape='ellipse', style='filled', fontcolor='white',
+        g.node(act['name'], color='green', label=act['name'], shape='ellipse', style='filled', fontcolor='white', pos='2,2'
         )
     
     if act['name'] == 'Succinic acid production':

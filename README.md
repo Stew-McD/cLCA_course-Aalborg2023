@@ -3,7 +3,8 @@
 This repository contains the code for the cLCA group project at Aalborg University.
 
 The course files are in the folder 'moodle'
-dasdfasdf
+
+
 ## Contents
 * Usage
 * Setup
