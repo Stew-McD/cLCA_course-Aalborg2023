@@ -1,9 +1,9 @@
 Activity database;Activity code;Activity name;Activity unit;Activity type;Exchange database;Exchange input;Exchange amount;Exchange unit;Exchange type;Exchange type;Exchange uncertainty type;Exchange loc;Exchange scale;Exchange negative;Notes
-exldb;Succinic acid production;Succinic acid production;kg;process;exldb;Succinic acid production;1.00E+00;kg;production;production;;;;;
+exldb;Succinic acid production;Succinic acid production;kg;process;exldb;Purification;1.00E+00;kg;production;production;;;;;
 exldb;Succinic acid production;Succinic acid production;kg;process;ecoinvent 3.9 conseq;688bad5a26258b5135cc811aa24138a2;-1.06E+01;kg;technosphere;;;;;;
-exldb;Succinic acid production;Succinic acid production;p;process;exldb;Purification;1.00E+00;p;technosphere;production;2;1;1.01;FALSE;
-exldb;Succinic acid production;Succinic acid production;p;process;exldb;Bacterial fermentation;1.00E+00;p;technosphere;technosphere;;;;;
-exldb;Succinic acid production;Succinic acid production;p;process;exldb;Pre-treatment;1.00E+00;p;technosphere;technosphere;;;;;
+exldb;Purification;Purification;p;process;exldb;Bacterial fermentation;1.00E+00;p;technosphere;production;2;1;1.01;FALSE;
+exldb;Pre-treatment;Pre-treatment;p;process;exldb;Pre-treatment;1.00E+00;p;technosphere;technosphere;;;;;
+exldb;Bacterial fermentation;Bacterial fermentation;p;process;exldb;Pre-treatment;1.00E+00;p;technosphere;technosphere;;;;;
 exldb;Purification;Purification;p;process;exldb;Purification;1.00E+00;p;production;technosphere;;;;;
 exldb;Purification;Purification;kWh;process;exldb;Electricity;3.30E-01;kg;technosphere;technosphere;0;2;2;TRUE;
 exldb;Purification;Purification;kg;process;exldb;HCL;7.90E-02;kg;technosphere;technosphere;;;;;
