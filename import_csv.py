@@ -3,6 +3,7 @@
 import pandas as pd
 import numpy as np
 import bw2data as bd
+import bw2calc as bc
 
 #%% Define custom fuction to import transform a df into a database: from Massimo 'lci_to_bw2.py'
 
@@ -147,11 +148,9 @@ for act in fg:
     print("BIOSPHERE EXCHANGES")
     print(*list(act.biosphere()))
 
-# In[13]:
-nacl = fg.get('NaCl production')
-nacl.as_dict()
 
-[print(act, act.as_dict()['amount']) for act in fg] 
+#%%
+[print(act, act.as_dict()) for act in fg] 
  # check more stuff 
 print('---------')
 
@@ -162,16 +161,20 @@ print('---------')
 
 #%%
 
-myact = bw.Database("exldb").get('Fuel production')
+myact = bd.Database("exldb").get('Succinic acid production')
 list(myact.exchanges())
 
 #%%
 
+feed
 
 mymethod = ('IPCC 2013', 'climate change', 'global warming potential (GWP100)')
-el = fg.get("Electricity production")
-functional_unit = {el: 1000}
-lca = bw.LCA(functional_unit, mymethod)
+sa = fg.get("Succinic acid production")
+functional_unit = {sa: 1}
+lca = bc.LCA(functional_unit, mymethod)
 lca.lci()
 lca.lcia()
 print(lca.score)
+# %%
+
+gwp = 
