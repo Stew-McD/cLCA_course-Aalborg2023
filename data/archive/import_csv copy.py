@@ -5,7 +5,7 @@ import numpy as np
 import bw2data as bd
 import bw2calc as bc
 
-# %% Define custom fuction to covert the dataframe from the csv into a set of dictionaries ready for the bw2io to make a database
+#%% Define custom fuction to covert the dataframe from the csv into a set of dictionaries ready for the bw2io to make a database
 # from Massimo 'lci_to_bw2.py'
 
 def lci_to_bw2(db_df):
@@ -66,45 +66,78 @@ def lci_to_bw2(db_df):
 db_df = pd.read_csv('data/Inventory_data_brightway2.csv', header = 0, sep = ";")
 db_df.head()
 
+cols = ['Activity database', 'Activity code', 'Activity name', 'Activity unit',
+       'Activity type', 'Exchange database', 'Exchange input',
+        'Exchange unit', 'Exchange type',
+       ]
+
+names = ['Activity code', 'Activity name', 'Exchange input']
 #%%
-# change names of databases to match  how they are in my project
+for col in names:
+    print("\n*****\n***", col , len(db_df[col].unique()))
+    print(*sorted(db_df[col].unique()))
+
+#%%
+
+db_df.replace("Technosphere", "technosphere", inplace=True)
+db_df.replace("Biosphere", "biosphere", inplace=True)
+
 db_df.replace("exldb", "fg_csv", inplace=True)
-db_df.replace("HCL", "HCl", inplace=True) # fix spelling error
+db_df.replace("MgCO2", "MgCO3", inplace=True)
+db_df.replace("HCL", "HCl", inplace=True)
+# db_df.replace("biosphere3", "biosphere", inplace=True)
 db_df.replace("ecoinvent 3.9 conseq", "con391", inplace=True)
 
-#%% Define the databases
+# db_df['Exchange amount'] = db_df['Exchange amount'].str.replace(',', '.').astype(float)
+
+#db_df = db_df.drop('Notes', axis = 1)
+db_df["comment"] = ""
+db_df['Exchange uncertainty type'] = db_df['Exchange uncertainty type'].fillna(0)
+db_df.replace("nan", 0.0, inplace=True)
+db_df.replace(np.NaN, 0.0, inplace=True)
+db_df.replace(0, 0.0, inplace=True)
+db_df.head()
+#%%
 ei = bd.Database('con391')
 bio = bd.Database('biosphere3')
+for i, act in db_df.iterrows():
+    #print("\n*** ", act.loc["Activity name"], act.loc["Exchange input"], act.loc["Exchange type"])
+    try:
+        x = ei.get(code=act.loc["Exchange input"]).as_dict()
+        #print(x['database'], " \t", x['name'], "\t", x['type'])
+    except:
+        try:
+            x = bio.get(code=act.loc["Exchange input"]).as_dict()
+            #print(x['database'], " \t", x['name'], "\t", x['type'])
+        except:
+            print("\n*** ", act.loc["Activity name"], act.loc["Exchange input"], act.loc["Exchange type"])
+            print("Not found")
+            pass
 
-# apply the function to the dataframe to get a dictionary ready for bw2io
 db = lci_to_bw2(db_df)
 
-# open the project in brightway2
-bd.projects.set_current('cLCA-aalborg')
 
-# list the databases in the project
+#%% Create a new database in brightway
+bd.projects.set_current('cLCA-aalborg')
 bd.databases
 
-# delete the database if it already exists
 try: 
     del bd.databases['fg_csv']
 except:
     pass
 
-# write the database to the project
 fg = bd.Database('fg_csv')
 fg.write(db)
-
-# check that it worked
 bd.databases
 fg.metadata
-fg_dict = fg.load()
-print(*fg_dict, sep = "\n")
+fg_df = fg.load()
 
-#%%  Inspect the database
+act = bd.get_node(code='d068f3e2-b033-417b-a359-ca4f25da9731')
+act
+#%%
 for act in fg:
     dict = act.as_dict()
-    print("\n")
+    print("\n\n")
     print("*****************************")
     print("{} : {} : {}".format(dict['name'], dict["unit"], dict["code"]))
     print("----------------------------")
@@ -113,13 +146,34 @@ for act in fg:
     print("----------------------------")
     print("BIOSPHERE EXCHANGES")
     print(*list(act.biosphere()))
-    print("*****************************")
 
 
-#%% Another way to inspect the database, using list comprehensions
+#%%
+[print(act, act.as_dict()) for act in fg] 
+ # check more stuff 
+print('---------')
+
 
 [[print(act, exc) for exc in list(act.technosphere())]for act in fg]  # check more stuff 
 print('---------')
 [[print(exc.uncertainty) for exc in list(act.biosphere())]for act in fg]  # check more stuff
 
-# now go to LCA_calculation.py
+#%%
+
+myact = bd.Database("exldb").get('Succinic acid production')
+list(myact.exchanges())
+
+#%%
+
+feed
+
+mymethod = ('IPCC 2013', 'climate change', 'global warming potential (GWP100)')
+sa = fg.get("Succinic acid production")
+functional_unit = {sa: 1}
+lca = bc.LCA(functional_unit, mymethod)
+lca.lci()
+lca.lcia()
+print(lca.score)
+# %%
+
+gwp = 
