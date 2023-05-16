@@ -11,7 +11,12 @@ The course files are in the folder 'moodle'
 * Contributing
 
 ## Usage:
+1. install VS code, login, clone the repository
+2. follow the setup guide below to make the environment
 
+3. if you don't have ecoinvent installed, download it and run import_ecoinvent.py
+4. run import_csv.py to import the data from the csv files
+5. run LCA_calculation.py to calculate the LCIA results 
 
 ## Setup: 
 
@@ -28,7 +33,7 @@ This guide provides instructions for:
 * and integrating with Visual Studio Code (VSCode)  
 
 
-### Install GitHub CLI
+### Install GitHub CLI and clone the repository
 
 #### Linux
 ```bash
@@ -56,7 +61,7 @@ https://cli.github.com/
 > gh repo clone https://github.com/Stew-McD/cLCA-Aalborg
 > cd cLCA-Aalborg
 
-#### Create a virtual environment
+### Create a virtual environment
 >python3 -m venv cLCA-Aalborg
 
 #### Activate the venv
@@ -65,7 +70,7 @@ Linux/MacOS
 Windows
 >cLCA-Aalborg\Scripts\activate
 
-#### Instal dependencies
+#### Install dependencies
 > pip install -c cmutel -r requirements.txt
 
 #### Install additional modules
@@ -97,12 +102,15 @@ To configure Visual Studio Code (VSCode) to recognize and use virtual environmen
 
 6. In the text box, enter the path to the Python interpreter within your virtual environment. This path will typically be in the venv or env folder within your project directory. For example, it might look like:
 
-    Windows: path\to\myenv\Scripts\python.exe
-    macOS/Linux: path/to/myenv/bin/python
+    Windows: <path\to\myenv>\Scripts\python.exe
+    macOS/Linux: <path/to/myenv>/bin/python
     After entering the interpreter path, VSCode will use that virtual environment for the current workspace.
 
 Now, when you work on a project within that workspace, VSCode will automatically use the specified virtual environment. You can verify this by opening a terminal within VSCode (Ctrl + backtick ```) and running python --version or pip list to see that the packages installed in the virtual environment are being used.
 
+## Contributing
+
+If you want to change something in the code, you can do that in vs code, then commit the changes and push them to the repository.
 
 
 
