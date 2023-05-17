@@ -37,7 +37,7 @@ def lci_to_bw2(db_df):
     db_keys = []
     db_values =[]
     
-    for act in db_df['Activity name'].unique():
+    for act in db_df['Activity code'].unique():
     
         sel = db_df[db_df['Activity code'] == act]
         db_key = (list(sel['Activity database'])[0], list(sel['Activity code'])[0])
@@ -64,10 +64,11 @@ def lci_to_bw2(db_df):
     return bw2_db
 
 def write_database(model):
+    print("===============\n Writing database for {}\n==================".format(model))
     # apply the function to the dataframe to get a dictionary ready for bw2io
     db_name = 'fg_'+model
     db_df = pd.read_csv('data/{}.csv'.format(db_name), sep = ';')
-
+    db_df
     db = lci_to_bw2(db_df)
 
     # delete the database if it already exists
@@ -86,7 +87,7 @@ def write_database(model):
     bd.databases
     fg.metadata
     fg_dict = fg.load()
-    print(*fg_dict, sep = "\n")
+    #print(*fg_dict, sep = "\n")
 
 # #%%  Inspect the database
 # for act in fg:

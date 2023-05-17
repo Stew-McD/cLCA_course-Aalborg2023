@@ -1,6 +1,5 @@
 #%% USE THIS FILE TO RUN THE LCA CALCULATION
 
-print("\n***************** LCA calculations *****************\n")
 #%% Import the necessary packages
 
 import bw2data as bd
@@ -26,8 +25,9 @@ import bw2calc as bc
 # # look for the activity in the database
 # fg.search('Succinic')
 
-db_name = 'corn'
 def get_LCA_scores(model):    #%% Set the functional unit for the LCA calculation
+    print("\n***************** LCA calculations *****************\n")
+    
     db_name = "fg_"+model
     fg = bd.Database(db_name)
     fu = {'name' : 'Succinic acid production ({})'.format(model), 'amount': 1, 'unit': 'kg'}
@@ -73,11 +73,11 @@ def get_LCA_scores(model):    #%% Set the functional unit for the LCA calculatio
     lca.lcia()
 
     #%% print the results
-    print("*****************\n\t For the FU: '{}' \n\t with the method '{}' \n\t, the LCIA score is: {}".format(functional_unit, lca.method, round(lca.score, 2)), bd.Method(mymethod).metadata['unit'])
+    print("*****************\n\t For the FU: '{}' \n\t with the method '{}' \n\t the LCIA score is: {}".format(functional_unit, lca.method, round(lca.score, 2)), bd.Method(mymethod).metadata['unit'])
 
 # write results to a file
 
     with open('LCA_results.txt', 'a') as f:
-        f.write("*****************\n\t For the FU: '{}' \n\t with the method '{}' \n\t, the LCIA score is: {}".format(functional_unit, lca.method, round(lca.score, 2)), bd.Method(mymethod).metadata['unit'])
+        f.write("*****************\n\t For the FU: '{}' \n\t with the method '{}' \n\t, the LCIA score is: {}".format(functional_unit, lca.method, round(lca.score, 2), bd.Method(mymethod).metadata['unit']))
 
     # %%

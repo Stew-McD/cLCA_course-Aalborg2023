@@ -3,19 +3,20 @@ import graphviz as gv
 import bw2data as bd
 
 #%% initialise the graph object
-
+model = 'corn'
 g = gv.Digraph(
-                filename="SuccinicAcidmarket", 
+                filename="SuccinicAcid_{}".format(model), 
                 #engine='twopi', 
-                format='svg',
+                format='pdf',
                 graph_attr={'rankdir':'LR',
                             'pad': '0.1',
                 }) 
 
 #%% load the project and define the databases
-
+db_name = 'fg_'+model
+bd.databases
 bd.projects.set_current('cLCA-aalborg')
-fg = bd.Database('fg_csv')
+fg = bd.Database(db_name)
 bio = bd.Database('biosphere3')
 
 #%%

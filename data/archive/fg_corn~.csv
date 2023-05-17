@@ -1,0 +1,33 @@
+Activity database;Activity code;Activity name;Activity unit;Activity type;Exchange database;Exchange input;Exchange amount;Exchange unit;Exchange type;Exchange uncertainty type;Exchange loc;Exchange scale;Exchange negative;Notes
+fg_corn;Ammonium Liquid;Ammonium Liquid;kg;process;fg_corn;Ammonium Liquid;0.41;kg;production;15;14;14.01;FALSE;none
+fg_corn;Ammonium Liquid;Ammonium Liquid;kg;process;con391;dc7a675d8adacd2cdc6fbda5a3bbe616;0.41;kg;technosphere;33;32;32.01;FALSE;none
+fg_corn;Dextrose;Dextrose;kg;process;fg_corn;Dextrose;0.013;kg;production;10;9;9.01;FALSE;none
+fg_corn;Dextrose;Dextrose;kg;process;con391;f8a41872402cf4a2bd8087c1c1005b7a;0.013;kg;technosphere;28;27;27.01;FALSE;none
+fg_corn;Electricity;Electricity;kWh;process;fg_corn;Electricity;2.67;kWh;production;13;12;12.01;FALSE;none
+fg_corn;Electricity;Electricity;kWh;process;con391;b0043a9ba35dea3f767abb1cf200032f;2.67;kWh;technosphere;31;30;30.01;FALSE;none
+fg_corn;Natural gas for steam;Natural gas for steam;mj;process;fg_corn;Natural gas for steam;14.77;mj;production;14;13;13.01;FALSE;none
+fg_corn;Natural gas for steam;Natural gas for steam;mj;process;con391;91309408f57e75a2fc1e5f4a9fd6518c;14.77;mj;technosphere;32;31;31.01;FALSE;none
+fg_corn;process water;process water;kg;process;fg_corn;process water;1.29;m3;production;11;10;10.01;FALSE;none
+fg_corn;process water;process water;kg;process;con391;42a88037a800886bf4d8a354d139923d;1.29;m3;technosphere;29;28;28.01;FALSE;none
+fg_corn;Sorghum grains;Sorghum grains;kg;process;fg_corn;Sorghum grains;1.66;kg;production;9;8;8.01;FALSE;none
+fg_corn;Sorghum grains;Sorghum grains;kg;process;con391;d5d680bed29f0d204ee68eb9f8867d0e;1.66;kg;technosphere;27;26;26.01;FALSE;none
+fg_corn;Succinic acid production (corn);Succinic acid production (corn);kg;biosphere;biosphere3;4ec70203-13b0-58cc-b4dd-2fcce8a96732;0.002;kg;biosphere;2;1;1.01;FALSE;none
+fg_corn;Succinic acid production (corn);Succinic acid production (corn);kg;biosphere;biosphere3;a3beb5ac-5149-47f6-a035-53fc5030f10a;0.015;kg;biosphere;3;2;2.01;FALSE;none
+fg_corn;Succinic acid production (corn);Succinic acid production (corn);kg;biosphere;biosphere3;7678cec7-b8e1-439d-8242-99cd452834b1;0.005;kg;biosphere;4;3;3.01;FALSE;none
+fg_corn;Succinic acid production (corn);Succinic acid production (corn);kg;biosphere;biosphere3;9990b51b-7023-4700-bca0-1a32ef921f74;0.001;kg;biosphere;5;4;4.01;FALSE;none
+fg_corn;Succinic acid production (corn);Succinic acid production (corn);kg;biosphere;biosphere3;fbcb9c7a-eea7-4694-ba6c-568e01d28883;0.000172;kg;biosphere;6;5;5.01;FALSE;none
+fg_corn;Succinic acid production (corn);Succinic acid production (corn);kg;biosphere;biosphere3;ffa96a92-2796-5a7c-ac56-3b8f290ed66d;0.0000806;kg;biosphere;7;6;6.01;FALSE;none
+fg_corn;Succinic acid production (corn);Succinic acid production (corn);kg;process;fg_corn;Succinic acid production (corn);1;kg;production;8;7;7.01;FALSE;none
+fg_corn;Succinic acid production (corn);Succinic acid production (corn);kg;process;fg_corn;5da9f37ddefb10971887f02fc446d8c3;-2.72;kg;technosphere;16;15;15.01;FALSE;none
+fg_corn;Succinic acid production (corn);Succinic acid production (corn);kg;process;fg_corn;Sorghum grains;1.66;kg;technosphere;17;16;16.01;FALSE;none
+fg_corn;Succinic acid production (corn);Succinic acid production (corn);kg;process;fg_corn;Dextrose;0.013;kg;technosphere;18;17;17.01;FALSE;none
+fg_corn;Succinic acid production (corn);Succinic acid production (corn);kg;process;fg_corn;process water;1.29;m3;technosphere;19;18;18.01;FALSE;none
+fg_corn;Succinic acid production (corn);Succinic acid production (corn);m3;process;fg_corn;Ultrapure water;25.3;kg;technosphere;20;19;19.01;FALSE;none
+fg_corn;Succinic acid production (corn);Succinic acid production (corn);kg;process;fg_corn;Electricity;2.67;kWh;technosphere;21;20;20.01;FALSE;none
+fg_corn;Succinic acid production (corn);Succinic acid production (corn);kWh;process;fg_corn;Natural gas for steam;14.77;mj;technosphere;22;21;21.01;FALSE;none
+fg_corn;Succinic acid production (corn);Succinic acid production (corn);mj;process;fg_corn;Ammonium Liquid;0.41;kg;technosphere;23;22;22.01;FALSE;none
+fg_corn;Succinic acid production (corn);Succinic acid production (corn);kg;process;con391;c96878c3cdb7a02e88f72871d11acaee;0.011;m3;technosphere;24;23;23.01;FALSE;none
+fg_corn;Succinic acid production (corn);Succinic acid production (corn);m3;process;con391;9c3b3e95f4ff6ec6e4287107d2aa489d;0.82;kg;technosphere;25;24;24.01;FALSE;none
+fg_corn;Succinic acid production (corn);Succinic acid production (corn);kg;process;con391;9c3b3e95f4ff6ec6e4287107d2aa489d;0.395;kg;technosphere;26;25;25.01;FALSE;none
+fg_corn;Ultrapure water;Ultrapure water;m3;process;fg_corn;Ultrapure water;25.3;kg;production;12;11;11.01;FALSE;none
+fg_corn;Ultrapure water;Ultrapure water;m3;process;con391;fa54dea702f85be5e0973dfae7f6e59c;25.3;kg;technosphere;30;29;29.01;FALSE;none
