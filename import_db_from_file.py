@@ -3,11 +3,9 @@
 import pandas as pd
 import numpy as np
 import bw2data as bd
-import bw2calc as bc
 
-# %% Define custom fuction to covert the dataframe from the csv into a set of dictionaries ready for the bw2io to make a database
+# %% Define custom fuction to covert the dataframe from the csv/excel into a set of dictionaries ready for the bw2io to make a database
 #%% from Massimo 'lci_to_bw2.py'
-
 def lci_to_bw2(db_df):
     '''A function to convert a pd.Dataframe to a dict
     to be used as database in bw2'''
@@ -21,6 +19,9 @@ def lci_to_bw2(db_df):
     def exc_to_dict(df_data, some_list):
         exc_data = (pd.DataFrame(list(df_data.values), index = list(exc_keys_bw2))).T
         exc_data = exc_data.dropna(axis=1, how='any')
+        # This code extracts the values of the exc_data dataframe and stores them in the e_values variable.
+        e_values = (exc_data.values).tolist()[0]
+
         e_values = (exc_data.values).tolist()[0]
         e_values = [(e_values[0],e_values[1])] + e_values[2:]
         some_list.append(dict(zip(list(exc_data.columns)[1:], e_values)))
@@ -64,41 +65,48 @@ def lci_to_bw2(db_df):
     return bw2_db
 
 def write_database(model):
-    print("===============\n Writing database for {}\n==================".format(model))
+    print("\n==================\n Writing database for: {}\n==================".format(model))
     # apply the function to the dataframe to get a dictionary ready for bw2io
     db_name = 'fg_'+model
-    db_df = pd.read_csv('data/{}.csv'.format(db_name), sep = ';')
+# you can choose if you want to import from a csv or an excel file
+    # db_df = pd.read_csv('data/{}.csv'.format(db_name), sep = ';')
+    db_df = pd.read_excel('data/{}.xlsx'.format(db_name))
     db_df
     db = lci_to_bw2(db_df)
 
     # delete the database if it already exists
     try: 
         del bd.databases[db_name]
+        print("\nDeleted old database {}".format(db_name))
     except:
+        print("\nDatabase {} does not exist".format(db_name))
         pass
 
 # write the database to the project
+    print("\n****** Writing new database: {}".format(db_name))
     fg = bd.Database(db_name)
     fg.write(db)
     
-    #print("*******\n", fg.name, "\n", fg.metadata)
-
 # check that it worked
-    bd.databases
-    fg.metadata
+    # bd.databases
+    print(fg.metadata)
     fg_dict = fg.load()
+
+    return fg_dict
     #print(*fg_dict, sep = "\n")
 
 # #%%  Inspect the database
-# for act in fg:
-#     dict = act.as_dict()
-#     print("\n")
-#     print("*****************************")
-#     print("{} : {} : {}".format(dict['name'], dict["unit"], dict["code"]))
-#     print("----------------------------")
-#     print("TECHNOSPHERE EXCHANGES")
-#     print(*list(act.technosphere()))
-#     print("----------------------------")
-#     print("BIOSPHERE EXCHANGES")
-#     print(*list(act.biosphere()))
-#     print("*****************************")
+
+def inspect_db(db):
+    for act in db:
+        dict = act.as_dict()
+        print("   ACTIVITY:  ")
+        print("*****************************")
+        print("{} : {} : {}".format(dict['name'], dict["unit"], dict["code"]))
+        print("----------------------------")
+        print("TECHNOSPHERE EXCHANGES:", len(list(act.technosphere())))
+        [print(' * ',x) for x in list(act.technosphere())]
+        print("----------------------------")
+        print("BIOSPHERE EXCHANGES: ", len(list(act.biosphere())))
+        [print(' * ',x) for x in list(act.biosphere())]
+        print("*****************************")

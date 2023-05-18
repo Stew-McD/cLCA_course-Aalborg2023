@@ -1,11 +1,11 @@
-2023-05-17 14:28:55,665 - cLCAaalborg - INFO - Ecospold2Matrix Processing
-2023-05-17 14:28:55,668 - cLCAaalborg - INFO - Current git commit: 09d9334d78eac6a55b818517c3c95b6a687e4720
-2023-05-17 14:28:55,669 - cLCAaalborg - INFO - Project name: cLCAaalborg
-2023-05-17 14:28:55,669 - cLCAaalborg - INFO - Unit process and Master data directory: ~/CML/coding/DBs/EI/con391/datasets/
-2023-05-17 14:28:55,670 - cLCAaalborg - INFO - Data saved in: /home/stew/code/gh/cLCA-Aalborg/exio
-2023-05-17 14:28:55,670 - cLCAaalborg - INFO - Sign conventions changed to make waste flows positive
-2023-05-17 14:28:55,670 - cLCAaalborg - INFO - Replace Not-a-Number instances with 0.0 in all matrices
-2023-05-17 14:28:55,671 - cLCAaalborg - INFO - Pickle intermediate results to files
-2023-05-17 14:28:55,671 - cLCAaalborg - INFO - Order processes based on: ISIC, activityName
-2023-05-17 14:28:55,671 - cLCAaalborg - INFO - Order elementary exchanges based on: comp, name, subcomp
-2023-05-17 14:28:56,093 - cLCAaalborg - WARNING - obs2char_subcomps constraints temporarily relaxed because not full recipe parsed
+2023-05-17 14:35:19,215 - cLCAaalborg - INFO - Ecospold2Matrix Processing
+2023-05-17 14:35:19,223 - cLCAaalborg - INFO - Current git commit: c207ffa20d56779e4e08f9c6ce2005fe67cab499
+2023-05-17 14:35:19,223 - cLCAaalborg - INFO - Project name: cLCAaalborg
+2023-05-17 14:35:19,224 - cLCAaalborg - INFO - Unit process and Master data directory: ~/CML/coding/DBs/EI/con391/
+2023-05-17 14:35:19,224 - cLCAaalborg - INFO - Data saved in: /home/stew/code/gh/cLCA-Aalborg/exio
+2023-05-17 14:35:19,224 - cLCAaalborg - INFO - Sign conventions changed to make waste flows positive
+2023-05-17 14:35:19,225 - cLCAaalborg - INFO - Replace Not-a-Number instances with 0.0 in all matrices
+2023-05-17 14:35:19,225 - cLCAaalborg - INFO - Pickle intermediate results to files
+2023-05-17 14:35:19,225 - cLCAaalborg - INFO - Order processes based on: ISIC, activityName
+2023-05-17 14:35:19,226 - cLCAaalborg - INFO - Order elementary exchanges based on: comp, name, subcomp
+2023-05-17 14:35:19,595 - cLCAaalborg - WARNING - obs2char_subcomps constraints temporarily relaxed because not full recipe parsed
