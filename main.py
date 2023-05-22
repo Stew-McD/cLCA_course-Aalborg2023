@@ -26,7 +26,7 @@ from make_process_diagram import extract_nodes_edges, write_process_diagram
 bd.projects.set_current('cLCA-aalborg')
 
 # set to True if you want to run that function
-remove = False
+remove = True
 rebuild = True
 recalculate = True
 recalculate_MC = True
