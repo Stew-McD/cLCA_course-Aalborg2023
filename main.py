@@ -1,27 +1,24 @@
 #%% 
 
 import os
+import sys
 import shutil
 
 import bw2calc as bc
 import bw2data as bd
 import bw2io as bi
 
-bd.projects.set_current('cLCA-aalborg')
 bi.__version__
 bd.__version__
 bc.__version__
 
-
-
 import seaborn as sns
-
 
 import visualisation as vis
 from add_uncertainties import add_uncertainties
 from import_db_from_file import write_database, inspect_db, export_db
 from LCA_calculations import get_LCA_scores, get_MCLCA_scores, get_LCA_report
-#from make_process_diagram import make_process_diagram
+from make_process_diagram import extract_nodes_edges, write_process_diagram
 
 #%%
 
@@ -29,14 +26,18 @@ from LCA_calculations import get_LCA_scores, get_MCLCA_scores, get_LCA_report
 bd.projects.set_current('cLCA-aalborg')
 
 # set to True if you want to run that function
-remove = True
+remove = False
 rebuild = True
 recalculate = True
-recalculate_MC = False
+recalculate_MC = True
+revisualise = True
 
+
+# Remove old results folder
 if remove == True and os.path.exists('results'):
     shutil.rmtree('results')
 
+# Set up models
 models = []
 models.append("bread") 
 models.append('corn')
@@ -48,8 +49,9 @@ if rebuild == True:
         inspect_db(model)
         export_db(model)
 
-#for model in models: make_process_diagram(model)
-bd.databases
+for model in models: 
+    nodes, edges, model = extract_nodes_edges(model)
+    write_process_diagram(nodes, edges, model)
 
 #%%
 if recalculate == True:
@@ -59,16 +61,40 @@ if recalculate == True:
         print(lca.score)
         print(lca.method)
 
-import bw2analyzer as ba
-from bw2analyzer import ContributionAnalysis 
-ContributionAnalysis().annotated_top_processes(lca)
-ContributionAnalysis().annotated_top_emissions(lca)
+#%% Calculate Monte Carlo results
+if recalculate_MC == True:
+    for model in models:
+        single_score = get_LCA_scores(model)
+        get_MCLCA_scores(model, single_score, iterations=100)
+#%% Plot Monte Carlo results and do statistical tests
+import cowsay 
+if revisualise == True:
+    df = vis.plot_MC_results(distribution_type='Normal_100')
+    dic = df.describe().to_dict()
+
+    results_list = []
+    results_list.append("==== Results for Monte Carlo analysis ====")
+    for key in dic.keys():
+        results_list.append("\n***  "  + key + "kg CO2eq / kg  ***")
+        for k, v in dic[key].items():
+            results_list.append(f"{k}, {v}")
+        print(cowsay.turtle('\n'.join(results_list)))
+ 
+    # with open('results/MC_results_cowsay.txt', 'w') as f:
+    #     f.write(x)
+
+#%%
+
+# import bw2analyzer as ba
+# from bw2analyzer import ContributionAnalysis 
+# ContributionAnalysis().annotated_top_processes(lca)
+# ContributionAnalysis().annotated_top_emissions(lca)
 
 # lca.dicts.X.biosphere
 # ContributionAnalysis().d3_treemap(lca.dict
                                  
-import bw2calc as bc
-from bw2calc import graph_traversal as gt
+# import bw2calc as bc
+# from bw2calc import graph_traversal as gt
 
 # lca.demand
 # act = bd.get_node(id=lca.demand.keys[0])
@@ -77,16 +103,6 @@ from bw2calc import graph_traversal as gt
 # gt.AssumedDiagonalGraphTraversal().calculate(lca)
 # gt.MultifunctionalGraphTraversal().calculate(lca)
 
-# %%
-
-if recalculate_MC == True:
-    for model in models:
-        single_score = get_LCA_scores(model)
-        get_MCLCA_scores(model, single_score, iterations=1000)
-#%%
-
-if recalculate_MC == True:
-    vis.plot_MC_results()
 
 # """
 # STATS_ARRAYS DISTRIBUTION IDS

@@ -1,7 +1,6 @@
 #%%
 #%% initialise the graph object
 def extract_nodes_edges(model):
-
     import bw2data as bd
 
     #% load the project and define the databases
@@ -45,11 +44,11 @@ def extract_nodes_edges(model):
             nodes.append(node)
     
     return nodes, edges, model
-nodes, edges, model = extract_nodes_edges('corn')
+
 #%%
 
 
-def make_process_diagram(model):
+def write_process_diagram(nodes, edges, model):
     # initialise the graph object
     import graphviz as gv
     g = None
@@ -76,18 +75,18 @@ def make_process_diagram(model):
                 })
     
     # make the first cluster for the background flows
-    with g.subgraph(name='cluster_bg') as bg:
-        bg.attr(label='Background flows', labelloc='t', fontsize='20', fontcolor='black', style='solid', color='black', shape='box', rank='min',rankdir='TB',penwidth='2', xfontcolor='black')
+    with g.subgraph(name='cluster_fg') as bg:
+        bg.attr(label='Technosphere flows', labelloc='t', fontsize='20', fontcolor='black', style='solid', color='black', shape='box', rank='min',rankdir='TB',penwidth='2', xfontcolor='black')
 
         for act in nodes:
             if act['db'] == 'con391':
-                bg.node(act['name'], fillcolor='#ff000080', label=act['name'], shape='box', style='filled', fontcolor='black'
+                bg.node(act['name'], fillcolor="darkorchid1", label=act['name'], shape='box', style='filled', fontcolor='black'
                 )
     
     # make the second cluster for the foreground flows
     with g.subgraph(name='cluster_fg') as fg:
 
-        fg.attr(label='Foreground flows', labelloc='t', fontsize='20',          style='solid', fontcolor='black', color='black', alpha='0.1',shape='box',   rank='max',rankdir='TB',penwidth='2',xfontcolor='black')
+        fg.attr(label='Foreground flows', labelloc='t', fontsize='20',          style='solid', fontcolor='black', fillcolor='deepskyblue1', alpha='0.1',shape='box',   rank='max',rankdir='TB',penwidth='2',xfontcolor='black')
 
         for act in nodes:
             if 'fg' in act['db'] :
@@ -101,7 +100,7 @@ def make_process_diagram(model):
 
         for act in nodes:
             if act['db'] == 'biosphere3':
-                bio.node(act['name'], color='green', label=act['name'], shape='ellipse', style='filled', fontcolor='black'
+                bio.node(act['name'], fillcolor='green3', label=act['name'], shape='ellipse', style='filled', fontcolor='black'
                 )
 
     # make links between the nodes
@@ -145,56 +144,56 @@ def make_process_diagram(model):
     g.render()
     return g
 
-pfd = make_process_diagram(model)
-pfd
+
         #%%
 
-        for edge in edges:
-             #  
-            #if edge['unit'] == 'm3': edge['unit'] = "m\u00B2" # wtf? 
+#         for edge in edges:
+#              #  
+#             #if edge['unit'] == 'm3': edge['unit'] = "m\u00B2" # wtf? 
 
-            if 'PFD_weight' not in edge:
-                edge['PFD_weight'] = 0.1
+#             if 'PFD_weight' not in edge:
+#                 edge['PFD_weight'] = 0.1
             
-                    # change arrow direction for biosphere flows
+#                     # change arrow direction for biosphere flows
             
 
-            elif act['db'] == 'con391':
-                g.node(act['name'], label=act['name'], shape='box', color='blue', style='filled', fontcolor='white')
+#             elif act['db'] == 'con391':
+#                 g.node(act['name'], label=act['name'], shape='box', color='blue', style='filled', fontcolor='white')
                 
 
-            elif 'fg' in act['db'] :
-                g.node(act['name'], color='red')
+#             elif 'fg' in act['db'] :
+#                 g.node(act['name'], color='red')
                 
-                if 'Succinic acid production' in act['name']:
-                    g.node(act['name'], color='pink', shape='ellipse', style='filled')
+#                 if 'Succinic acid production' in act['name']:
+#                     g.node(act['name'], color='pink', shape='ellipse', style='filled')
 
-            try: 
-                g.node(act['name'], pos=act['PFD_pos'])
-            except KeyError:
-                pass
+#             try: 
+#                 g.node(act['name'], pos=act['PFD_pos'])
+#             except KeyError:
+#                 pass
 
-            try:
-                g.node(act['amount'], size=act['PFD_size'])
-            except KeyError:
-                pass
-            else:
-                direction='forward'
+#             try:
+#                 g.node(act['amount'], size=act['PFD_size'])
+#             except KeyError:
+#                 pass
+#             else:
+#                 direction='forward'
 
-            g.edge(tail_name=edge['input'], 
-                    head_name=edge['output'], 
-                    label="{:.2f} {}".format(edge['amount'] , edge['unit']),
-                    penwidth=str(0.1+(edge['amount'])**0.1),
-                    weight=str(edge['PFD_weight']),
-                    dir=direction,
-                    #edge_attr={"weight" : str(edge['PFD_weight'])}
-                    )
+#             g.edge(tail_name=edge['input'], 
+#                     head_name=edge['output'], 
+#                     label="{:.2f} {}".format(edge['amount'] , edge['unit']),
+#                     penwidth=str(0.1+(edge['amount'])**0.1),
+#                     weight=str(edge['PFD_weight']),
+#                     dir=direction,
+#                     #edge_attr={"weight" : str(edge['PFD_weight'])}
+#                     )
             
-            g.render()
-            g
-# %
+#             g.render()
+#             g
+# # %
 
 if __name__ == "__main__":
-    models = ["corn", "bread"]
+    models = ["bread"]
     for model in models: 
-        make_process_diagram(model)
+        nodes, edges, model = extract_nodes_edges(model)
+        write_process_diagram(nodes, edges, model)

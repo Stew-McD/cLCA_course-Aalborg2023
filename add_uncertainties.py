@@ -35,12 +35,12 @@ def add_uncertainties(model, dist_id=2, scale_percent=0.1):
             edge['scale'] = round_to_sf(abs(edge['loc']*scale_percent), 6) 
 
             if dist_id == 2: 
-                edge['scale'] = np.log(1.01)
-                edge['loc'] = np.log(abs(edge['loc']))
-
-            if edge['amount'] <= 0: edge['negative'] = True
-            else: edge['negative'] = False
-            if edge['amount'] == 0: edge['uncertainty type'] = 1 # NoUncertainty.id
+                edge['scale'] = np.log(1 + scale_percent/10)
+                edge['loc'] = np.log(abs(edge['amount']))
+            if edge['amount'] <= 0: edge['negative'] = "True"
+            else: edge['negative'] = "False"
+            if edge['amount'] == 0: edge['uncertainty type'] = 1
+            if edge['amount'] == 0: edge['loc'] = 0 # NoUncertainty.id
             edge.save()
 
 # scales = []
