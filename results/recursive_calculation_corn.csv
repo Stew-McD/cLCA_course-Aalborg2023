@@ -1,0 +1,13 @@
+Fraction of score | Absolute score | Amount | Activity
+0001 | 5.989 |     1 | 'Succinic acid production (corn)' (kg, None, None)
+;-0.419 | -2.508 | -2.72 | 'market for ammonium sulfate' (kilogram, RER, None)
+;;-0.405 | -2.428 | -2.72 | 'ammonium sulfate production' (kilogram, RER, None)
+;;-0.0119 | -0.07102 | -0.4659 | 'market for transport, freight, lorry, unspecified' (ton kilometer, RER, None)
+;0.679 | 4.065 |  1.66 | 'Sorghum grains' (kg, None, None)
+;;0.679 | 4.065 |  1.66 | 'market for sweet sorghum grain' (kilogram, GLO, None)
+;0.106 | 0.632 |  2.67 | 'Electricity' (kWh, None, None)
+;;0.106 | 0.632 |  2.67 | 'market group for electricity, medium voltage' (kilowatt hour, RER, None)
+;0.419 |  2.51 | 14.77 | 'Natural gas for steam' (mj, None, None)
+;;0.419 |  2.51 | 14.77 | 'market group for heat, district or industrial, natural gas' (megajoule, RER, None)
+;0.191 | 1.142 |  0.41 | 'Ammonia liquid' (kg, None, None)
+;;0.191 | 1.142 |  0.41 | 'market for ammonia, anhydrous, liquid' (kilogram, RER, None)

@@ -3,7 +3,7 @@
 import pandas as pd
 import numpy as np
 import bw2data as bd
-
+import bw2io as bi
 # %% Define custom fuction to covert the dataframe from the csv/excel into a set of dictionaries ready for the bw2io to make a database
 #%% from Massimo 'lci_to_bw2.py'
 def lci_to_bw2(db_df):
@@ -19,7 +19,6 @@ def lci_to_bw2(db_df):
     def exc_to_dict(df_data, some_list):
         exc_data = (pd.DataFrame(list(df_data.values), index = list(exc_keys_bw2))).T
         exc_data = exc_data.dropna(axis=1, how='any')
-        # This code extracts the values of the exc_data dataframe and stores them in the e_values variable.
         e_values = (exc_data.values).tolist()[0]
 
         e_values = (exc_data.values).tolist()[0]
@@ -97,16 +96,22 @@ def write_database(model):
 
 # #%%  Inspect the database
 
-def inspect_db(db):
+def inspect_db(model):
+    db = bd.Database('fg_'+model)
     for act in db:
         dict = act.as_dict()
-        print("   ACTIVITY:  ")
+        print("\n   ACTIVITY:  ")
         print("*****************************")
         print("{} : {} : {}".format(dict['name'], dict["unit"], dict["code"]))
         print("----------------------------")
-        print("TECHNOSPHERE EXCHANGES:", len(list(act.technosphere())))
+        print("\tTECHNOSPHERE EXCHANGES:", len(list(act.technosphere())))
         [print(' * ',x) for x in list(act.technosphere())]
         print("----------------------------")
-        print("BIOSPHERE EXCHANGES: ", len(list(act.biosphere())))
+        print("\tBIOSPHERE EXCHANGES: ", len(list(act.biosphere())))
         [print(' * ',x) for x in list(act.biosphere())]
         print("*****************************")
+
+def export_db(model):
+    db = 'fg_'+model
+    bi.export.write_lci_excel(db, dirpath='data/')
+

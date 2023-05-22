@@ -26,15 +26,21 @@ def round_to_sf(num, significant):
 #%%
 # bd.projects.set_current("cLCA-aalborg")
 # model = "bread"
-def add_uncertainties(model):
+def add_uncertainties(model, dist_id=2, scale_percent=0.1):
     fg = bd.Database("fg_"+ model)
     for node in fg:
         for edge in node.exchanges():
-            edge['uncertainty type'] = NormalUncertainty.id
-            edge['loc'] = abs(edge['amount'])
-            edge['scale'] = round_to_sf(abs(edge['loc']*0.05), 6) # 20% uncertainty
+            edge['uncertainty type'] = dist_id #LognormalUncertainty.id
+            edge['loc'] = (edge['amount'])
+            edge['scale'] = round_to_sf(abs(edge['loc']*scale_percent), 6) 
+
+            if dist_id == 2: 
+                edge['scale'] = np.log(1.01)
+                edge['loc'] = np.log(abs(edge['loc']))
+
             if edge['amount'] <= 0: edge['negative'] = True
             else: edge['negative'] = False
+            if edge['amount'] == 0: edge['uncertainty type'] = 1 # NoUncertainty.id
             edge.save()
 
 # scales = []
@@ -51,3 +57,19 @@ def add_uncertainties(model):
 
 
 # %%
+"""
+STATS_ARRAYS DISTRIBUTION IDS
+ 0: stats_arrays.distributions.undefined.UndefinedUncertainty,
+ 1: stats_arrays.distributions.undefined.NoUncertainty,
+ 2: stats_arrays.distributions.lognormal.LognormalUncertainty,
+ 3: stats_arrays.distributions.normal.NormalUncertainty,
+ 4: stats_arrays.distributions.geometric.UniformUncertainty,
+ 5: stats_arrays.distributions.geometric.TriangularUncertainty,
+ 6: stats_arrays.distributions.bernoulli.BernoulliUncertainty,
+ 7: stats_arrays.distributions.discrete_uniform.DiscreteUniform,
+ 8: stats_arrays.distributions.weibull.WeibullUncertainty,
+ 9: stats_arrays.distributions.gamma.GammaUncertainty,
+ 10: stats_arrays.distributions.beta.BetaUncertainty,
+ 11: stats_arrays.distributions.extreme.GeneralizedExtremeValueUncertainty,
+ 12: stats_arrays.distributions.student.StudentsTUncertaint
+"""

@@ -6,6 +6,9 @@ import bw2data as bd
 import bw2calc as bc
 import seaborn as sb
 
+import bw2analyzer as ba
+from bw2analyzer import ContributionAnalysis as ca
+
 import bw_processing as bwp
 import matrix_utils as mu
 import bw2calc as bc
@@ -13,12 +16,74 @@ import numpy as np
 import seaborn as sb
 import pandas as pd
 
+
 import os
+from stats_arrays import uncertainty_choices
 #%% Set the project
 bd.projects.set_current('cLCA-aalborg')
 if not os.path.exists('results'): os.makedirs('results')
 
-# look for the activity in the database
+def get_LCA_report(model):
+
+    db_name = "fg_"+model
+    fg = bd.Database(db_name)
+    fu = {'name' : 'Succinic acid production ({})'.format(model), 'amount': 1}
+    # find it in the database
+    myact = fg.get(fu['name'])
+
+    mymethod = ('IPCC 2013', 'climate change', 'global warming potential (GWP100)')
+
+    lca = bc.LCA(
+        demand = {myact : fu['amount']},
+        method = mymethod,
+        use_distributions = False)
+    lca.lci()
+    lca.lcia()
+
+    # from bw2calc import graph_traversal as gtrav
+
+    # # gt = gtrav.AssumedDiagonalGraphTraversal().calculate(lca)
+    # # # gt.MultifunctionalGraphTraversal().calculate(lca)
+
+    # # import bw2analyzer as ba
+    # # from bw2analyzer import ContributionAnalysis as ca
+    # # from bw2analyzer import print_recursive_supply_chain, PageRank, traverse_tagged_databases
+    # # from bw2analyzer.econ import gini_coefficient, herfindahl_index, concentration_ratio, theil_index
+    # # income = lca.characterized_inventory.data
+    # # gini_coefficient(income), herfindahl_index(income), concentration_ratio(income), theil_index(income)
+
+    with open("results/recursive_calculation_{}.csv".format(model), "w") as f:
+        ba.print_recursive_calculation(myact, mymethod, max_level=4, file_obj=f, tab_character=";")
+
+    with open("results/recursive_supply_chain_{}.txt".format(model), "w") as f:
+        ba.print_recursive_supply_chain(myact, max_level=2, file_obj=f, tab_character="    ")
+
+    with open("results/top_emissions_{}.csv".format(model), "w") as f:
+        top_emissions = ca().annotated_top_emissions(lca)
+        header = "LCIA score; Inventory amount; Biosphere flow"
+        f.write("{}\n".format(header)) 
+        for e in top_emissions:
+            f.write(f"{e[0]}; {e[1]}; {e[2]}\n")
+            
+    with open("results/top_processes_{}.csv".format(model), "w") as f:
+        top_processes = ca().annotated_top_processes(lca)
+        header = "LCIA score; Supply amount; Activity"
+        f.write("{}\n".format(header)) 
+        for e in top_processes:
+            f.write(f"{e[0]}; {e[1]}; {e[2]}\n")
+
+
+    #%% print the results
+    print(("\n\n*****************\n\t For the FU: '{}' {} {} \n\t with the method '{}' \n\tthe LCIA score is: {} {}".format(myact.as_dict()['name'], fu['amount'], myact.as_dict()['unit'], lca.method, round(lca.score, 2), bd.Method(mymethod).metadata['unit'])))
+    if not os.path.exists('results'): os.makedirs('results')
+
+# write results to a file
+    with open('results/LCA_results.txt', 'a+') as f:
+        f.write(("\n\n*****************\n\t For the FU: '{}' {} {} \n\t with the method '{}' \n\tthe LCIA score is: {} {}".format(myact.as_dict()['name'], fu['amount'], myact.as_dict()['unit'], lca.method, round(lca.score, 2), bd.Method(mymethod).metadata['unit'])))
+
+    print("reports written to file")
+
+
 
 def get_LCA_scores(model):    #%% Set the functional unit for the LCA calculation
     print("\n***************** LCA calculations *****************\n")
@@ -77,8 +142,11 @@ def get_LCA_scores(model):    #%% Set the functional unit for the LCA calculatio
     with open('results/LCA_results.txt', 'a+') as f:
         f.write(("\n\n*****************\n\t For the FU: '{}' {} {} \n\t with the method '{}' \n\tthe LCIA score is: {} {}".format(myact.as_dict()['name'], fu['amount'], myact.as_dict()['unit'], lca.method, round(lca.score, 2), bd.Method(mymethod).metadata['unit'])))
 
+    
+    return lca
+
     # %% Monte Carlo LCA calculations
-def get_MCLCA_scores(model, iterations=100):
+def get_MCLCA_scores(model, single_score, iterations=100):
     print("\n***************** Monte carlo - LCA calculations *****************\n")
     
     db_name = "fg_"+model
@@ -86,7 +154,10 @@ def get_MCLCA_scores(model, iterations=100):
     fu = {'name' : 'Succinic acid production ({})'.format(model), 'amount': 1, 'unit': 'kg'}
     mymethod = ('IPCC 2013', 'climate change', 'global warming potential (GWP100)')
     myact = fg.get(fu['name'])
- 
+
+    dist_code = list(myact.technosphere())[0].as_dict()['uncertainty type']
+    dist_name = uncertainty_choices.id_dict[dist_code].description.split(" ")[0]
+
     lca = bc.LCA(
         demand = {myact : fu['amount']},
         method = mymethod,
@@ -103,22 +174,22 @@ def get_MCLCA_scores(model, iterations=100):
     
     fig = mc_res.plot(kind='scatter', x='MC iteration', y=mymethod[2], title='Monte Carlo results for Succinic acid production ({})'.format(model), logy=False)
 
-    fig.figure.savefig('figures/MC_LCA_{}.png'.format(model))
+    fig.figure.savefig('figures/MC_LCA_{}_{}_{}.png'.format(model, dist_name, iterations))
     #%% print the results
     print("\n\n*****************\n\t For the FU: '{}' {} {} \n\t with the method '{}' \n\tthe LCIA score is ({}):\n {}".format(myact.as_dict()['name'], fu['amount'], myact.as_dict()['unit'], lca.method, bd.Method(mymethod).metadata['unit'], mc_res[mymethod[2]].describe()))
 
 # write results to a file
     if not os.path.exists('results'): os.makedirs('results')
-    with open('results/MC_LCA_results.txt', 'a') as f:
+    with open('results/MC_LCA_results_{}_{}.txt'.format(dist_name, iterations), 'a') as f:
         f.write(("\n\n*****************\n\t For the FU: '{}' {} {} \n\t with the method '{}' \n\tthe LCIA score is: {} {}".format(myact.as_dict()['name'], fu['amount'], myact.as_dict()['unit'], lca.method, round(lca.score, 2), bd.Method(mymethod).metadata['unit'])))
 
 # write results to a csv file, appending a new column for each model
 #%%
     try:
-        df = pd.read_csv('results/MC_LCA_results.csv')
+        df = pd.read_csv('results/MC_LCA_results_{}_{}.csv'.format(dist_name, iterations))
     except:
         df = pd.DataFrame()
 
-    df[model+" @ "+mymethod[2]] = mc_res[mymethod[2]]
-    df.to_csv('results/MC_LCA_results.csv', header=True, index=False)
+    df[model+" @ "+mymethod[2]+ " @ " + str(round(single_score.score,2))] = mc_res[mymethod[2]]
+    df.to_csv('results/MC_LCA_results_{}_{}.csv'.format(dist_name, iterations), header=True, index=False)
 

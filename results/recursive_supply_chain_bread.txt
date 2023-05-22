@@ -1,0 +1,8 @@
+1: 'Succinic acid production (bread)' (kg, None, None)
+    1: 'Purification' (kg, None, None)
+        7.33: 'market for steam, in chemical industry' (kilogram, RoW, None)
+        8.14: 'market for sodium chloride, brine solution' (kilogram, GLO, None)
+        56: 'tap water production, underground water with disinfection' (kilogram, RoW, None)
+        -5.77: 'market for soybean meal' (kilogram, RoW, None)
+        0.042: 'market for hydrochloric acid, without water, in 30% solution state' (kilogram, RER, None)
+        1: 'Bacterial fermentation' (kg, None, None)
