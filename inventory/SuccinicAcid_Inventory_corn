@@ -2,35 +2,28 @@ digraph {
 	graph [pad=0.1 rankdir=RL]
 	subgraph cluster_fg {
 		color=black fontcolor=black fontsize=20 label="Technosphere flows" labelloc=t penwidth=2 rank=min rankdir=TB shape=box style=solid xfontcolor=black
-		"market group for electricity, medium voltage" [label="market group for electricity, medium voltage" fillcolor=darkorchid1 fontcolor=black shape=box style=filled]
-		"treatment of inert waste, sanitary landfill" [label="treatment of inert waste, sanitary landfill" fillcolor=darkorchid1 fontcolor=black shape=box style=filled]
-		"market for ammonium sulfate" [label="market for ammonium sulfate" fillcolor=darkorchid1 fontcolor=black shape=box style=filled]
-		"market for ammonia, anhydrous, liquid" [label="market for ammonia, anhydrous, liquid" fillcolor=darkorchid1 fontcolor=black shape=box style=filled]
-		"treatment of sewage sludge, 75% water, WWT, WW from particle board production, sanitary landfill" [label="treatment of sewage sludge, 75% water, WWT, WW from particle board production, sanitary landfill" fillcolor=darkorchid1 fontcolor=black shape=box style=filled]
 		"market for sweet sorghum grain" [label="market for sweet sorghum grain" fillcolor=darkorchid1 fontcolor=black shape=box style=filled]
 		"glucose production" [label="glucose production" fillcolor=darkorchid1 fontcolor=black shape=box style=filled]
 		"market group for tap water" [label="market group for tap water" fillcolor=darkorchid1 fontcolor=black shape=box style=filled]
 		"market for water, ultrapure" [label="market for water, ultrapure" fillcolor=darkorchid1 fontcolor=black shape=box style=filled]
+		"market group for electricity, medium voltage" [label="market group for electricity, medium voltage" fillcolor=darkorchid1 fontcolor=black shape=box style=filled]
 		"steam production, in chemical industry" [label="steam production, in chemical industry" fillcolor=darkorchid1 fontcolor=black shape=box style=filled]
 		"treatment of biowaste by anaerobic digestion" [label="treatment of biowaste by anaerobic digestion" fillcolor=darkorchid1 fontcolor=black shape=box style=filled]
+		"market for ammonium sulfate" [label="market for ammonium sulfate" fillcolor=darkorchid1 fontcolor=black shape=box style=filled]
+		"market for ammonia, anhydrous, liquid" [label="market for ammonia, anhydrous, liquid" fillcolor=darkorchid1 fontcolor=black shape=box style=filled]
+		"treatment of sewage sludge, 75% water, WWT, WW from particle board production, sanitary landfill" [label="treatment of sewage sludge, 75% water, WWT, WW from particle board production, sanitary landfill" fillcolor=darkorchid1 fontcolor=black shape=box style=filled]
+		"treatment of inert waste, sanitary landfill" [label="treatment of inert waste, sanitary landfill" fillcolor=darkorchid1 fontcolor=black shape=box style=filled]
 	}
 	subgraph cluster_fg {
 		alpha=0.1 fillcolor=deepskyblue1 fontcolor=black fontsize=20 label="Foreground flows" labelloc=t penwidth=2 rank=max rankdir=TB shape=box style=solid xfontcolor=black
-		"Pre-treatment (corn)" [label="Pre-treatment (corn)" color=blue fontcolor=white shape=box style=filled]
-		"Bacterial fermentation (corn)" [label="Bacterial fermentation (corn)" color=blue fontcolor=white shape=box style=filled]
 		"Purification (corn)" [label="Purification (corn)" color=blue fontcolor=white shape=box style=filled]
+		"Bacterial fermentation (corn)" [label="Bacterial fermentation (corn)" color=blue fontcolor=white shape=box style=filled]
+		"Pre-treatment (corn)" [label="Pre-treatment (corn)" color=blue fontcolor=white shape=box style=filled]
 	}
 	subgraph cluster_bio {
 		alpha=0.1 color=black fontsize=20 label="Biosphere flows" labelloc=t penwidth=2 rank=sink rankdir=TB shape=box style=solid xfontcolor=black
 	}
-	"market group for electricity, medium voltage" -> "Bacterial fermentation (corn)" [dir=forward fontsize=8 penwidth=1.0895192582062145 weight=0 xlabel="9.0e-01 kWh"]
-	"treatment of inert waste, sanitary landfill" -> "Bacterial fermentation (corn)" [dir=forward fontsize=8 penwidth=nan weight=0 xlabel="-8.2e-01 kg"]
-	"Pre-treatment (corn)" -> "Bacterial fermentation (corn)" [dir=forward fontsize=8 penwidth=1.1 weight=0 xlabel="1.0e+00 kg"]
-	"market for ammonium sulfate" -> "Purification (corn)" [dir=forward fontsize=8 penwidth=nan weight=0 xlabel="-2.7e+00 kg"]
-	"market group for electricity, medium voltage" -> "Purification (corn)" [dir=forward fontsize=8 penwidth=1.0895192582062145 weight=0 xlabel="9.0e-01 kWh"]
-	"market for ammonia, anhydrous, liquid" -> "Purification (corn)" [dir=forward fontsize=8 penwidth=1.0146993820210588 weight=0 xlabel="4.1e-01 kg"]
-	"treatment of sewage sludge, 75% water, WWT, WW from particle board production, sanitary landfill" -> "Purification (corn)" [dir=forward fontsize=8 penwidth=nan weight=0 xlabel="-1.1e-02 m³"]
-	"Bacterial fermentation (corn)" -> "Purification (corn)" [dir=forward fontsize=8 penwidth=1.1 weight=0 xlabel="1.0e+00 kg"]
+	"Purification (corn)" -> "Succinic acid production (corn)" [dir=forward fontsize=8 penwidth=1.1 weight=0 xlabel="1.0e+00 kg"]
 	"market for sweet sorghum grain" -> "Pre-treatment (corn)" [dir=forward fontsize=8 penwidth=1.1519880555770452 weight=0 xlabel="1.7e+00 kg"]
 	"glucose production" -> "Pre-treatment (corn)" [dir=forward fontsize=8 penwidth=1.1265836313042321 weight=0 xlabel="1.3e+00 kg"]
 	"market group for tap water" -> "Pre-treatment (corn)" [dir=forward fontsize=8 penwidth=1.125791204689333 weight=0 xlabel="1.3e+00 m³"]
@@ -38,5 +31,12 @@ digraph {
 	"market group for electricity, medium voltage" -> "Pre-treatment (corn)" [dir=forward fontsize=8 penwidth=1.0895192582062145 weight=0 xlabel="9.0e-01 kWh"]
 	"steam production, in chemical industry" -> "Pre-treatment (corn)" [dir=forward fontsize=8 penwidth=1.4636218334780102 weight=0 xlabel="2.2e+01 mj"]
 	"treatment of biowaste by anaerobic digestion" -> "Pre-treatment (corn)" [dir=forward fontsize=8 penwidth=nan weight=0 xlabel="-4.0e-01 kg"]
-	"Purification (corn)" -> "Succinic acid production (corn)" [dir=forward fontsize=8 penwidth=1.1 weight=0 xlabel="1.0e+00 kg"]
+	"market for ammonium sulfate" -> "Purification (corn)" [dir=forward fontsize=8 penwidth=nan weight=0 xlabel="-2.7e+00 kg"]
+	"market group for electricity, medium voltage" -> "Purification (corn)" [dir=forward fontsize=8 penwidth=1.0895192582062145 weight=0 xlabel="9.0e-01 kWh"]
+	"market for ammonia, anhydrous, liquid" -> "Purification (corn)" [dir=forward fontsize=8 penwidth=1.0146993820210588 weight=0 xlabel="4.1e-01 kg"]
+	"treatment of sewage sludge, 75% water, WWT, WW from particle board production, sanitary landfill" -> "Purification (corn)" [dir=forward fontsize=8 penwidth=nan weight=0 xlabel="-1.1e-02 m³"]
+	"Bacterial fermentation (corn)" -> "Purification (corn)" [dir=forward fontsize=8 penwidth=1.1 weight=0 xlabel="1.0e+00 kg"]
+	"market group for electricity, medium voltage" -> "Bacterial fermentation (corn)" [dir=forward fontsize=8 penwidth=1.0895192582062145 weight=0 xlabel="9.0e-01 kWh"]
+	"treatment of inert waste, sanitary landfill" -> "Bacterial fermentation (corn)" [dir=forward fontsize=8 penwidth=nan weight=0 xlabel="-8.2e-01 kg"]
+	"Pre-treatment (corn)" -> "Bacterial fermentation (corn)" [dir=forward fontsize=8 penwidth=1.1 weight=0 xlabel="1.0e+00 kg"]
 }

@@ -65,11 +65,11 @@ if recalculate == True:
 if recalculate_MC == True:
     for model in models:
         single_score = get_LCA_scores(model)
-        get_MCLCA_scores(model, single_score, iterations=100)
+        get_MCLCA_scores(model, single_score, iterations=1000)
 #%% Plot Monte Carlo results and do statistical tests
 import cowsay 
 if revisualise == True:
-    df = vis.plot_MC_results(distribution_type='Normal_100')
+    df = vis.plot_MC_results(distribution_type='Normal_1000')
     dic = df.describe().to_dict()
 
     results_list = []
