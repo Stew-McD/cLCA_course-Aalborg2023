@@ -3,4 +3,4 @@
 *****************
 	 For the FU: 'Succinic acid production (bread)' 1 kg 
 	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
-	the LCIA score is: -42.44 kg CO2-Eq
+	the LCIA score is: -13.2 kg CO2-Eq

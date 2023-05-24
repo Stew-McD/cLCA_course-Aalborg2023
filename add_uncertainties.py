@@ -26,7 +26,7 @@ def round_to_sf(num, significant):
 #%%
 # bd.projects.set_current("cLCA-aalborg")
 # model = "bread"
-def add_uncertainties(model, dist_id=2, scale_percent=0.1):
+def add_uncertainties(model, dist_id=3, scale_percent=0.1):
     fg = bd.Database("fg_"+ model)
     for node in fg:
         for edge in node.exchanges():

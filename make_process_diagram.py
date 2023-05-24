@@ -21,8 +21,8 @@ def extract_nodes_edges(model):
             ex = ex.as_dict()
             input = bd.get_node(code=ex['input'][1]).as_dict()
             output = bd.get_node(code=ex['output'][1]).as_dict()
-            edge = {'input': input["name"], 
-                    'output': output["name"], 
+            edge = {'input': input["name"].split(",")[0], 
+                    'output': output["name"].split(",")[0], 
                     'amount': ex['amount'], 
                     'unit': ex['unit'],
                     'type' : ex['type'],
@@ -31,42 +31,42 @@ def extract_nodes_edges(model):
                     'PFD_weight': 0}
             
             if edge['unit'] == 'm3': edge['unit'] = 'm³'
+            edges.append(edge)
 
-            if input != output: edges.append(edge)
     #%
     # extract the activities (nodes)
     nodes = []
     for edge in edges:
-        node = {'name': edge['input'], 'db': edge['db_input'], 'type' : edge['type']}
+        node = {'name': edge['input'].split(",")[0], 'db': edge['db_input'], 'type' : edge['type']}
         if node not in nodes:
             nodes.append(node)
-        if node not in nodes:
-            nodes.append(node)
-    
+
     return nodes, edges, model
 
 #%%
-
-
 def write_process_diagram(nodes, edges, model):
     # initialise the graph object
     import graphviz as gv
+    import numpy as np
     g = None
     g = gv.Digraph(
                 filename="inventory/SuccinicAcid_Inventory_{}".format(model), 
                 engine='dot', 
-                format='png',
-                graph_attr={'rankdir':'RL',
-                            'pad': '0.1',
-                            # 'splines':'curved',
-                            # 'overlap':'prism',
-                            # 'nodesep':'0.1',
-                            # 'ranksep':'0.1',
-                            # 'fontname':'Arial',
-                            # 'fontsize':'20',
+                format='svg',
+                graph_attr={
+                            'label':'System model for succinic acid production from {}'.format(model),
+                            'labelloc':'t',
+                            'rankdir':'TB',
+                            'pad': '.5',
+                            # 'nodesep':'0.5',
+                             'edgesep':'2',
+                            'splines':'ortho',
+                            # 'overlap':'false',
+                            'fontname':'Comic Sans MS',
+                            'fontsize':'30',
                             # 'fontcolor':'black',
-                            # 'bgcolor':'transparent',
-                            # 'margin':'0',
+                            #'bgcolor':'#00000',
+                            'margin':'0',
                             # 'compound':'true',
                             # 'dpi':'300',
                             # 'ratio':'0.5',
@@ -76,27 +76,39 @@ def write_process_diagram(nodes, edges, model):
     
     # make the first cluster for the background flows
     with g.subgraph(name='cluster_fg') as bg:
-        bg.attr(label='Technosphere flows', labelloc='t', fontsize='20', fontcolor='black', style='solid', color='black', shape='box', rank='min',rankdir='TB',penwidth='2', xfontcolor='black')
+        
+        # bg.attr(label='Technosphere flows', labelloc='t', fontsize='20', fontcolor='black', style='solid', color='black', shape='box', rank='min',rankdir='TB',penwidth='2', xfontcolor='black')
+
 
         for act in nodes:
             if act['db'] == 'con391':
-                bg.node(act['name'], fillcolor="darkorchid1", label=act['name'], shape='box', style='filled', fontcolor='black'
+                bg.node(act['name'], fontname='Comic Sans MS', fillcolor="darkolivegreen", label=act['name'], shape='box', style='filled', fontcolor='white', alpha='0.5'
                 )
     
     # make the second cluster for the foreground flows
     with g.subgraph(name='cluster_fg') as fg:
 
-        fg.attr(label='Foreground flows', labelloc='t', fontsize='20',          style='solid', fontcolor='black', fillcolor='deepskyblue1', alpha='0.1',shape='box',   rank='max',rankdir='TB',penwidth='2',xfontcolor='black')
+        fg.attr(label='', margin='30', labelloc='t', fontsize='20', fontname='Comic Sans MS', style='solid', fontcolor='white', fillcolor='darkorchid2', alpha='0.6', shape='box',   rank='max',rankdir='TB',penwidth='2',xfontcolor='black')
+
+        # fg.attr(penwidth='2', xfontcolor='black', color='white', alpha='0.1', shape='none', rank='sink',rankdir='TB')
 
         for act in nodes:
             if 'fg' in act['db'] :
-                fg.node(act['name'], color='blue', label=act['name'], shape='box', style='filled', fontcolor='white'
+                fg.node(act['name'], label=act['name'], shape='box', style='filled', fontname='Comic Sans MS', fontcolor='white', alpha='0.5', fillcolor='#0a86e5',
                 )
+
+                if 'Succinic acid production' in act['name']:
+                    fg.node(act['name'], color='green', shape='ellipse', style='filled', fillcolor='#471a87', fontcolor='white', alpha='0.5')
+                
+                if 'Bread waste' in act['name']:
+                    fg.node(act['name'], color='rgb(189, 177, 5)', shape='ellipse', style='filled', fillcolor='goldenrod', fontcolor='white', alpha='0.5')
+
+                
 
     # make the third cluster for the biosphere flows
     with g.subgraph(name='cluster_bio') as bio:
         
-        bio.attr(label='Biosphere flows', labelloc='t', fontsize='20', style='solid', penwidth='2', xfontcolor='black', color='black', alpha='0.1', shape='box', rank='sink',rankdir='TB')
+        # bio.attr(label='Biosphere flows', labelloc='t', fontsize='20', style='solid', penwidth='2', xfontcolor='black', color='black', alpha='0.1', shape='box', rank='sink',rankdir='TB')
 
         for act in nodes:
             if act['db'] == 'biosphere3':
@@ -106,43 +118,78 @@ def write_process_diagram(nodes, edges, model):
     # make links between the nodes
 
     for edge in edges:
+        if edge['amount'] == 0: continue
         if edge['db_input'] == 'biosphere3': 
                 direction='back'
                 g.edge(tail_name=edge['input'], 
                         head_name=edge['output'], 
-                        xlabel="{:.1e} {}".format(edge['amount'] , edge['unit']),
-                        fontsize='8',
-                        penwidth=str(0.1+(edge['amount'])**0.1),
-                        weight=str(edge['PFD_weight']),
+                        xlabel=XLABEL,
+                        penwidth=str(0.1+abs((edge['amount'])**0.1)),
+                        weight='1', #str(edge['PFD_weight']),
                         dir=direction,
-                        #edge_attr={"weight" : str(edge['PFD_weight'])}
-                        )      
-        elif edge['db_input'] == 'con391':
-                direction='forward'
-                g.edge(tail_name=edge['input'], 
-                        head_name=edge['output'],
-                        fontsize='8',
-                        xlabel="{:.1e} {}".format(edge['amount'] , edge['unit']),
-                        penwidth=str(0.1+(edge['amount'])**0.1),
-                        weight=str(edge['PFD_weight']),
-                        dir=direction,
+                        fontcolor='white', 
+                        fontsize='6', 
+                        color='black', 
+                        style='filled', 
+                        fillcolor='white',
+                        shape='ellipse',
                         #edge_attr={"weight" : str(edge['PFD_weight'])}
                         )
                 
-        elif edge['db_input'] == 'fg_'+model:
+        if edge['db_input'] == 'con391':
                 direction='forward'
+                line_col='black'
+                if edge['amount'] < 0: line_col='#8e0c0c' 
+                if abs(np.log10(edge['amount'])) > 2: XLABEL="{:.2e} {}".format(edge['amount'] , edge['unit'])
+                else: XLABEL="{:.2f} {}".format(edge['amount'] , edge['unit'])
                 g.edge(tail_name=edge['input'], 
                         head_name=edge['output'],
-                        fontsize='8',
-                        xlabel="{:.1e} {}".format(edge['amount'] , edge['unit']),
-                        penwidth=str(0.1+(edge['amount'])**0.1),
-                        weight=str(edge['PFD_weight']),
+                        xlabel=XLABEL,
+                        penwidth='1', #str(0.1+abs((edge['amount'])**0.1)),
+                        weight='1', #str(edge['PFD_weight']),
                         dir=direction,
+                        minlen='2',
+                        fontcolor='black', 
+                        fontsize='6', 
+                        color=line_col, 
+                        style='filled', 
+                        fillcolor='white',
+                        shape='ellipse',
+                        xlabelfillcolor='white',
+                        # xlabeldistance='-1'
+
                         #edge_attr={"weight" : str(edge['PFD_weight'])}
                         )
+                
+        if edge['db_input'] == 'fg_'+model:
+                direction='forward'
+                if abs(np.log10(edge['amount'])) > 3: XLABEL="{:.1e} {}".format(edge['amount'] , edge['unit'])
+                else: XLABEL="{:.2f} {}".format(edge['amount'] , edge['unit'])
+                if edge['amount'] < 0: direction='back',
+                g.edge(tail_name=edge['input'], 
+                        head_name=edge['output'],
+                        xlabel=XLABEL,
+                        penwidth='1', #str(0.1+abs((edge['amount'])**0.1)),
+                        weight=str(10),
+                        dir=direction,
+                        minlen='3',
+                        fontcolor='black', 
+                        fontsize='6', 
+                        xlabelcolor='white', 
+                        style='filled', 
+                        xlabelfillcolor='white',
+                        shape='ellipse',
+                        # xlabeldistance='0'
+                        
 
-    g.render()
-    return g
+                        #edge_attr={"weight" : str(edge['PFD_weight'])}
+                        )
+        
+        
+    g.view()
+    g.save()
+    # g.render()
+    # return g
 
 
         #%%
@@ -190,10 +237,9 @@ def write_process_diagram(nodes, edges, model):
             
 #             g.render()
 #             g
-# # %
-
+#%%
 if __name__ == "__main__":
-    models = ["bread"]
+    models = ['corn', 'bread']
     for model in models: 
         nodes, edges, model = extract_nodes_edges(model)
         write_process_diagram(nodes, edges, model)

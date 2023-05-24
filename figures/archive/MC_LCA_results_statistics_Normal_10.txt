@@ -1,0 +1,9 @@
+*** Welch's t-test
+stat = -10.55
+p = 7.93e-07
+*** Mann-Whitney U test
+stat = 0.00
+p = 1.83e-04
+*** Kolmogorov-Smirnov test
+stat = 1.00
+p = 1.08e-05

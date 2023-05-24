@@ -10,11 +10,11 @@ import palettable.wesanderson as wa
 
 
 #%%# Read the CSV file into a DataFrame
-def plot_MC_results(distribution_type='Normal_1000'):
+def plot_MC_results(mc_type):
     """Plot results of Monte Carlo analysis for Succinic acid production"""
     # Read the CSV file into a DataFrame
     directory = 'results'
-    csv_files = [f for f in os.listdir(directory) if f.endswith(distribution_type+'.csv')]
+    csv_files = [f for f in os.listdir(directory) if f.endswith(mc_type+'.csv')]
     csv_files.sort(key=lambda x: os.path.getmtime(os.path.join(directory, x)), reverse=True)
     csv_file = csv_files[0]
     csv_path = os.path.join(directory, csv_file)
@@ -90,7 +90,7 @@ def plot_MC_results(distribution_type='Normal_1000'):
     # Add a legend to the plot and some other information
     plt.legend(fontsize=20)
     plt.ylabel('Distribution Density', fontsize=14)
-    plt.xlabel(f"{results_df.columns[0].split('@')[1].title()} (kg CO$_2$(eq)/kg FU)", fontsize=14)
+    plt.xlabel(f"{results_df.columns[0].split('@')[1].title()} (kg CO$_2$(eq)/kg succinic acid)", fontsize=14)
     plt.title('Monte Carlo LCIA results for Succinic acid production scenarios', fontsize=24)
     plt.annotate("Number of iterations: {}\nUncertainty type: {}".format(len(results_df), dist_type), xy=(0.5, 0.95), fontsize = 16, xycoords='axes fraction', ha='center', va='center', bbox=dict(edgecolor='black', boxstyle='round', facecolor='white', alpha=0.1))
 
