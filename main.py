@@ -46,7 +46,7 @@ if remove == True and os.path.exists('results'):
 # set parameters for Monte Carlo analysis
 iterations = 100
 scale_percent = 0.3
-dist_id = 3
+dist_id = 3 # normal - 2 is lognormal 
 mc_type = ""
 if dist_id == 3: mc_type = "Normal_"+str(iterations)
 elif dist_id == 2: mc_type = "Lognormal_"+str(iterations)
@@ -55,7 +55,7 @@ elif dist_id == 2: mc_type = "Lognormal_"+str(iterations)
 # set scenarios for testing sensitivity
 
 scenarios = {
-    "CoproductsToWaste": False,
+    "CoproductsToWaste": True,
     "EnergyEfficient": False,
     "WaterEfficient": False
 }
