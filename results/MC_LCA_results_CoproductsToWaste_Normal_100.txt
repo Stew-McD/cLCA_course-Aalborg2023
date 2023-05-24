@@ -1,0 +1,11 @@
+
+
+*****************
+	 CoproductsToWaste: For the FU: 'Succinic acid production (bread)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: -14.3 kg CO2-Eq
+
+*****************
+	 CoproductsToWaste: For the FU: 'Succinic acid production (corn)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: 8.09 kg CO2-Eq

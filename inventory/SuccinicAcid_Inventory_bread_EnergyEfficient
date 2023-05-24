@@ -1,0 +1,49 @@
+digraph {
+	graph [edgesep=2 fontname="Comic Sans MS" fontsize=30 label="System model for succinic acid production from bread - EnergyEfficient" labelloc=t margin=0 pad=.5 rankdir=TB splines=ortho]
+	subgraph cluster_fg {
+		"market for soybean meal" [label="market for soybean meal" alpha=0.5 fillcolor=darkolivegreen fontcolor=white fontname="Comic Sans MS" shape=box style=filled]
+		"market for hydrochloric acid" [label="market for hydrochloric acid" alpha=0.5 fillcolor=darkolivegreen fontcolor=white fontname="Comic Sans MS" shape=box style=filled]
+		"market for steam" [label="market for steam" alpha=0.5 fillcolor=darkolivegreen fontcolor=white fontname="Comic Sans MS" shape=box style=filled]
+		"market for sodium chloride" [label="market for sodium chloride" alpha=0.5 fillcolor=darkolivegreen fontcolor=white fontname="Comic Sans MS" shape=box style=filled]
+		"market for tap water" [label="market for tap water" alpha=0.5 fillcolor=darkolivegreen fontcolor=white fontname="Comic Sans MS" shape=box style=filled]
+		"treatment of wastewater" [label="treatment of wastewater" alpha=0.5 fillcolor=darkolivegreen fontcolor=white fontname="Comic Sans MS" shape=box style=filled]
+		"market group for electricity" [label="market group for electricity" alpha=0.5 fillcolor=darkolivegreen fontcolor=white fontname="Comic Sans MS" shape=box style=filled]
+		"treatment of biowaste" [label="treatment of biowaste" alpha=0.5 fillcolor=darkolivegreen fontcolor=white fontname="Comic Sans MS" shape=box style=filled]
+		"market for neutralising agent" [label="market for neutralising agent" alpha=0.5 fillcolor=darkolivegreen fontcolor=white fontname="Comic Sans MS" shape=box style=filled]
+		"market for magnesium oxide" [label="market for magnesium oxide" alpha=0.5 fillcolor=darkolivegreen fontcolor=white fontname="Comic Sans MS" shape=box style=filled]
+		"market for carbon dioxide" [label="market for carbon dioxide" alpha=0.5 fillcolor=darkolivegreen fontcolor=white fontname="Comic Sans MS" shape=box style=filled]
+		"market for enzymes" [label="market for enzymes" alpha=0.5 fillcolor=darkolivegreen fontcolor=white fontname="Comic Sans MS" shape=box style=filled]
+	}
+	subgraph cluster_fg {
+		alpha=0.6 fillcolor=darkorchid2 fontcolor=white fontname="Comic Sans MS" fontsize=20 label="" labelloc=t margin=30 penwidth=2 rank=max rankdir=TB shape=box style=solid xfontcolor=black
+		"Bacterial fermentation (bread)" [label="Bacterial fermentation (bread)" alpha=0.5 fillcolor="#0a86e5" fontcolor=white fontname="Comic Sans MS" shape=box style=filled]
+		"Pre-treatment (bread)" [label="Pre-treatment (bread)" alpha=0.5 fillcolor="#0a86e5" fontcolor=white fontname="Comic Sans MS" shape=box style=filled]
+		"Bread waste" [label="Bread waste" alpha=0.5 fillcolor="#0a86e5" fontcolor=white fontname="Comic Sans MS" shape=box style=filled]
+		"Bread waste" [alpha=0.5 color="rgb(189, 177, 5)" fillcolor=goldenrod fontcolor=white shape=ellipse style=filled]
+		"Succinic acid production (bread)" [label="Succinic acid production (bread)" alpha=0.5 fillcolor="#0a86e5" fontcolor=white fontname="Comic Sans MS" shape=box style=filled]
+		"Succinic acid production (bread)" [alpha=0.5 color=green fillcolor="#471a87" fontcolor=white shape=ellipse style=filled]
+		"Purification (bread)" [label="Purification (bread)" alpha=0.5 fillcolor="#0a86e5" fontcolor=white fontname="Comic Sans MS" shape=box style=filled]
+	}
+	subgraph cluster_bio {
+	}
+	"market for soybean meal" -> "Purification (bread)" [color="#8e0c0c" dir=forward fillcolor=white fontcolor=black fontsize=6 minlen=2 penwidth=1 shape=ellipse style=filled weight=1 xlabel="-5.77 kg" xlabelfillcolor=white]
+	"market for hydrochloric acid" -> "Purification (bread)" [color=black dir=forward fillcolor=white fontcolor=black fontsize=6 minlen=2 penwidth=1 shape=ellipse style=filled weight=1 xlabel="0.04 kg" xlabelfillcolor=white]
+	"Bacterial fermentation (bread)" -> "Purification (bread)" [dir=forward fontcolor=black fontsize=6 minlen=3 penwidth=1 shape=ellipse style=filled weight=10 xlabel="1.00 kg" xlabelcolor=white xlabelfillcolor=white]
+	"market for steam" -> "Purification (bread)" [color=black dir=forward fillcolor=white fontcolor=black fontsize=6 minlen=2 penwidth=1 shape=ellipse style=filled weight=1 xlabel="7.33 kg" xlabelfillcolor=white]
+	"market for sodium chloride" -> "Purification (bread)" [color=black dir=forward fillcolor=white fontcolor=black fontsize=6 minlen=2 penwidth=1 shape=ellipse style=filled weight=1 xlabel="8.14 kg" xlabelfillcolor=white]
+	"market for tap water" -> "Purification (bread)" [color=black dir=forward fillcolor=white fontcolor=black fontsize=6 minlen=2 penwidth=1 shape=ellipse style=filled weight=1 xlabel="56.00 kg" xlabelfillcolor=white]
+	"treatment of wastewater" -> "Purification (bread)" [color=black dir=forward fillcolor=white fontcolor=black fontsize=6 minlen=2 penwidth=1 shape=ellipse style=filled weight=1 xlabel="62.00 kg" xlabelfillcolor=white]
+	"market group for electricity" -> "Purification (bread)" [color=black dir=forward fillcolor=white fontcolor=black fontsize=6 minlen=2 penwidth=1 shape=ellipse style=filled weight=1 xlabel="0.18 kWh" xlabelfillcolor=white]
+	"treatment of biowaste" -> "Bacterial fermentation (bread)" [color=black dir=forward fillcolor=white fontcolor=black fontsize=6 minlen=2 penwidth=1 shape=ellipse style=filled weight=1 xlabel="0.50 kg" xlabelfillcolor=white]
+	"market for neutralising agent" -> "Bacterial fermentation (bread)" [color=black dir=forward fillcolor=white fontcolor=black fontsize=6 minlen=2 penwidth=1 shape=ellipse style=filled weight=1 xlabel="0.11 kg" xlabelfillcolor=white]
+	"market for magnesium oxide" -> "Bacterial fermentation (bread)" [color=black dir=forward fillcolor=white fontcolor=black fontsize=6 minlen=2 penwidth=1 shape=ellipse style=filled weight=1 xlabel="0.15 kg" xlabelfillcolor=white]
+	"market group for electricity" -> "Bacterial fermentation (bread)" [color=black dir=forward fillcolor=white fontcolor=black fontsize=6 minlen=2 penwidth=1 shape=ellipse style=filled weight=1 xlabel="0.18 kWh" xlabelfillcolor=white]
+	"market for carbon dioxide" -> "Bacterial fermentation (bread)" [color=black dir=forward fillcolor=white fontcolor=black fontsize=6 minlen=2 penwidth=1 shape=ellipse style=filled weight=1 xlabel="0.32 kWh" xlabelfillcolor=white]
+	"Pre-treatment (bread)" -> "Bacterial fermentation (bread)" [dir=forward fontcolor=black fontsize=6 minlen=3 penwidth=1 shape=ellipse style=filled weight=10 xlabel="1.00 kg" xlabelcolor=white xlabelfillcolor=white]
+	"market for steam" -> "Bacterial fermentation (bread)" [color=black dir=forward fillcolor=white fontcolor=black fontsize=6 minlen=2 penwidth=1 shape=ellipse style=filled weight=1 xlabel="7.33 kg" xlabelfillcolor=white]
+	"Purification (bread)" -> "Succinic acid production (bread)" [dir=forward fontcolor=black fontsize=6 minlen=3 penwidth=1 shape=ellipse style=filled weight=10 xlabel="1.00 kg" xlabelcolor=white xlabelfillcolor=white]
+	"market for enzymes" -> "Pre-treatment (bread)" [color=black dir=forward fillcolor=white fontcolor=black fontsize=6 minlen=2 penwidth=1 shape=ellipse style=filled weight=1 xlabel="3.68e-03 kg" xlabelfillcolor=white]
+	"market group for electricity" -> "Pre-treatment (bread)" [color=black dir=forward fillcolor=white fontcolor=black fontsize=6 minlen=2 penwidth=1 shape=ellipse style=filled weight=1 xlabel="0.18 kWh" xlabelfillcolor=white]
+	"market for tap water" -> "Pre-treatment (bread)" [color=black dir=forward fillcolor=white fontcolor=black fontsize=6 minlen=2 penwidth=1 shape=ellipse style=filled weight=1 xlabel="6.00 kg" xlabelfillcolor=white]
+	"market for steam" -> "Pre-treatment (bread)" [color=black dir=forward fillcolor=white fontcolor=black fontsize=6 minlen=2 penwidth=1 shape=ellipse style=filled weight=1 xlabel="7.20 kg" xlabelfillcolor=white]
+}

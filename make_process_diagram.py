@@ -44,17 +44,17 @@ def extract_nodes_edges(model):
     return nodes, edges, model
 
 #%%
-def write_process_diagram(nodes, edges, model):
+def write_process_diagram(nodes, edges, model, scenario_name):
     # initialise the graph object
     import graphviz as gv
     import numpy as np
     g = None
     g = gv.Digraph(
-                filename="inventory/SuccinicAcid_Inventory_{}".format(model), 
+                filename="inventory/SuccinicAcid_Inventory_{}_{}".format(model, scenario_name), 
                 engine='dot', 
                 format='svg',
                 graph_attr={
-                            'label':'System model for succinic acid production from {}'.format(model),
+                            'label':'System model for succinic acid production from {} - {}'.format(model, scenario_name),
                             'labelloc':'t',
                             'rankdir':'TB',
                             'pad': '.5',

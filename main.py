@@ -44,7 +44,7 @@ if remove == True and os.path.exists('results'):
     shutil.rmtree('results')
 
 # set parameters for Monte Carlo analysis
-iterations = 1000
+iterations = 100
 scale_percent = 0.3
 dist_id = 3
 mc_type = ""
@@ -125,6 +125,8 @@ for model in models:
             else:
                 print("No scenario selected")
 
+    nodes, edges, model = extract_nodes_edges(model)
+    write_process_diagram(nodes, edges, model, scenario_name)
 
 #%%
 if recalculate == True:

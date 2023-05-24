@@ -1,0 +1,42 @@
+digraph {
+	graph [edgesep=2 fontname="Comic Sans MS" fontsize=30 label="System model for succinic acid production from corn - WaterEfficient" labelloc=t margin=0 pad=.5 rankdir=TB splines=ortho]
+	subgraph cluster_fg {
+		"treatment of biowaste" [label="treatment of biowaste" alpha=0.5 fillcolor=darkolivegreen fontcolor=white fontname="Comic Sans MS" shape=box style=filled]
+		"market group for electricity" [label="market group for electricity" alpha=0.5 fillcolor=darkolivegreen fontcolor=white fontname="Comic Sans MS" shape=box style=filled]
+		"treatment of wastewater" [label="treatment of wastewater" alpha=0.5 fillcolor=darkolivegreen fontcolor=white fontname="Comic Sans MS" shape=box style=filled]
+		"steam production" [label="steam production" alpha=0.5 fillcolor=darkolivegreen fontcolor=white fontname="Comic Sans MS" shape=box style=filled]
+		"market for tap water" [label="market for tap water" alpha=0.5 fillcolor=darkolivegreen fontcolor=white fontname="Comic Sans MS" shape=box style=filled]
+		"market for sweet sorghum grain" [label="market for sweet sorghum grain" alpha=0.5 fillcolor=darkolivegreen fontcolor=white fontname="Comic Sans MS" shape=box style=filled]
+		"market for glucose" [label="market for glucose" alpha=0.5 fillcolor=darkolivegreen fontcolor=white fontname="Comic Sans MS" shape=box style=filled]
+		"market for ammonium sulfate" [label="market for ammonium sulfate" alpha=0.5 fillcolor=darkolivegreen fontcolor=white fontname="Comic Sans MS" shape=box style=filled]
+		"market for ammonia" [label="market for ammonia" alpha=0.5 fillcolor=darkolivegreen fontcolor=white fontname="Comic Sans MS" shape=box style=filled]
+		"market for water" [label="market for water" alpha=0.5 fillcolor=darkolivegreen fontcolor=white fontname="Comic Sans MS" shape=box style=filled]
+	}
+	subgraph cluster_fg {
+		alpha=0.6 fillcolor=darkorchid2 fontcolor=white fontname="Comic Sans MS" fontsize=20 label="" labelloc=t margin=30 penwidth=2 rank=max rankdir=TB shape=box style=solid xfontcolor=black
+		"Pre-treatment (corn)" [label="Pre-treatment (corn)" alpha=0.5 fillcolor="#0a86e5" fontcolor=white fontname="Comic Sans MS" shape=box style=filled]
+		"Succinic acid production (corn)" [label="Succinic acid production (corn)" alpha=0.5 fillcolor="#0a86e5" fontcolor=white fontname="Comic Sans MS" shape=box style=filled]
+		"Succinic acid production (corn)" [alpha=0.5 color=green fillcolor="#471a87" fontcolor=white shape=ellipse style=filled]
+		"Purification (corn)" [label="Purification (corn)" alpha=0.5 fillcolor="#0a86e5" fontcolor=white fontname="Comic Sans MS" shape=box style=filled]
+		"Bacterial fermentation (corn)" [label="Bacterial fermentation (corn)" alpha=0.5 fillcolor="#0a86e5" fontcolor=white fontname="Comic Sans MS" shape=box style=filled]
+	}
+	subgraph cluster_bio {
+	}
+	"treatment of biowaste" -> "Bacterial fermentation (corn)" [color=black dir=forward fillcolor=white fontcolor=black fontsize=6 minlen=2 penwidth=1 shape=ellipse style=filled weight=1 xlabel="0.82 kg" xlabelfillcolor=white]
+	"market group for electricity" -> "Bacterial fermentation (corn)" [color=black dir=forward fillcolor=white fontcolor=black fontsize=6 minlen=2 penwidth=1 shape=ellipse style=filled weight=1 xlabel="0.90 kWh" xlabelfillcolor=white]
+	"Pre-treatment (corn)" -> "Bacterial fermentation (corn)" [dir=forward fontcolor=black fontsize=6 minlen=3 penwidth=1 shape=ellipse style=filled weight=10 xlabel="1.00 kg" xlabelcolor=white xlabelfillcolor=white]
+	"Purification (corn)" -> "Succinic acid production (corn)" [dir=forward fontcolor=black fontsize=6 minlen=3 penwidth=1 shape=ellipse style=filled weight=10 xlabel="1.00 kg" xlabelcolor=white xlabelfillcolor=white]
+	"treatment of wastewater" -> "Pre-treatment (corn)" [color=black dir=forward fillcolor=white fontcolor=black fontsize=6 minlen=2 penwidth=1 shape=ellipse style=filled weight=1 xlabel="3.25e-03 m³" xlabelfillcolor=white]
+	"steam production" -> "Pre-treatment (corn)" [color=black dir=forward fillcolor=white fontcolor=black fontsize=6 minlen=2 penwidth=1 shape=ellipse style=filled weight=1 xlabel="0.02 kg" xlabelfillcolor=white]
+	"treatment of biowaste" -> "Pre-treatment (corn)" [color=black dir=forward fillcolor=white fontcolor=black fontsize=6 minlen=2 penwidth=1 shape=ellipse style=filled weight=1 xlabel="0.40 kg" xlabelfillcolor=white]
+	"market group for electricity" -> "Pre-treatment (corn)" [color=black dir=forward fillcolor=white fontcolor=black fontsize=6 minlen=2 penwidth=1 shape=ellipse style=filled weight=1 xlabel="0.90 kWh" xlabelfillcolor=white]
+	"market for tap water" -> "Pre-treatment (corn)" [color=black dir=forward fillcolor=white fontcolor=black fontsize=6 minlen=2 penwidth=1 shape=ellipse style=filled weight=1 xlabel="3.23 kg" xlabelfillcolor=white]
+	"market for sweet sorghum grain" -> "Pre-treatment (corn)" [color=black dir=forward fillcolor=white fontcolor=black fontsize=6 minlen=2 penwidth=1 shape=ellipse style=filled weight=1 xlabel="1.66 kg" xlabelfillcolor=white]
+	"market for glucose" -> "Pre-treatment (corn)" [color=black dir=forward fillcolor=white fontcolor=black fontsize=6 minlen=2 penwidth=1 shape=ellipse style=filled weight=1 xlabel="2.00 kg" xlabelfillcolor=white]
+	"market for ammonium sulfate" -> "Purification (corn)" [color="#8e0c0c" dir=forward fillcolor=white fontcolor=black fontsize=6 minlen=2 penwidth=1 shape=ellipse style=filled weight=1 xlabel="-2.72 kg" xlabelfillcolor=white]
+	"treatment of wastewater" -> "Purification (corn)" [color=black dir=forward fillcolor=white fontcolor=black fontsize=6 minlen=2 penwidth=1 shape=ellipse style=filled weight=1 xlabel="2.75e-03 m³" xlabelfillcolor=white]
+	"market for ammonia" -> "Purification (corn)" [color=black dir=forward fillcolor=white fontcolor=black fontsize=6 minlen=2 penwidth=1 shape=ellipse style=filled weight=1 xlabel="0.41 kg" xlabelfillcolor=white]
+	"market group for electricity" -> "Purification (corn)" [color=black dir=forward fillcolor=white fontcolor=black fontsize=6 minlen=2 penwidth=1 shape=ellipse style=filled weight=1 xlabel="0.90 kWh" xlabelfillcolor=white]
+	"Bacterial fermentation (corn)" -> "Purification (corn)" [dir=forward fontcolor=black fontsize=6 minlen=3 penwidth=1 shape=ellipse style=filled weight=10 xlabel="1.00 kg" xlabelcolor=white xlabelfillcolor=white]
+	"market for water" -> "Purification (corn)" [color=black dir=forward fillcolor=white fontcolor=black fontsize=6 minlen=2 penwidth=1 shape=ellipse style=filled weight=1 xlabel="6.33 kg" xlabelfillcolor=white]
+}
