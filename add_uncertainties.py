@@ -30,7 +30,7 @@ def add_uncertainties(model, dist_id=3, scale_percent=0.1):
     fg = bd.Database("fg_"+ model)
     for node in fg:
         for edge in node.exchanges():
-            edge['uncertainty type'] = dist_id #LognormalUncertainty.id
+            edge['uncertainty type'] = dist_id #NormalUncertainty.id
             edge['loc'] = (edge['amount'])
             edge['scale'] = round_to_sf(abs(edge['loc']*scale_percent), 6) 
 
