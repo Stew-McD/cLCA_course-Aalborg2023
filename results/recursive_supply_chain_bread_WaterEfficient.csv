@@ -1,0 +1,355 @@
+1: 'Succinic acid production (bread)' (kg, None, None)
+    1: 'Purification (bread)' (kg, None, None)
+        1: 'Bacterial fermentation (bread)' (kg, None, None)
+            0.5: 'treatment of biowaste, industrial composting' (kilogram, RoW, None)
+                0.25: 'market for compost' (kilogram, GLO, None)
+                    0.25: 'nutrient supply from compost' (kilogram, GLO, None)
+            0.106: 'market for neutralising agent, sodium hydroxide-equivalent' (kilogram, GLO, None)
+                0.106: 'soda ash, light, crystalline, heptahydrate, to generic market for neutralising agent' (kilogram, GLO, None
+                    0.14: 'market for soda ash, light' (kilogram, GLO, None)
+                        0.109: 'soda production, solvay process' (kilogram, RoW, None)
+                            0.827: 'market for heat, district or industrial, other than natural gas' (megajoule, RoW, None)
+                                0.0835: 'heat production, hardwood chips from forest, at furnace 1000kW, state-of-the-art 2014' (m
+                                0.0796: 'heat production, hardwood chips from forest, at furnace 300kW, state-of-the-art 2014' (me
+                                0.0835: 'heat production, wood chips from industry, at furnace 1000kW, state-of-the-art 2014' (meg
+                                0.0621: 'heat production, wood chips from industry, at furnace 300kW, state-of-the-art 2014' (mega
+                                0.0615: 'heat and power co-generation, hard coal' (megajoule, RU, None)
+                                0.0608: 'heat and power co-generation, lignite' (megajoule, RoW, None)
+                                    0.0546: 'market for lignite' (kilogram, RoW, None)
+                                        0.0546: 'lignite mine operation' (kilogram, RoW, None)
+                                0.104: 'heat and power co-generation, wood chips, 6667 kW, state-of-the-art 2014' (megajoule, RoW,
+                                0.0835: 'heat production, wood chips from industry, at furnace 5000kW, state-of-the-art 2014' (meg
+                                0.0835: 'heat production, hardwood chips from forest, at furnace 5000kW, state-of-the-art 2014' (m
+                            0.138: 'market for lime, packed' (kilogram, RoW, None)
+                                0.138: 'lime production, milled, packed' (kilogram, RoW, None)
+                                    0.138: 'market for lime' (kilogram, RoW, None)
+                                        0.138: 'lime production, milled, loose' (kilogram, RoW, None)
+                                    0.138: 'market for packing, lime product' (kilogram, GLO, None)
+                                        0.138: 'packing, lime product' (kilogram, RoW, None)
+                            0.172: 'market for sodium chloride, brine solution' (kilogram, GLO, None)
+                                0.115: 'sodium chloride production, brine solution' (kilogram, RoW, None)
+                                0.0569: 'sodium chloride production, brine solution' (kilogram, RER, None)
+                        0.0839: 'market for transport, freight, sea, container ship' (ton kilometer, GLO, None)
+                            0.0839: 'transport, freight, sea, container ship' (ton kilometer, GLO, None)
+            0.148: 'market for magnesium oxide' (kilogram, GLO, None)
+                0.122: 'magnesium oxide production' (kilogram, RoW, None)
+                    0.583: 'market for heat, central or small-scale, natural gas' (megajoule, RoW, None)
+                        0.0833: 'heat production, natural gas, at boiler atmospheric low-NOx non-modulating <100kW' (megajoule, Ro
+                        0.0833: 'heat production, natural gas, at boiler atmospheric non-modulating <100kW' (megajoule, RoW, None)
+                        0.0833: 'heat production, natural gas, at boiler fan burner low-NOx non-modulating <100kW' (megajoule, RoW
+                        0.0833: 'heat production, natural gas, at boiler fan burner non-modulating <100kW' (megajoule, RoW, None)
+                        0.0833: 'heat production, natural gas, at boiler modulating <100kW' (megajoule, RoW, None)
+                        0.0833: 'heat production, natural gas, at boiler atm. low-NOx condensing non-modulating <100kW' (megajoule
+                        0.0833: 'heat production, natural gas, at boiler condensing modulating <100kW' (megajoule, RoW, None)
+                    0.516: 'market for heat, district or industrial, other than natural gas' (megajoule, RoW, None)
+                        0.0521: 'heat production, hardwood chips from forest, at furnace 1000kW, state-of-the-art 2014' (megajoule
+                        0.0521: 'heat production, wood chips from industry, at furnace 1000kW, state-of-the-art 2014' (megajoule, 
+                        0.0651: 'heat and power co-generation, wood chips, 6667 kW, state-of-the-art 2014' (megajoule, RoW, None)
+                        0.0521: 'heat production, wood chips from industry, at furnace 5000kW, state-of-the-art 2014' (megajoule, 
+                        0.0521: 'heat production, hardwood chips from forest, at furnace 5000kW, state-of-the-art 2014' (megajoule
+                0.0571: 'market group for transport, freight train' (ton kilometer, GLO, None)
+                0.251: 'market for transport, freight, sea, bulk carrier for dry goods' (ton kilometer, GLO, None)
+                    0.251: 'transport, freight, sea, bulk carrier for dry goods' (ton kilometer, GLO, None)
+            0.183: 'market group for electricity, high voltage' (kilowatt hour, RER, None)
+                0.18: 'market group for electricity, high voltage' (kilowatt hour, Europe without Switzerland, None)
+            0.319: 'market for carbon dioxide, liquid' (kilogram, RER, None)
+                0.319: 'carbon dioxide production, liquid' (kilogram, RER, None)
+                    0.128: 'market group for electricity, medium voltage' (kilowatt hour, RER, None)
+                        0.126: 'market group for electricity, medium voltage' (kilowatt hour, Europe without Switzerland, None)
+                    0.916: 'market group for heat, district or industrial, natural gas' (megajoule, RER, None)
+                        0.913: 'market for heat, district or industrial, natural gas' (megajoule, Europe without Switzerland, None
+                            0.0771: 'heat and power co-generation, natural gas, combined cycle power plant, 400MW electrical' (meg
+                                0.0555: 'market for water, decarbonised' (kilogram, GB, None)
+                                    0.0555: 'water production, decarbonised' (kilogram, GB, None)
+                            0.282: 'heat and power co-generation, natural gas, combined cycle power plant, 400MW electrical' (mega
+                                0.251: 'market for water, decarbonised' (kilogram, RoW, None)
+                                    0.251: 'water production, decarbonised' (kilogram, RoW, None)
+                            0.0622: 'heat and power co-generation, natural gas, combined cycle power plant, 400MW electrical' (meg
+                            0.0675: 'heat and power co-generation, natural gas, combined cycle power plant, 400MW electrical' (meg
+                            0.184: 'heat and power co-generation, natural gas, combined cycle power plant, 400MW electrical' (mega
+                                0.107: 'market for water, decarbonised' (kilogram, RoW, None)
+                                    0.107: 'water production, decarbonised' (kilogram, RoW, None)
+                    0.162: 'market group for heat, district or industrial, other than natural gas' (megajoule, RER, None)
+                        0.162: 'market for heat, district or industrial, other than natural gas' (megajoule, Europe without Switze
+            1: 'Pre-treatment (bread)' (kg, None, None)
+                0.183: 'market group for electricity, high voltage' (kilowatt hour, RER, None)
+                    0.18: 'market group for electricity, high voltage' (kilowatt hour, Europe without Switzerland, None)
+                6: 'market for tap water' (kilogram, Europe without Switzerland, None)
+                    6.89: 'tap water production, ultrafiltration treatment' (kilogram, Europe without Switzerland, None)
+                7.2: 'market for steam, in chemical industry' (kilogram, RoW, None)
+                    7.2: 'steam production, in chemical industry' (kilogram, RoW, None)
+                        19.8: 'market for heat, from steam, in chemical industry' (megajoule, RoW, None)
+                            19.8: 'steam production, as energy carrier, in chemical industry' (megajoule, RoW, None)
+                                0.126: 'market group for electricity, medium voltage' (kilowatt hour, RAS, None)
+                                    0.0565: 'market group for electricity, medium voltage' (kilowatt hour, CN, None)
+                                        0.0522: 'market group for electricity, medium voltage' (kilowatt hour, CN-SGCC, None)
+                                12.7: 'heat production, natural gas, at industrial furnace >100kW' (megajoule, RoW, None)
+                                    0.12: 'market for natural gas, high pressure' (cubic meter, RoW, None)
+                                    0.0959: 'market for natural gas, high pressure' (cubic meter, US, None)
+                                        0.0889: 'natural gas, high pressure, domestic supply with seasonal storage' (cubic meter, 
+                                7.61: 'heat production, light fuel oil, at industrial furnace 1MW' (megajoule, RoW, None)
+                                    0.176: 'market for light fuel oil' (kilogram, RoW, None)
+                                        0.176: 'light fuel oil production, petroleum refinery operation' (kilogram, RoW, None)
+                                        0.114: 'market for transport, freight, sea, tanker for petroleum' (ton kilometer, GLO, Non
+                                        0.0542: 'market for transport, pipeline, onshore, petroleum' (ton kilometer, RoW, None)
+                                5.07: 'heat production, at hard coal industrial furnace 1-10MW' (megajoule, RoW, None)
+                                    0.114: 'market for hard coal' (kilogram, CN, None)
+                                        0.11: 'hard coal mine operation and hard coal preparation' (kilogram, CN, None)
+                                        0.0736: 'market for transport, freight train' (ton kilometer, CN, None)
+                                0.15: 'market for tap water' (kilogram, BR, None)
+                                    0.327: 'tap water production, conventional treatment' (kilogram, BR, None)
+                                0.0557: 'market for tap water' (kilogram, ZA, None)
+                                    0.11: 'tap water production, conventional treatment' (kilogram, ZA, None)
+                                0.752: 'market for tap water' (kilogram, IN, None)
+                                    1.07: 'tap water production, conventional treatment' (kilogram, IN, None)
+                                    0.0922: 'tap water production, underground water without treatment' (kilogram, IN, None)
+                                    0.0829: 'tap water production, direct filtration treatment' (kilogram, IN, None)
+                                    0.0685: 'tap water production, underground water with chemical treatment' (kilogram, IN, None)
+                                0.216: 'market for tap water' (kilogram, RoW, None)
+                                    0.436: 'tap water production, ultrafiltration treatment' (kilogram, RoW, None)
+            7.33: 'market for steam, in chemical industry' (kilogram, RoW, None)
+                7.33: 'steam production, in chemical industry' (kilogram, RoW, None)
+                    20.2: 'market for heat, from steam, in chemical industry' (megajoule, RoW, None)
+                        20.2: 'steam production, as energy carrier, in chemical industry' (megajoule, RoW, None)
+                            0.128: 'market group for electricity, medium voltage' (kilowatt hour, RAS, None)
+                                0.0575: 'market group for electricity, medium voltage' (kilowatt hour, CN, None)
+                                    0.0531: 'market group for electricity, medium voltage' (kilowatt hour, CN-SGCC, None)
+                            12.9: 'heat production, natural gas, at industrial furnace >100kW' (megajoule, RoW, None)
+                                0.122: 'market for natural gas, high pressure' (cubic meter, RoW, None)
+                                0.0977: 'market for natural gas, high pressure' (cubic meter, US, None)
+                                    0.0905: 'natural gas, high pressure, domestic supply with seasonal storage' (cubic meter, US, 
+                                        0.0878: 'petroleum and gas production, onshore' (cubic meter, US, None)
+                            7.75: 'heat production, light fuel oil, at industrial furnace 1MW' (megajoule, RoW, None)
+                                0.179: 'market for light fuel oil' (kilogram, RoW, None)
+                                    0.179: 'light fuel oil production, petroleum refinery operation' (kilogram, RoW, None)
+                                        0.132: 'market for petroleum' (kilogram, RoW, None)
+                                        0.061: 'market for petroleum' (kilogram, RNA, None)
+                                    0.116: 'market for transport, freight, sea, tanker for petroleum' (ton kilometer, GLO, None)
+                                        0.116: 'transport, freight, sea, tanker for petroleum' (ton kilometer, GLO, None)
+                                    0.0551: 'market for transport, pipeline, onshore, petroleum' (ton kilometer, RoW, None)
+                                        0.0551: 'transport, pipeline, onshore, petroleum' (ton kilometer, RoW, None)
+                            5.16: 'heat production, at hard coal industrial furnace 1-10MW' (megajoule, RoW, None)
+                                0.116: 'market for hard coal' (kilogram, CN, None)
+                                    0.112: 'hard coal mine operation and hard coal preparation' (kilogram, CN, None)
+                                    0.0749: 'market for transport, freight train' (ton kilometer, CN, None)
+                                        0.0522: 'transport, freight train, diesel' (ton kilometer, CN, None)
+                            0.153: 'market for tap water' (kilogram, BR, None)
+                                0.333: 'tap water production, conventional treatment' (kilogram, BR, None)
+                            0.0567: 'market for tap water' (kilogram, ZA, None)
+                                0.112: 'tap water production, conventional treatment' (kilogram, ZA, None)
+                            0.766: 'market for tap water' (kilogram, IN, None)
+                                1.09: 'tap water production, conventional treatment' (kilogram, IN, None)
+                                0.0938: 'tap water production, underground water without treatment' (kilogram, IN, None)
+                                0.0844: 'tap water production, direct filtration treatment' (kilogram, IN, None)
+                                0.0697: 'tap water production, underground water with chemical treatment' (kilogram, IN, None)
+                            0.22: 'market for tap water' (kilogram, RoW, None)
+                                0.444: 'tap water production, ultrafiltration treatment' (kilogram, RoW, None)
+        7.33: 'market for steam, in chemical industry' (kilogram, RoW, None)
+            7.33: 'steam production, in chemical industry' (kilogram, RoW, None)
+                20.2: 'market for heat, from steam, in chemical industry' (megajoule, RoW, None)
+                    20.2: 'steam production, as energy carrier, in chemical industry' (megajoule, RoW, None)
+                        0.128: 'market group for electricity, medium voltage' (kilowatt hour, RAS, None)
+                            0.0575: 'market group for electricity, medium voltage' (kilowatt hour, CN, None)
+                                0.0531: 'market group for electricity, medium voltage' (kilowatt hour, CN-SGCC, None)
+                        12.9: 'heat production, natural gas, at industrial furnace >100kW' (megajoule, RoW, None)
+                            0.122: 'market for natural gas, high pressure' (cubic meter, RoW, None)
+                            0.0977: 'market for natural gas, high pressure' (cubic meter, US, None)
+                                0.0905: 'natural gas, high pressure, domestic supply with seasonal storage' (cubic meter, US, None
+                                    0.0878: 'petroleum and gas production, onshore' (cubic meter, US, None)
+                                        0.186: 'market for sweet gas, burned in gas turbine' (megajoule, GLO, None)
+                        7.75: 'heat production, light fuel oil, at industrial furnace 1MW' (megajoule, RoW, None)
+                            0.179: 'market for light fuel oil' (kilogram, RoW, None)
+                                0.179: 'light fuel oil production, petroleum refinery operation' (kilogram, RoW, None)
+                                    0.132: 'market for petroleum' (kilogram, RoW, None)
+                                        0.871: 'market for transport, freight, sea, tanker for petroleum' (ton kilometer, GLO, Non
+                                        0.144: 'market for transport, pipeline, onshore, petroleum' (ton kilometer, RoW, None)
+                                    0.061: 'market for petroleum' (kilogram, RNA, None)
+                                        0.465: 'market for transport, freight, sea, tanker for petroleum' (ton kilometer, GLO, Non
+                                0.116: 'market for transport, freight, sea, tanker for petroleum' (ton kilometer, GLO, None)
+                                    0.116: 'transport, freight, sea, tanker for petroleum' (ton kilometer, GLO, None)
+                                0.0551: 'market for transport, pipeline, onshore, petroleum' (ton kilometer, RoW, None)
+                                    0.0551: 'transport, pipeline, onshore, petroleum' (ton kilometer, RoW, None)
+                        5.16: 'heat production, at hard coal industrial furnace 1-10MW' (megajoule, RoW, None)
+                            0.116: 'market for hard coal' (kilogram, CN, None)
+                                0.112: 'hard coal mine operation and hard coal preparation' (kilogram, CN, None)
+                                0.0749: 'market for transport, freight train' (ton kilometer, CN, None)
+                                    0.0522: 'transport, freight train, diesel' (ton kilometer, CN, None)
+                        0.153: 'market for tap water' (kilogram, BR, None)
+                            0.333: 'tap water production, conventional treatment' (kilogram, BR, None)
+                        0.0567: 'market for tap water' (kilogram, ZA, None)
+                            0.112: 'tap water production, conventional treatment' (kilogram, ZA, None)
+                        0.766: 'market for tap water' (kilogram, IN, None)
+                            1.09: 'tap water production, conventional treatment' (kilogram, IN, None)
+                            0.0938: 'tap water production, underground water without treatment' (kilogram, IN, None)
+                            0.0844: 'tap water production, direct filtration treatment' (kilogram, IN, None)
+                            0.0697: 'tap water production, underground water with chemical treatment' (kilogram, IN, None)
+                        0.22: 'market for tap water' (kilogram, RoW, None)
+                            0.444: 'tap water production, ultrafiltration treatment' (kilogram, RoW, None)
+        8.14: 'market for sodium chloride, brine solution' (kilogram, GLO, None)
+            5.45: 'sodium chloride production, brine solution' (kilogram, RoW, None)
+                0.287: 'market group for electricity, medium voltage' (kilowatt hour, RAS, None)
+                    0.129: 'market group for electricity, medium voltage' (kilowatt hour, CN, None)
+                        0.119: 'market group for electricity, medium voltage' (kilowatt hour, CN-SGCC, None)
+                    0.0574: 'market group for electricity, medium voltage' (kilowatt hour, IN, None)
+                0.121: 'market for heat, district or industrial, natural gas' (megajoule, CA-QC, None)
+                0.8: 'market for heat, district or industrial, natural gas' (megajoule, RoW, None)
+                    0.383: 'heat and power co-generation, natural gas, 200kW electrical, lean burn' (megajoule, RoW, None)
+                    0.138: 'heat and power co-generation, natural gas, combined cycle power plant, 400MW electrical' (megajoule, R
+                        0.0616: 'market for water, decarbonised' (kilogram, RU, None)
+                            0.0616: 'water production, decarbonised' (kilogram, RU, None)
+                    0.0617: 'heat and power co-generation, natural gas, combined cycle power plant, 400MW electrical' (megajoule, 
+                0.919: 'market for heat, district or industrial, other than natural gas' (megajoule, RoW, None)
+                    0.0928: 'heat production, hardwood chips from forest, at furnace 1000kW, state-of-the-art 2014' (megajoule, Ro
+                    0.0885: 'heat production, hardwood chips from forest, at furnace 300kW, state-of-the-art 2014' (megajoule, RoW
+                    0.0928: 'heat production, wood chips from industry, at furnace 1000kW, state-of-the-art 2014' (megajoule, RoW,
+                    0.0691: 'heat production, wood chips from industry, at furnace 300kW, state-of-the-art 2014' (megajoule, RoW, 
+                    0.0684: 'heat and power co-generation, hard coal' (megajoule, RU, None)
+                        0.0541: 'market for water, decarbonised' (kilogram, RU, None)
+                            0.0541: 'water production, decarbonised' (kilogram, RU, None)
+                    0.0676: 'heat and power co-generation, lignite' (megajoule, RoW, None)
+                        0.0607: 'market for lignite' (kilogram, RoW, None)
+                            0.0607: 'lignite mine operation' (kilogram, RoW, None)
+                    0.116: 'heat and power co-generation, wood chips, 6667 kW, state-of-the-art 2014' (megajoule, RoW, None)
+                    0.0928: 'heat production, wood chips from industry, at furnace 5000kW, state-of-the-art 2014' (megajoule, RoW,
+                    0.0928: 'heat production, hardwood chips from forest, at furnace 5000kW, state-of-the-art 2014' (megajoule, Ro
+            2.69: 'sodium chloride production, brine solution' (kilogram, RER, None)
+                0.18: 'market group for electricity, medium voltage' (kilowatt hour, RER, None)
+                    0.178: 'market group for electricity, medium voltage' (kilowatt hour, Europe without Switzerland, None)
+                0.455: 'market group for heat, district or industrial, natural gas' (megajoule, RER, None)
+                    0.454: 'market for heat, district or industrial, natural gas' (megajoule, Europe without Switzerland, None)
+                        0.14: 'heat and power co-generation, natural gas, combined cycle power plant, 400MW electrical' (megajoule
+                            0.124: 'market for water, decarbonised' (kilogram, RoW, None)
+                                0.124: 'water production, decarbonised' (kilogram, RoW, None)
+                        0.0915: 'heat and power co-generation, natural gas, combined cycle power plant, 400MW electrical' (megajou
+                            0.0534: 'market for water, decarbonised' (kilogram, RoW, None)
+                                0.0534: 'water production, decarbonised' (kilogram, RoW, None)
+                0.455: 'market group for heat, district or industrial, other than natural gas' (megajoule, RER, None)
+                    0.455: 'market for heat, district or industrial, other than natural gas' (megajoule, Europe without Switzerlan
+                        0.0516: 'heat and power co-generation, hard coal' (megajoule, PL, None)
+        56: 'market for tap water' (kilogram, Europe without Switzerland, None)
+            64.3: 'tap water production, ultrafiltration treatment' (kilogram, Europe without Switzerland, None)
+        62: 'treatment of wastewater, average, wastewater treatment' (cubic meter, Europe without Switzerland, None)
+            0.465: 'market for heat, central or small-scale, other than natural gas' (megajoule, Europe without Switzerland, None)
+                0.465: 'heat production, wood pellet, at furnace 9kW, state-of-the-art 2014' (megajoule, Europe without Switzerlan
+            0.298: 'market for inert waste, for final disposal' (kilogram, RoW, None)
+                0.298: 'treatment of inert waste, inert material landfill' (kilogram, RoW, None)
+            8.16: 'market for sewage sludge, 70% water, WWT, WW, average' (kilogram, Europe without Switzerland, None)
+                8.16: 'treatment of sewage sludge, 70% water, WWT, WW, average, municipal incineration' (kilogram, Europe without 
+                    0.476: 'market for bottom ash, MSWI-WWT, WW, average' (kilogram, Europe without Switzerland, None)
+                        0.476: 'treatment of bottom ash, MSWI-WWT, WW, average, slag compartment' (kilogram, Europe without Switze
+                    0.221: 'market for heat, for reuse in municipal waste incineration only' (megajoule, SE, None)
+                        0.221: 'heat, from municipal waste incineration to generic market for heat district or industrial, other t
+                            0.221: 'market for heat, district or industrial, other than natural gas' (megajoule, Europe without Sw
+                    0.221: 'market for heat, for reuse in municipal waste incineration only' (megajoule, FR, None)
+                        0.221: 'heat, from municipal waste incineration to generic market for heat district or industrial, other t
+                            0.221: 'market for heat, district or industrial, other than natural gas' (megajoule, Europe without Sw
+                    0.221: 'market for heat, for reuse in municipal waste incineration only' (megajoule, FI, None)
+                        0.221: 'heat, from municipal waste incineration to generic market for heat district or industrial, other t
+                            0.221: 'market for heat, district or industrial, other than natural gas' (megajoule, Europe without Sw
+                    0.221: 'market for heat, for reuse in municipal waste incineration only' (megajoule, CZ, None)
+                        0.221: 'heat, from municipal waste incineration to generic market for heat district or industrial, other t
+                            0.221: 'market for heat, district or industrial, other than natural gas' (megajoule, Europe without Sw
+                    0.221: 'market for heat, for reuse in municipal waste incineration only' (megajoule, NO, None)
+                        0.221: 'heat, from municipal waste incineration to generic market for heat district or industrial, other t
+                            0.221: 'market for heat, district or industrial, other than natural gas' (megajoule, Europe without Sw
+                    0.221: 'market for heat, for reuse in municipal waste incineration only' (megajoule, LU, None)
+                        0.221: 'heat, from municipal waste incineration to generic market for heat district or industrial, other t
+                            0.221: 'market for heat, district or industrial, other than natural gas' (megajoule, Europe without Sw
+                    0.221: 'market for heat, for reuse in municipal waste incineration only' (megajoule, HU, None)
+                        0.221: 'heat, from municipal waste incineration to generic market for heat district or industrial, other t
+                            0.221: 'market for heat, district or industrial, other than natural gas' (megajoule, Europe without Sw
+                    0.221: 'market for heat, for reuse in municipal waste incineration only' (megajoule, NL, None)
+                        0.221: 'heat, from municipal waste incineration to generic market for heat district or industrial, other t
+                            0.221: 'market for heat, district or industrial, other than natural gas' (megajoule, Europe without Sw
+                    0.221: 'market for heat, for reuse in municipal waste incineration only' (megajoule, BE, None)
+                        0.221: 'heat, from municipal waste incineration to generic market for heat district or industrial, other t
+                            0.221: 'market for heat, district or industrial, other than natural gas' (megajoule, Europe without Sw
+                    0.221: 'market for heat, for reuse in municipal waste incineration only' (megajoule, PL, None)
+                        0.221: 'heat, from municipal waste incineration to generic market for heat district or industrial, other t
+                            0.221: 'market for heat, district or industrial, other than natural gas' (megajoule, Europe without Sw
+                    0.221: 'market for heat, for reuse in municipal waste incineration only' (megajoule, SK, None)
+                        0.221: 'heat, from municipal waste incineration to generic market for heat district or industrial, other t
+                            0.221: 'market for heat, district or industrial, other than natural gas' (megajoule, Europe without Sw
+                    0.221: 'market for heat, for reuse in municipal waste incineration only' (megajoule, PT, None)
+                        0.221: 'heat, from municipal waste incineration to generic market for heat district or industrial, other t
+                            0.221: 'market for heat, district or industrial, other than natural gas' (megajoule, Europe without Sw
+                    0.221: 'market for heat, for reuse in municipal waste incineration only' (megajoule, AT, None)
+                        0.221: 'heat, from municipal waste incineration to generic market for heat district or industrial, other t
+                            0.221: 'market for heat, district or industrial, other than natural gas' (megajoule, Europe without Sw
+                    0.221: 'market for heat, for reuse in municipal waste incineration only' (megajoule, DK, None)
+                        0.221: 'heat, from municipal waste incineration to generic market for heat district or industrial, other t
+                            0.221: 'market for heat, district or industrial, other than natural gas' (megajoule, Europe without Sw
+                    0.221: 'market for heat, for reuse in municipal waste incineration only' (megajoule, GB, None)
+                        0.221: 'heat, from municipal waste incineration to generic market for heat district or industrial, other t
+                            0.221: 'market for heat, district or industrial, other than natural gas' (megajoule, Europe without Sw
+                    0.221: 'market for heat, for reuse in municipal waste incineration only' (megajoule, IT, None)
+                        0.221: 'heat, from municipal waste incineration to generic market for heat district or industrial, other t
+                            0.221: 'market for heat, district or industrial, other than natural gas' (megajoule, Europe without Sw
+                    0.221: 'market for heat, for reuse in municipal waste incineration only' (megajoule, ES, None)
+                        0.221: 'heat, from municipal waste incineration to generic market for heat district or industrial, other t
+                            0.221: 'market for heat, district or industrial, other than natural gas' (megajoule, Europe without Sw
+                    0.221: 'market for heat, for reuse in municipal waste incineration only' (megajoule, DE, None)
+                        0.221: 'heat, from municipal waste incineration to generic market for heat district or industrial, other t
+                            0.221: 'market for heat, district or industrial, other than natural gas' (megajoule, Europe without Sw
+                    0.221: 'market for heat, for reuse in municipal waste incineration only' (megajoule, BG, None)
+                        0.221: 'heat, from municipal waste incineration to generic market for heat district or industrial, other t
+                            0.221: 'market for heat, district or industrial, other than natural gas' (megajoule, Europe without Sw
+                    0.0991: 'market for residues, MSWI-WWT, WW, average' (kilogram, Europe without Switzerland, None)
+                        0.0991: 'treatment of residues, MSWI-WWT, WW, average, residual material landfill' (kilogram, Europe witho
+                            0.0991: 'market for waste cement, hydrated' (kilogram, Europe without Switzerland, None)
+                                0.0991: 'treatment of waste cement, hydrated, residual material landfill' (kilogram, Europe withou
+            7.02: 'market for sewage sludge, 75% water, WWT, WW, average' (kilogram, Europe without Switzerland, None)
+                7.02: 'treatment of sewage sludge, 75% water, WWT, WW, average, sanitary landfill' (kilogram, Europe without Switz
+                    0.268: 'market group for electricity, medium voltage' (kilowatt hour, Europe without Switzerland, None)
+                    0.473: 'market for heat, district or industrial, other than natural gas' (megajoule, Europe without Switzerlan
+                        0.0536: 'heat and power co-generation, hard coal' (megajoule, PL, None)
+            192: 'market for sewage sludge, 97% water, WWT, WW, average' (kilogram, Europe without Switzerland, None)
+                192: 'treatment of sewage sludge, 97% water, WWT, WW, average, landfarming' (kilogram, Europe without Switzerland,
+                    0.228: 'market for organic nitrogen fertiliser, as N' (kilogram, GLO, None)
+                        0.228: 'inorganic nitrogen fertiliser, as N to generic market for organic nitrogen fertiliser, as N' (kilo
+                            0.122: 'market for inorganic nitrogen fertiliser, as N' (kilogram, RoW, None)
+                                0.0594: 'nutrient supply from urea' (kilogram, RoW, None)
+                                    0.127: 'market for urea' (kilogram, RoW, None)
+                                        0.107: 'market for transport, freight, sea, container ship' (ton kilometer, GLO, None)
+                                        0.127: 'urea production' (kilogram, RoW, None)
+                    0.3: 'market for organic phosphorus fertiliser, as P2O5' (kilogram, GLO, None)
+                        0.3: 'inorganic phosphorus, as P2O5 to generic market for organic phosphorus, as P2O5' (kilogram, GLO, Non
+                            0.159: 'market for inorganic phosphorus fertiliser, as P2O5' (kilogram, RoW, None)
+                                0.0813: 'nutrient supply from monoammonium phosphate' (kilogram, RoW, None)
+                                    0.156: 'market for monoammonium phosphate' (kilogram, RoW, None)
+                                        0.156: 'monoammonium phosphate production' (kilogram, RoW, None)
+                                        0.132: 'market for transport, freight, sea, container ship' (ton kilometer, GLO, None)
+            0.607: 'market group for waste graphical paper' (kilogram, Europe without Switzerland, None)
+                0.0823: 'market for waste graphical paper' (kilogram, FR, None)
+                    0.0506: 'treatment of waste graphical paper, municipal incineration' (kilogram, RoW, None)
+                0.0627: 'market for waste graphical paper' (kilogram, GB, None)
+                0.0612: 'market for waste graphical paper' (kilogram, ES, None)
+                0.0981: 'market for waste graphical paper' (kilogram, DE, None)
+                    0.0974: 'treatment of waste graphical paper, municipal incineration' (kilogram, RoW, None)
+                0.0865: 'market for waste graphical paper' (kilogram, IT, None)
+            0.607: 'market group for waste plastic, mixture' (kilogram, Europe without Switzerland, None)
+                0.103: 'market for waste plastic, mixture' (kilogram, DE, None)
+                    0.103: 'treatment of waste plastic, mixture, municipal incineration' (kilogram, RoW, None)
+                0.0962: 'market for waste plastic, mixture' (kilogram, IT, None)
+                    0.0531: 'treatment of waste plastic, mixture, sanitary landfill' (kilogram, RoW, None)
+                0.0812: 'market for waste plastic, mixture' (kilogram, ES, None)
+                0.054: 'market for waste plastic, mixture' (kilogram, FR, None)
+            9.14: 'market for waste reinforced concrete' (kilogram, Europe without Switzerland, None)
+                2.66: 'treatment of waste reinforced concrete, collection for final disposal' (kilogram, Europe without Switzerlan
+                    2.58: 'market for inert waste, for final disposal' (kilogram, RoW, None)
+                        2.58: 'treatment of inert waste, inert material landfill' (kilogram, RoW, None)
+                    0.0798: 'market for scrap steel' (kilogram, Europe without Switzerland, None)
+                        0.0793: 'treatment of scrap steel, inert material landfill' (kilogram, Europe without Switzerland, None)
+                1.85: 'treatment of waste reinforced concrete, recycling' (kilogram, Europe without Switzerland, None)
+                4.62: 'treatment of waste reinforced concrete, sorting plant' (kilogram, Europe without Switzerland, None)
+                    1.79: 'market for inert waste' (kilogram, Europe without Switzerland, None)
+                        0.781: 'treatment of inert waste, sanitary landfill' (kilogram, Europe without Switzerland, None)
+                        1.01: 'clinker production' (kilogram, Europe without Switzerland, None)
+            0.316: 'market for waste reinforcement steel' (kilogram, RoW, None)
+                0.13: 'treatment of waste reinforcement steel, collection for final disposal' (kilogram, RoW, None)
+                    0.098: 'market for scrap steel' (kilogram, RoW, None)
+                        0.0974: 'treatment of scrap steel, inert material landfill' (kilogram, RoW, None)
+                0.0569: 'treatment of waste reinforcement steel, sorting plant' (kilogram, RoW, None)
+                0.13: 'treatment of waste reinforcement steel, recycling' (kilogram, RoW, None)
+        0.183: 'market group for electricity, high voltage' (kilowatt hour, RER, None)
+            0.18: 'market group for electricity, high voltage' (kilowatt hour, Europe without Switzerland, None)

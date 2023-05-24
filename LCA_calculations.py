@@ -25,7 +25,7 @@ if not os.path.exists('results'):
     os.makedirs('results')
 
 
-def get_LCA_report(model):
+def get_LCA_report(model, scenario_name):
 
     db_name = "fg_"+model
     fg = bd.Database(db_name)
@@ -55,22 +55,22 @@ def get_LCA_report(model):
     # # income = lca.characterized_inventory.data
     # # gini_coefficient(income), herfindahl_index(income), concentration_ratio(income), theil_index(income)
 
-    with open("results/recursive_calculation_{}.csv".format(model), "w") as f:
+    with open("results/recursive_calculation_{}_{}.csv".format(model,scenario_name), "w") as f:
         ba.print_recursive_calculation(
             myact, mymethod, max_level=10, file_obj=f, tab_character=";", cutoff=0.05)
 
-    with open("results/recursive_supply_chain_{}.csv".format(model), "w") as f:
+    with open("results/recursive_supply_chain_{}_{}.csv".format(model,scenario_name), "w") as f:
         ba.print_recursive_supply_chain(
             myact, max_level=10, file_obj=f, tab_character="    ", cutoff=0.05)
 
-    with open("results/top_emissions_{}.csv".format(model), "w") as f:
+    with open("results/top_emissions_{}_{}.csv".format(model,scenario_name), "w") as f:
         top_emissions = ca().annotated_top_emissions(lca)
         header = "LCIA score; Inventory amount; Biosphere flow"
         f.write("{}\n".format(header))
         for e in top_emissions:
             f.write(f"{e[0]};{e[1]};{e[2]}\n")
 
-    with open("results/top_processes_{}.csv".format(model), "w") as f:
+    with open("results/top_processes_{}_{}.csv".format(model,scenario_name), "w") as f:
         top_processes = ca().annotated_top_processes(lca)
         header = "LCIA score; Supply amount; Activity"
         f.write("{}\n".format(header))
@@ -78,20 +78,20 @@ def get_LCA_report(model):
             f.write(f"{e[0]}; {e[1]}; {e[2]}\n")
 
     # %% print the results
-    print(("\n\n*****************\n\t For the FU: '{}' {} {} \n\t with the method '{}' \n\tthe LCIA score is: {} {}".format(myact.as_dict()
+    print(("\n\n*****************\n\t {}: For the FU: '{}' {} {} \n\t with the method '{}' \n\tthe LCIA score is: {} {}".format(scenario_name, myact.as_dict()
           ['name'], fu['amount'], myact.as_dict()['unit'], lca.method, round(lca.score, 2), bd.Method(mymethod).metadata['unit'])))
     if not os.path.exists('results'):
         os.makedirs('results')
 
 # write results to a file
     with open('results/LCA_results.txt', 'a+') as f:
-        f.write(("\n\n*****************\n\t For the FU: '{}' {} {} \n\t with the method '{}' \n\tthe LCIA score is: {} {}".format(myact.as_dict()
+        f.write(("\n\n*****************\n\t {}: For the FU: '{}' {} {} \n\t with the method '{}' \n\tthe LCIA score is: {} {}".format(scenario_name, myact.as_dict()
                 ['name'], fu['amount'], myact.as_dict()['unit'], lca.method, round(lca.score, 2), bd.Method(mymethod).metadata['unit'])))
 
     print("reports written to file")
 
 
-def get_LCA_scores(model):  # %% Set the functional unit for the LCA calculation
+def get_LCA_scores(model, scenario_name):  # %% Set the functional unit for the LCA calculation
     print("\n***************** LCA calculations *****************\n")
 
     db_name = "fg_"+model
@@ -143,14 +143,14 @@ def get_LCA_scores(model):  # %% Set the functional unit for the LCA calculation
     lca.lcia()
 
     # %% print the results
-    print(("\n\n*****************\n\t For the FU: '{}' {} {} \n\t with the method '{}' \n\tthe LCIA score is: {} {}".format(myact.as_dict()
+    print(("\n\n*****************\n\t {}: For the FU: '{}' {} {} \n\t with the method '{}' \n\tthe LCIA score is: {} {}".format(scenario_name, myact.as_dict()
           ['name'], fu['amount'], myact.as_dict()['unit'], lca.method, round(lca.score, 2), bd.Method(mymethod).metadata['unit'])))
     if not os.path.exists('results'):
         os.makedirs('results')
 
 # write results to a file
     with open('results/LCA_results.txt', 'a+') as f:
-        f.write(("\n\n*****************\n\t For the FU: '{}' {} {} \n\t with the method '{}' \n\tthe LCIA score is: {} {}".format(myact.as_dict()
+        f.write(("\n\n*****************\n\t {}: For the FU: '{}' {} {} \n\t with the method '{}' \n\tthe LCIA score is: {} {}".format(scenario_name, myact.as_dict()
                 ['name'], fu['amount'], myact.as_dict()['unit'], lca.method, round(lca.score, 2), bd.Method(mymethod).metadata['unit'])))
 
     return lca
@@ -158,7 +158,7 @@ def get_LCA_scores(model):  # %% Set the functional unit for the LCA calculation
     # %% Monte Carlo LCA calculations
 
 
-def get_MCLCA_scores(model, single_score, iterations, mc_type):
+def get_MCLCA_scores(model, single_score, iterations, mc_type, scenario_name):
     print("\n***************** Monte carlo - LCA calculations *****************\n")
 
     db_name = "fg_"+model
@@ -185,28 +185,28 @@ def get_MCLCA_scores(model, single_score, iterations, mc_type):
     mc_res.describe()
 
     fig = mc_res.plot(kind='scatter', x='MC iteration',
-                      y=mymethod[2], title='Monte Carlo results for Succinic acid production ({})'.format(model), logy=False)
+                      y=mymethod[2], title='- Monte Carlo results for Succinic acid production ({}) - {}'.format(model, scenario_name))
 
-    fig.figure.savefig('figures/MC_LCA_{}_{}.png'.format(model, mc_type))
+    fig.figure.savefig('figures/MC_LCA_{}_{}_{}.png'.format(model, scenario_name, mc_type))
     # %% print the results
-    print("\n\n*****************\n\t For the FU: '{}' {} {} \n\t with the method '{}' \n\tthe LCIA score is ({}):\n {}".format(myact.as_dict()
+    print("\n\n*****************\n\t {} : For the FU: '{}' {} {} \n\t with the method '{}' \n\tthe LCIA score is ({}):\n {}".format(scenario_name, myact.as_dict()
           ['name'], fu['amount'], myact.as_dict()['unit'], lca.method, bd.Method(mymethod).metadata['unit'], mc_res[mymethod[2]].describe()))
 
 # write results to a file
     if not os.path.exists('results'):
         os.makedirs('results')
-    with open('results/MC_LCA_results_{}.txt'.format(mc_type), 'a') as f:
-        f.write(("\n\n*****************\n\t For the FU: '{}' {} {} \n\t with the method '{}' \n\tthe LCIA score is: {} {}".format(myact.as_dict()
+    with open('results/MC_LCA_results_{}_{}.txt'.format(scenario_name, mc_type), 'a') as f:
+        f.write(("\n\n*****************\n\t {}: For the FU: '{}' {} {} \n\t with the method '{}' \n\tthe LCIA score is: {} {}".format(scenario_name, myact.as_dict()
                 ['name'], fu['amount'], myact.as_dict()['unit'], lca.method, round(lca.score, 2), bd.Method(mymethod).metadata['unit'])))
 
 # write results to a csv file, appending a new column for each model
 # %%
     try:
-        df = pd.read_csv('results/MC_LCA_results_{}.csv'.format(mc_type))
+        df = pd.read_csv('results/MC_LCA_results_{}_{}.csv'.format(scenario_name, mc_type))
     except:
         df = pd.DataFrame()
 
     df[model+" @ "+mymethod[2] + " @ " +
         str(round(single_score.score, 2))] = mc_res[mymethod[2]]
-    df.to_csv('results/MC_LCA_results_{}.csv'.format(mc_type),
+    df.to_csv('results/MC_LCA_results_{}_{}.csv'.format(scenario_name, mc_type),
               header=True, index=False)

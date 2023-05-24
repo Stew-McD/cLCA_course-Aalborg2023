@@ -26,14 +26,24 @@ from make_process_diagram import extract_nodes_edges, write_process_diagram
 bd.projects.set_current('cLCA-aalborg')
 ei = bd.Database('con391')
 
+# Set up models
+models = []
+models.append("bread") 
+models.append('corn')
+
 # set to True if you want to run that function
 remove = False
 rebuild = True
+redo_diagrams = False
 recalculate = True
 recalculate_MC = True
 revisualise = True
 
-# set parameters
+# Remove old results folder
+if remove == True and os.path.exists('results'):
+    shutil.rmtree('results')
+
+# set parameters for Monte Carlo analysis
 iterations = 1000
 scale_percent = 0.3
 dist_id = 3
@@ -44,43 +54,93 @@ elif dist_id == 2: mc_type = "Lognormal_"+str(iterations)
 
 # set scenarios for testing sensitivity
 
+scenarios = {
+    "CoproductsToWaste": False,
+    "EnergyEfficient": False,
+    "WaterEfficient": False
+}
 
-
-
-
-# Remove old results folder
-if remove == True and os.path.exists('results'):
-    shutil.rmtree('results')
-
-# Set up models
-models = []
-models.append("bread") 
-models.append('corn')
-
+# Write databases from csv files, add uncertainties, inspect and export, make process diagrams
 if rebuild == True:
     for model in models:
         write_database(model)
         add_uncertainties(model, dist_id, scale_percent) # see ids below
         inspect_db(model)
         export_db(model)
-        nodes, edges, model = extract_nodes_edges(model)
-        write_process_diagram(nodes, edges, model)
+
+        if redo_diagrams == True:
+            nodes, edges, model = extract_nodes_edges(model)
+            write_process_diagram(nodes, edges, model)
+
+fg = bd.Database(f'fg_{model}')
+
+
+#%% Set up scenarios
+
+for model in models:
+    scenario_name = ""
+    for k, v in scenarios.items():
+        if v == True:
+            if k == 'CoproductsToWaste':
+                print("\n***************** Scenario: {} *****************\n".format(k))
+                act = bd.get_node(name=f'Purification ({model})')
+                if model == 'bread': waste = bd.get_node(code='e343521ccabc453ec59738b1d5678118') # 'treatment of biowaste, industrial composting'
+                if model == 'corn': waste = bd.get_node(code='6e199e3cc577ca27b046f0a9898192c2') # 'treatment of inert waste, sanitary landfill'
+                edge = [x for x in list(act.technosphere()) if x['amount'] < 0]
+                print(f"Changed co-products destination from market to waste: {edge} --> {waste}")
+                edge[0]['amount'] *= -1
+                edge[0]['input'] = ('con391', waste['code'])
+                edge[0].save()
+                scenario_name = f'{k}'
+            if k == 'EnergyEfficient':
+                print("\n***************** Scenario: {} *****************\n".format(k))
+                for act in fg:
+                    for edge in list(act.technosphere()):
+                        input = bd.get_node(code=edge.as_dict()['input'][1])
+                        name = input['name']
+                        if 'electricity' in name: 
+                            print(name) 
+                            amount1 = edge['amount']
+                            edge['amount'] *= 0.5
+                            edge.save()
+                            amount2 = edge['amount']
+                            print(f"Changed edge amount from {amount1} to {amount2} for \n{edge}")
+                            scenario_name = f'{k}'
+
+            if k == 'WaterEfficient':
+                print("\n***************** Scenario: {} *****************\n".format(k))
+                for act in fg:
+                    for edge in list(act.technosphere()):
+                        input = bd.get_node(code=edge.as_dict()['input'][1])
+                        name = input['name']
+                        if 'water' in name: 
+                            print(name) 
+                            amount1 = edge['amount']
+                            edge['amount'] *= 0.5
+                            edge.save()
+                            amount2 = edge['amount']
+                            print(f"Changed edge amount from {amount1} to {amount2} for \n{edge}")
+                            scenario_name = f'{k}'
+
+            else:
+                print("No scenario selected")
+
 
 #%%
 if recalculate == True:
     for model in models:
-        lca = get_LCA_scores(model)
-        get_LCA_report(model)
+        lca = get_LCA_scores(model, scenario_name)
+        get_LCA_report(model, scenario_name)
 
 #%% Calculate Monte Carlo results
 if recalculate_MC == True:
     for model in models:
-        single_score = get_LCA_scores(model)
-        get_MCLCA_scores(model, single_score, iterations,mc_type)
+        single_score = get_LCA_scores(model, scenario_name)
+        get_MCLCA_scores(model, single_score, iterations, mc_type, scenario_name)
 #%% Plot Monte Carlo results and do statistical tests
 import cowsay 
 if revisualise == True:
-    df = vis.plot_MC_results(mc_type)
+    df = vis.plot_MC_results(mc_type, scenario_name)
     dic = df.describe().to_dict()
 
     results_list = []

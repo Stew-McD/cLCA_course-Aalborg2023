@@ -10,11 +10,11 @@ import palettable.wesanderson as wa
 
 
 #%%# Read the CSV file into a DataFrame
-def plot_MC_results(mc_type):
+def plot_MC_results(mc_type, scenario_name):
     """Plot results of Monte Carlo analysis for Succinic acid production"""
     # Read the CSV file into a DataFrame
     directory = 'results'
-    csv_files = [f for f in os.listdir(directory) if f.endswith(mc_type+'.csv')]
+    csv_files = [f for f in os.listdir(directory) if f.endswith(scenario_name+"_"+mc_type+'.csv')]
     csv_files.sort(key=lambda x: os.path.getmtime(os.path.join(directory, x)), reverse=True)
     csv_file = csv_files[0]
     csv_path = os.path.join(directory, csv_file)
@@ -91,7 +91,7 @@ def plot_MC_results(mc_type):
     plt.legend(fontsize=20)
     plt.ylabel('Distribution Density', fontsize=14)
     plt.xlabel(f"{results_df.columns[0].split('@')[1].title()} (kg CO$_2$(eq)/kg succinic acid)", fontsize=14)
-    plt.title('Monte Carlo LCIA results for Succinic acid production scenarios', fontsize=24)
+    plt.title(f'Monte Carlo LCIA results for Succinic acid production - {scenario_name}', fontsize=24)
     plt.annotate("Number of iterations: {}\nUncertainty type: {}".format(len(results_df), dist_type), xy=(0.5, 0.95), fontsize = 16, xycoords='axes fraction', ha='center', va='center', bbox=dict(edgecolor='black', boxstyle='round', facecolor='white', alpha=0.1))
 
     # add statistical test results to the plot
@@ -105,7 +105,7 @@ def plot_MC_results(mc_type):
     print("*** Kolmogorov-Smirnov test\nstat = {:.2f}\np = {:.2e}".format(stat_KS, p_KS))
 
     # print statistical tests results to a text file
-    with open('figures/MC_LCA_results_statistics_{}_{}.txt'.format(dist_type, len(results_df)), 'w') as f:
+    with open('figures/MC_LCA_results_statistics_{}_{}_{}.txt'.format(scenario_name, dist_type, len(results_df)), 'w') as f:
         f.write("*** Welch's t-test\nstat = {:.2f}\np = {:.2e}\n".format(stat_WT, p_WT))
         f.write("*** Mann-Whitney U test\nstat = {:.2f}\np = {:.2e}\n".format(stat_MW, p_MW))
         f.write("*** Kolmogorov-Smirnov test\nstat = {:.2f}\np = {:.2e}\n".format(stat_KS, p_KS))
@@ -117,7 +117,7 @@ def plot_MC_results(mc_type):
     fig.tight_layout()
     fig
     # Save the plot
-    fig.savefig('figures/MC_LCA_results_distplot_{}_{}.svg'.format(dist_type, len(results_df)))
+    fig.savefig('figures/MC_LCA_results_distplot_{}_{}_{}.svg'.format(scenario_name, dist_type, len(results_df)))
     plt.close()
 
     return results_df
