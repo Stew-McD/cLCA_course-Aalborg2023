@@ -1,3 +1,36 @@
+"""
+# searching_activities.py
+
+This script demonstrates how to search for specific activities in the `con391` and `biosphere3` databases using the Brightway2 package.
+
+The script first sets the current project to `cLCA-aalborg` and creates two database objects, `ei` and `bio`, which represent the `con391` and `biosphere3` databases, respectively.
+
+It then searches for specific activities in the `ei` and `bio` databases and prints out information about those activities.
+
+Author: Stew-McD
+Date: 27/05/2023
+"""
+
+
+"""
+This Python code is using the Brightway2 package to search for specific activities in the con391 and biosphere3 databases. Here's a breakdown of what each section of the code is doing:
+
+The first few lines of code import the bw2data package and set the current project to cLCA-aalborg. It then creates two database objects, ei and bio, which represent the con391 and biosphere3 databases, respectively.
+
+The next few lines of code search for a specific activity in the ei database with the name "market for ammonium sulfate" and the location "RER". It then retrieves the first search result and assigns it to the variable nh4so4_market. Finally, it prints out the dictionary representation of the nh4so4_market node.
+
+The next section of code creates a list of activity names and splits it into individual strings. It then searches for each activity in the bio database and prints out the name, location, and code of each activity that is found. If an activity is not found, it prints out the message "not found".
+
+The next section of code searches for a specific activity in the ei database with the name "tilapia feed production, commercial" and the location "RoW". It then retrieves the first search result and prints out a list of all the inputs to the activity.
+
+The next section of code searches for a specific activity in the ei database with the name "market for soybean meal" and the location "RoW". It then retrieves the first search result and prints out the dictionary representation of the activity.
+
+The next section of code searches for a specific activity in the ei database with the name "market for ammonium". It then prints out the name, location, and code of each search result.
+
+The final section of code searches for a specific activity in the bio database with the name "methane, non-fossil" and the category "air". It then retrieves the second search result and prints out the dictionary representation of the activity. 
+
+"""
+
 #%%
 import bw2data as bd
 

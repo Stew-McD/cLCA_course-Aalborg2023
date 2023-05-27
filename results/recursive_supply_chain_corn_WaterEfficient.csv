@@ -1,5 +1,6 @@
 1: 'Succinic acid production (corn)' (kg, None, None)
     1: 'Purification (corn)' (kg, None, None)
+        2.72: 'treatment of inert waste, sanitary landfill' (kilogram, RoW, None)
         0.41: 'market for ammonia, anhydrous, liquid' (kilogram, RER, None)
             0.222: 'ammonia production, steam reforming, liquid' (kilogram, RER w/o RU, None)
                 0.0517: 'market group for electricity, low voltage' (kilowatt hour, RER, None)

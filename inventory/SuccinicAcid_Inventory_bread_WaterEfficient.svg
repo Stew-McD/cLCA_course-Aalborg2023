@@ -14,247 +14,241 @@
 <title>cluster_fg</title>
 <polygon fill="none" stroke="black" stroke-width="2" points="8,-8 8,-721 933,-721 933,-8 8,-8"/>
 </g>
-<!-- market for enzymes -->
+<!-- treatment of biowaste -->
 <g id="node1" class="node">
-<title>market for enzymes</title>
-<polygon fill="darkolivegreen" stroke="black" points="551,-691 417,-691 417,-655 551,-655 551,-691"/>
-<text text-anchor="middle" x="484" y="-669.3" font-family="Comic Sans MS" font-size="14.00" fill="white">market for enzymes</text>
-</g>
-<!-- Pre&#45;treatment (bread) -->
-<g id="node16" class="node">
-<title>Pre&#45;treatment (bread)</title>
-<polygon fill="#0a86e5" stroke="black" points="843,-582 697,-582 697,-546 843,-546 843,-582"/>
-<text text-anchor="middle" x="770" y="-560.3" font-family="Comic Sans MS" font-size="14.00" fill="white">Pre&#45;treatment (bread)</text>
-</g>
-<!-- market for enzymes&#45;&gt;Pre&#45;treatment (bread) -->
-<g id="edge1" class="edge">
-<title>market for enzymes&#45;&gt;Pre&#45;treatment (bread)</title>
-<path fill="none" stroke="black" d="M484,-654.59C484,-624.96 484,-570 484,-570 484,-570 686.72,-570 686.72,-570"/>
-<polygon fill="white" stroke="black" points="686.72,-573.5 696.72,-570 686.72,-566.5 686.72,-573.5"/>
-<text text-anchor="middle" x="524.57" y="-572.2" font-family="Times,serif" font-size="6.00">3.68e&#45;03 kg</text>
-</g>
-<!-- market group for electricity -->
-<g id="node2" class="node">
-<title>market group for electricity</title>
-<polygon fill="darkolivegreen" stroke="black" points="903,-691 725,-691 725,-655 903,-655 903,-691"/>
-<text text-anchor="middle" x="814" y="-669.3" font-family="Comic Sans MS" font-size="14.00" fill="white">market group for electricity</text>
+<title>treatment of biowaste</title>
+<polygon fill="darkolivegreen" stroke="black" points="862.5,-510 719.5,-510 719.5,-474 862.5,-474 862.5,-510"/>
+<text text-anchor="middle" x="791" y="-488.3" font-family="Comic Sans MS" font-size="14.00" fill="white">treatment of biowaste</text>
 </g>
 <!-- Purification (bread) -->
-<g id="node15" class="node">
+<g id="node13" class="node">
 <title>Purification (bread)</title>
-<polygon fill="#0a86e5" stroke="black" points="831.5,-220 700.5,-220 700.5,-184 831.5,-184 831.5,-220"/>
-<text text-anchor="middle" x="766" y="-198.3" font-family="Comic Sans MS" font-size="14.00" fill="white">Purification (bread)</text>
+<polygon fill="#0a86e5" stroke="black" points="331.5,-220 200.5,-220 200.5,-184 331.5,-184 331.5,-220"/>
+<text text-anchor="middle" x="266" y="-198.3" font-family="Comic Sans MS" font-size="14.00" fill="white">Purification (bread)</text>
 </g>
-<!-- market group for electricity&#45;&gt;Purification (bread) -->
-<g id="edge20" class="edge">
-<title>market group for electricity&#45;&gt;Purification (bread)</title>
-<path fill="none" stroke="black" d="M883,-654.82C883,-568.27 883,-202 883,-202 883,-202 841.68,-202 841.68,-202"/>
-<polygon fill="white" stroke="black" points="841.68,-198.5 831.68,-202 841.68,-205.5 841.68,-198.5"/>
-<text text-anchor="middle" x="868" y="-409.95" font-family="Times,serif" font-size="6.00">0.18 kWh</text>
-</g>
-<!-- market group for electricity&#45;&gt;Pre&#45;treatment (bread) -->
+<!-- treatment of biowaste&#45;&gt;Purification (bread) -->
 <g id="edge2" class="edge">
-<title>market group for electricity&#45;&gt;Pre&#45;treatment (bread)</title>
-<path fill="none" stroke="black" d="M784,-654.51C784,-654.51 784,-592.22 784,-592.22"/>
-<polygon fill="white" stroke="black" points="787.5,-592.22 784,-582.22 780.5,-592.22 787.5,-592.22"/>
-<text text-anchor="middle" x="769" y="-625.56" font-family="Times,serif" font-size="6.00">0.18 kWh</text>
+<title>treatment of biowaste&#45;&gt;Purification (bread)</title>
+<path fill="none" stroke="black" d="M767.17,-473.99C767.17,-457.95 767.17,-437 767.17,-437 767.17,-437 263.5,-437 263.5,-437 263.5,-437 263.5,-230.05 263.5,-230.05"/>
+<polygon fill="white" stroke="black" points="267,-230.05 263.5,-220.05 260,-230.05 267,-230.05"/>
+<text text-anchor="middle" x="418.35" y="-439.2" font-family="Times,serif" font-size="6.00">5.77 kg</text>
 </g>
 <!-- Bacterial fermentation (bread) -->
-<g id="node17" class="node">
+<g id="node14" class="node">
 <title>Bacterial fermentation (bread)</title>
-<polygon fill="#0a86e5" stroke="black" points="843,-401 647,-401 647,-365 843,-365 843,-401"/>
-<text text-anchor="middle" x="745" y="-379.3" font-family="Comic Sans MS" font-size="14.00" fill="white">Bacterial fermentation (bread)</text>
-</g>
-<!-- market group for electricity&#45;&gt;Bacterial fermentation (bread) -->
-<g id="edge9" class="edge">
-<title>market group for electricity&#45;&gt;Bacterial fermentation (bread)</title>
-<path fill="none" stroke="black" d="M863,-654.86C863,-591.37 863,-383 863,-383 863,-383 853.25,-383 853.25,-383"/>
-<polygon fill="white" stroke="black" points="853.25,-379.5 843.25,-383 853.25,-386.5 853.25,-379.5"/>
-<text text-anchor="middle" x="848" y="-516.25" font-family="Times,serif" font-size="6.00">0.18 kWh</text>
-</g>
-<!-- market for tap water -->
-<g id="node3" class="node">
-<title>market for tap water</title>
-<polygon fill="darkolivegreen" stroke="black" points="707,-691 569,-691 569,-655 707,-655 707,-691"/>
-<text text-anchor="middle" x="638" y="-669.3" font-family="Comic Sans MS" font-size="14.00" fill="white">market for tap water</text>
-</g>
-<!-- market for tap water&#45;&gt;Purification (bread) -->
-<g id="edge18" class="edge">
-<title>market for tap water&#45;&gt;Purification (bread)</title>
-<path fill="none" stroke="black" d="M604.75,-654.72C604.75,-569.35 604.75,-214 604.75,-214 604.75,-214 690.41,-214 690.41,-214"/>
-<polygon fill="white" stroke="black" points="690.41,-217.5 700.41,-214 690.41,-210.5 690.41,-217.5"/>
-<text text-anchor="middle" x="590.75" y="-393.73" font-family="Times,serif" font-size="6.00">56.00 kg</text>
-</g>
-<!-- market for tap water&#45;&gt;Pre&#45;treatment (bread) -->
-<g id="edge3" class="edge">
-<title>market for tap water&#45;&gt;Pre&#45;treatment (bread)</title>
-<path fill="none" stroke="black" d="M702,-654.51C702,-654.51 702,-592.22 702,-592.22"/>
-<polygon fill="white" stroke="black" points="705.5,-592.22 702,-582.22 698.5,-592.22 705.5,-592.22"/>
-<text text-anchor="middle" x="690" y="-625.56" font-family="Times,serif" font-size="6.00">6.00 kg</text>
-</g>
-<!-- market for steam -->
-<g id="node4" class="node">
-<title>market for steam</title>
-<polygon fill="darkolivegreen" stroke="black" points="398.5,-691 279.5,-691 279.5,-655 398.5,-655 398.5,-691"/>
-<text text-anchor="middle" x="339" y="-669.3" font-family="Comic Sans MS" font-size="14.00" fill="white">market for steam</text>
-</g>
-<!-- market for steam&#45;&gt;Purification (bread) -->
-<g id="edge16" class="edge">
-<title>market for steam&#45;&gt;Purification (bread)</title>
-<path fill="none" stroke="black" d="M398.86,-673C401.76,-673 403.5,-673 403.5,-673 403.5,-673 403.5,-202 403.5,-202 403.5,-202 690.35,-202 690.35,-202"/>
-<polygon fill="white" stroke="black" points="690.35,-205.5 700.35,-202 690.35,-198.5 690.35,-205.5"/>
-<text text-anchor="middle" x="397.5" y="-291.59" font-family="Times,serif" font-size="6.00">7.33 kg</text>
-</g>
-<!-- market for steam&#45;&gt;Pre&#45;treatment (bread) -->
-<g id="edge4" class="edge">
-<title>market for steam&#45;&gt;Pre&#45;treatment (bread)</title>
-<path fill="none" stroke="black" d="M384.83,-654.78C384.83,-622.35 384.83,-558 384.83,-558 384.83,-558 686.65,-558 686.65,-558"/>
-<polygon fill="white" stroke="black" points="686.65,-561.5 696.65,-558 686.65,-554.5 686.65,-561.5"/>
-<text text-anchor="middle" x="475.35" y="-560.2" font-family="Times,serif" font-size="6.00">7.20 kg</text>
-</g>
-<!-- market for steam&#45;&gt;Bacterial fermentation (bread) -->
-<g id="edge12" class="edge">
-<title>market for steam&#45;&gt;Bacterial fermentation (bread)</title>
-<path fill="none" stroke="black" d="M377.67,-654.61C377.67,-591.27 377.67,-386 377.67,-386 377.67,-386 636.56,-386 636.56,-386"/>
-<polygon fill="white" stroke="black" points="636.56,-389.5 646.56,-386 636.56,-382.5 636.56,-389.5"/>
-<text text-anchor="middle" x="365.67" y="-393.06" font-family="Times,serif" font-size="6.00">7.33 kg</text>
-</g>
-<!-- treatment of biowaste -->
-<g id="node5" class="node">
-<title>treatment of biowaste</title>
-<polygon fill="darkolivegreen" stroke="black" points="181.5,-510 38.5,-510 38.5,-474 181.5,-474 181.5,-510"/>
-<text text-anchor="middle" x="110" y="-488.3" font-family="Comic Sans MS" font-size="14.00" fill="white">treatment of biowaste</text>
+<polygon fill="#0a86e5" stroke="black" points="504,-401 308,-401 308,-365 504,-365 504,-401"/>
+<text text-anchor="middle" x="406" y="-379.3" font-family="Comic Sans MS" font-size="14.00" fill="white">Bacterial fermentation (bread)</text>
 </g>
 <!-- treatment of biowaste&#45;&gt;Bacterial fermentation (bread) -->
-<g id="edge6" class="edge">
-<title>treatment of biowaste&#45;&gt;Bacterial fermentation (bread)</title>
-<path fill="none" stroke="black" d="M110,-473.77C110,-440.2 110,-372 110,-372 110,-372 636.83,-372 636.83,-372"/>
-<polygon fill="white" stroke="black" points="636.83,-375.5 646.83,-372 636.83,-368.5 636.83,-375.5"/>
-<text text-anchor="middle" x="310.53" y="-374.2" font-family="Times,serif" font-size="6.00">0.50 kg</text>
-</g>
-<!-- market for neutralising agent -->
-<g id="node6" class="node">
-<title>market for neutralising agent</title>
-<polygon fill="darkolivegreen" stroke="black" points="802.5,-510 613.5,-510 613.5,-474 802.5,-474 802.5,-510"/>
-<text text-anchor="middle" x="708" y="-488.3" font-family="Comic Sans MS" font-size="14.00" fill="white">market for neutralising agent</text>
-</g>
-<!-- market for neutralising agent&#45;&gt;Bacterial fermentation (bread) -->
-<g id="edge7" class="edge">
-<title>market for neutralising agent&#45;&gt;Bacterial fermentation (bread)</title>
-<path fill="none" stroke="black" d="M724.75,-473.51C724.75,-473.51 724.75,-411.22 724.75,-411.22"/>
-<polygon fill="white" stroke="black" points="728.25,-411.22 724.75,-401.22 721.25,-411.22 728.25,-411.22"/>
-<text text-anchor="middle" x="712.75" y="-444.56" font-family="Times,serif" font-size="6.00">0.11 kg</text>
-</g>
-<!-- market for magnesium oxide -->
-<g id="node7" class="node">
-<title>market for magnesium oxide</title>
-<polygon fill="darkolivegreen" stroke="black" points="595.5,-510 408.5,-510 408.5,-474 595.5,-474 595.5,-510"/>
-<text text-anchor="middle" x="502" y="-488.3" font-family="Comic Sans MS" font-size="14.00" fill="white">market for magnesium oxide</text>
-</g>
-<!-- market for magnesium oxide&#45;&gt;Bacterial fermentation (bread) -->
-<g id="edge8" class="edge">
-<title>market for magnesium oxide&#45;&gt;Bacterial fermentation (bread)</title>
-<path fill="none" stroke="black" d="M502.75,-473.84C502.75,-445.26 502.75,-393 502.75,-393 502.75,-393 636.82,-393 636.82,-393"/>
-<polygon fill="white" stroke="black" points="636.82,-396.5 646.82,-393 636.82,-389.5 636.82,-396.5"/>
-<text text-anchor="middle" x="517.36" y="-395.2" font-family="Times,serif" font-size="6.00">0.15 kg</text>
-</g>
-<!-- market for carbon dioxide -->
-<g id="node8" class="node">
-<title>market for carbon dioxide</title>
-<polygon fill="darkolivegreen" stroke="black" points="370.5,-510 199.5,-510 199.5,-474 370.5,-474 370.5,-510"/>
-<text text-anchor="middle" x="285" y="-488.3" font-family="Comic Sans MS" font-size="14.00" fill="white">market for carbon dioxide</text>
-</g>
-<!-- market for carbon dioxide&#45;&gt;Bacterial fermentation (bread) -->
 <g id="edge10" class="edge">
-<title>market for carbon dioxide&#45;&gt;Bacterial fermentation (bread)</title>
-<path fill="none" stroke="black" d="M292.25,-473.84C292.25,-441.9 292.25,-379 292.25,-379 292.25,-379 636.76,-379 636.76,-379"/>
-<polygon fill="white" stroke="black" points="636.76,-382.5 646.76,-379 636.76,-375.5 636.76,-382.5"/>
-<text text-anchor="middle" x="402.08" y="-381.2" font-family="Times,serif" font-size="6.00">0.32 kWh</text>
-</g>
-<!-- market for soybean meal -->
-<g id="node9" class="node">
-<title>market for soybean meal</title>
-<polygon fill="darkolivegreen" stroke="black" points="779.5,-329 614.5,-329 614.5,-293 779.5,-293 779.5,-329"/>
-<text text-anchor="middle" x="697" y="-307.3" font-family="Comic Sans MS" font-size="14.00" fill="white">market for soybean meal</text>
-</g>
-<!-- market for soybean meal&#45;&gt;Purification (bread) -->
-<g id="edge13" class="edge">
-<title>market for soybean meal&#45;&gt;Purification (bread)</title>
-<path fill="none" stroke="#8e0c0c" d="M740,-292.51C740,-292.51 740,-230.22 740,-230.22"/>
-<polygon fill="white" stroke="#8e0c0c" points="743.5,-230.22 740,-220.22 736.5,-230.22 743.5,-230.22"/>
-<text text-anchor="middle" x="727" y="-263.56" font-family="Times,serif" font-size="6.00">&#45;5.77 kg</text>
+<title>treatment of biowaste&#45;&gt;Bacterial fermentation (bread)</title>
+<path fill="none" stroke="black" d="M814.83,-473.51C814.83,-442.41 814.83,-383 814.83,-383 814.83,-383 514.19,-383 514.19,-383"/>
+<polygon fill="white" stroke="black" points="514.19,-379.5 504.19,-383 514.19,-386.5 514.19,-379.5"/>
+<text text-anchor="middle" x="697.76" y="-385.2" font-family="Times,serif" font-size="6.00">0.50 kg</text>
 </g>
 <!-- market for hydrochloric acid -->
-<g id="node10" class="node">
+<g id="node2" class="node">
 <title>market for hydrochloric acid</title>
-<polygon fill="darkolivegreen" stroke="black" points="596,-329 410,-329 410,-293 596,-293 596,-329"/>
-<text text-anchor="middle" x="503" y="-307.3" font-family="Comic Sans MS" font-size="14.00" fill="white">market for hydrochloric acid</text>
+<polygon fill="darkolivegreen" stroke="black" points="883,-329 697,-329 697,-293 883,-293 883,-329"/>
+<text text-anchor="middle" x="790" y="-307.3" font-family="Comic Sans MS" font-size="14.00" fill="white">market for hydrochloric acid</text>
 </g>
 <!-- market for hydrochloric acid&#45;&gt;Purification (bread) -->
-<g id="edge14" class="edge">
+<g id="edge3" class="edge">
 <title>market for hydrochloric acid&#45;&gt;Purification (bread)</title>
-<path fill="none" stroke="black" d="M503,-292.59C503,-262.96 503,-208 503,-208 503,-208 690.31,-208 690.31,-208"/>
-<polygon fill="white" stroke="black" points="690.31,-211.5 700.31,-208 690.31,-204.5 690.31,-211.5"/>
-<text text-anchor="middle" x="542.36" y="-210.2" font-family="Times,serif" font-size="6.00">0.04 kg</text>
+<path fill="none" stroke="black" d="M790,-292.51C790,-261.41 790,-202 790,-202 790,-202 341.57,-202 341.57,-202"/>
+<polygon fill="white" stroke="black" points="341.57,-198.5 331.57,-202 341.57,-205.5 341.57,-198.5"/>
+<text text-anchor="middle" x="599.04" y="-204.2" font-family="Times,serif" font-size="6.00">0.04 kg</text>
+</g>
+<!-- market for steam -->
+<g id="node3" class="node">
+<title>market for steam</title>
+<polygon fill="darkolivegreen" stroke="black" points="668.5,-691 549.5,-691 549.5,-655 668.5,-655 668.5,-691"/>
+<text text-anchor="middle" x="609" y="-669.3" font-family="Comic Sans MS" font-size="14.00" fill="white">market for steam</text>
+</g>
+<!-- market for steam&#45;&gt;Purification (bread) -->
+<g id="edge5" class="edge">
+<title>market for steam&#45;&gt;Purification (bread)</title>
+<path fill="none" stroke="black" d="M554.33,-654.99C554.33,-638.95 554.33,-618 554.33,-618 554.33,-618 257.17,-618 257.17,-618 257.17,-618 257.17,-230.14 257.17,-230.14"/>
+<polygon fill="white" stroke="black" points="260.67,-230.14 257.17,-220.14 253.67,-230.14 260.67,-230.14"/>
+<text text-anchor="middle" x="245.17" y="-593.35" font-family="Times,serif" font-size="6.00">7.33 kg</text>
+</g>
+<!-- market for steam&#45;&gt;Bacterial fermentation (bread) -->
+<g id="edge16" class="edge">
+<title>market for steam&#45;&gt;Bacterial fermentation (bread)</title>
+<path fill="none" stroke="black" d="M616.25,-654.93C616.25,-616.06 616.25,-528 616.25,-528 616.25,-528 487.75,-528 487.75,-528 487.75,-528 487.75,-411.07 487.75,-411.07"/>
+<polygon fill="white" stroke="black" points="491.25,-411.07 487.75,-401.07 484.25,-411.07 491.25,-411.07"/>
+<text text-anchor="middle" x="545" y="-530.2" font-family="Times,serif" font-size="6.00">7.33 kg</text>
+</g>
+<!-- Pre&#45;treatment (bread) -->
+<g id="node15" class="node">
+<title>Pre&#45;treatment (bread)</title>
+<polygon fill="#0a86e5" stroke="black" points="564,-582 418,-582 418,-546 564,-546 564,-582"/>
+<text text-anchor="middle" x="491" y="-560.3" font-family="Comic Sans MS" font-size="14.00" fill="white">Pre&#45;treatment (bread)</text>
+</g>
+<!-- market for steam&#45;&gt;Pre&#45;treatment (bread) -->
+<g id="edge20" class="edge">
+<title>market for steam&#45;&gt;Pre&#45;treatment (bread)</title>
+<path fill="none" stroke="black" d="M559.17,-654.51C559.17,-654.51 559.17,-592.22 559.17,-592.22"/>
+<polygon fill="white" stroke="black" points="562.67,-592.22 559.17,-582.22 555.67,-592.22 562.67,-592.22"/>
+<text text-anchor="middle" x="547.17" y="-625.56" font-family="Times,serif" font-size="6.00">7.20 kg</text>
 </g>
 <!-- market for sodium chloride -->
-<g id="node11" class="node">
+<g id="node4" class="node">
 <title>market for sodium chloride</title>
-<polygon fill="darkolivegreen" stroke="black" points="392,-329 214,-329 214,-293 392,-293 392,-329"/>
-<text text-anchor="middle" x="303" y="-307.3" font-family="Comic Sans MS" font-size="14.00" fill="white">market for sodium chloride</text>
+<polygon fill="darkolivegreen" stroke="black" points="659,-329 481,-329 481,-293 659,-293 659,-329"/>
+<text text-anchor="middle" x="570" y="-307.3" font-family="Comic Sans MS" font-size="14.00" fill="white">market for sodium chloride</text>
 </g>
 <!-- market for sodium chloride&#45;&gt;Purification (bread) -->
-<g id="edge17" class="edge">
+<g id="edge6" class="edge">
 <title>market for sodium chloride&#45;&gt;Purification (bread)</title>
-<path fill="none" stroke="black" d="M303,-292.78C303,-260.35 303,-196 303,-196 303,-196 690.16,-196 690.16,-196"/>
-<polygon fill="white" stroke="black" points="690.16,-199.5 700.16,-196 690.16,-192.5 690.16,-199.5"/>
-<text text-anchor="middle" x="436.19" y="-198.2" font-family="Times,serif" font-size="6.00">8.14 kg</text>
+<path fill="none" stroke="black" d="M570,-292.66C570,-263.79 570,-211 570,-211 570,-211 341.59,-211 341.59,-211"/>
+<polygon fill="white" stroke="black" points="341.59,-207.5 331.59,-211 341.59,-214.5 341.59,-207.5"/>
+<text text-anchor="middle" x="484.62" y="-213.2" font-family="Times,serif" font-size="6.00">8.14 kg</text>
+</g>
+<!-- market for tap water -->
+<g id="node5" class="node">
+<title>market for tap water</title>
+<polygon fill="darkolivegreen" stroke="black" points="903,-691 765,-691 765,-655 903,-655 903,-691"/>
+<text text-anchor="middle" x="834" y="-669.3" font-family="Comic Sans MS" font-size="14.00" fill="white">market for tap water</text>
+</g>
+<!-- market for tap water&#45;&gt;Purification (bread) -->
+<g id="edge7" class="edge">
+<title>market for tap water&#45;&gt;Purification (bread)</title>
+<path fill="none" stroke="black" d="M893,-654.77C893,-567.09 893,-193 893,-193 893,-193 341.62,-193 341.62,-193"/>
+<polygon fill="white" stroke="black" points="341.62,-189.5 331.62,-193 341.62,-196.5 341.62,-189.5"/>
+<text text-anchor="middle" x="834.19" y="-195.2" font-family="Times,serif" font-size="6.00">56.00 kg</text>
+</g>
+<!-- market for tap water&#45;&gt;Pre&#45;treatment (bread) -->
+<g id="edge19" class="edge">
+<title>market for tap water&#45;&gt;Pre&#45;treatment (bread)</title>
+<path fill="none" stroke="black" d="M813.75,-654.51C813.75,-623.41 813.75,-564 813.75,-564 813.75,-564 574.24,-564 574.24,-564"/>
+<polygon fill="white" stroke="black" points="574.24,-560.5 564.24,-564 574.24,-567.5 574.24,-560.5"/>
+<text text-anchor="middle" x="727.25" y="-566.2" font-family="Times,serif" font-size="6.00">6.00 kg</text>
 </g>
 <!-- treatment of wastewater -->
-<g id="node12" class="node">
+<g id="node6" class="node">
 <title>treatment of wastewater</title>
-<polygon fill="darkolivegreen" stroke="black" points="195.5,-329 38.5,-329 38.5,-293 195.5,-293 195.5,-329"/>
-<text text-anchor="middle" x="117" y="-307.3" font-family="Comic Sans MS" font-size="14.00" fill="white">treatment of wastewater</text>
+<polygon fill="darkolivegreen" stroke="black" points="442.5,-329 285.5,-329 285.5,-293 442.5,-293 442.5,-329"/>
+<text text-anchor="middle" x="364" y="-307.3" font-family="Comic Sans MS" font-size="14.00" fill="white">treatment of wastewater</text>
 </g>
 <!-- treatment of wastewater&#45;&gt;Purification (bread) -->
-<g id="edge19" class="edge">
+<g id="edge8" class="edge">
 <title>treatment of wastewater&#45;&gt;Purification (bread)</title>
-<path fill="none" stroke="black" d="M117,-292.89C117,-259.13 117,-190 117,-190 117,-190 690.5,-190 690.5,-190"/>
-<polygon fill="white" stroke="black" points="690.5,-193.5 700.5,-190 690.5,-186.5 690.5,-193.5"/>
-<text text-anchor="middle" x="338.31" y="-192.2" font-family="Times,serif" font-size="6.00">62.00 kg</text>
+<path fill="none" stroke="black" d="M308.5,-292.51C308.5,-292.51 308.5,-230.22 308.5,-230.22"/>
+<polygon fill="white" stroke="black" points="312,-230.22 308.5,-220.22 305,-230.22 312,-230.22"/>
+<text text-anchor="middle" x="294.5" y="-263.56" font-family="Times,serif" font-size="6.00">62.00 kg</text>
 </g>
-<!-- Bread waste -->
-<g id="node13" class="node">
-<title>Bread waste</title>
-<ellipse fill="goldenrod" stroke="#000000" cx="150" cy="-673" rx="57.69" ry="18"/>
-<text text-anchor="middle" x="150" y="-669.3" font-family="Comic Sans MS" font-size="14.00" fill="white">Bread waste</text>
+<!-- market group for electricity -->
+<g id="node7" class="node">
+<title>market group for electricity</title>
+<polygon fill="darkolivegreen" stroke="black" points="352,-691 174,-691 174,-655 352,-655 352,-691"/>
+<text text-anchor="middle" x="263" y="-669.3" font-family="Comic Sans MS" font-size="14.00" fill="white">market group for electricity</text>
+</g>
+<!-- market group for electricity&#45;&gt;Purification (bread) -->
+<g id="edge9" class="edge">
+<title>market group for electricity&#45;&gt;Purification (bread)</title>
+<path fill="none" stroke="black" d="M250.83,-654.82C250.83,-654.82 250.83,-230.12 250.83,-230.12"/>
+<polygon fill="white" stroke="black" points="254.33,-230.12 250.83,-220.12 247.33,-230.12 254.33,-230.12"/>
+<text text-anchor="middle" x="235.83" y="-444.67" font-family="Times,serif" font-size="6.00">0.18 kWh</text>
+</g>
+<!-- market group for electricity&#45;&gt;Bacterial fermentation (bread) -->
+<g id="edge13" class="edge">
+<title>market group for electricity&#45;&gt;Bacterial fermentation (bread)</title>
+<path fill="none" stroke="black" d="M269.83,-654.99C269.83,-592.98 269.83,-392 269.83,-392 269.83,-392 297.76,-392 297.76,-392"/>
+<polygon fill="white" stroke="black" points="297.76,-395.5 307.76,-392 297.76,-388.5 297.76,-395.5"/>
+<text text-anchor="middle" x="262.33" y="-504.73" font-family="Times,serif" font-size="6.00">0.18 kWh</text>
+</g>
+<!-- market group for electricity&#45;&gt;Pre&#45;treatment (bread) -->
+<g id="edge18" class="edge">
+<title>market group for electricity&#45;&gt;Pre&#45;treatment (bread)</title>
+<path fill="none" stroke="black" d="M317.25,-654.51C317.25,-623.41 317.25,-564 317.25,-564 317.25,-564 407.82,-564 407.82,-564"/>
+<polygon fill="white" stroke="black" points="407.82,-567.5 417.82,-564 407.82,-560.5 407.82,-567.5"/>
+<text text-anchor="middle" x="302.28" y="-566.2" font-family="Times,serif" font-size="6.00">0.18 kWh</text>
+</g>
+<!-- market for neutralising agent -->
+<g id="node8" class="node">
+<title>market for neutralising agent</title>
+<polygon fill="darkolivegreen" stroke="black" points="471.5,-510 282.5,-510 282.5,-474 471.5,-474 471.5,-510"/>
+<text text-anchor="middle" x="377" y="-488.3" font-family="Comic Sans MS" font-size="14.00" fill="white">market for neutralising agent</text>
+</g>
+<!-- market for neutralising agent&#45;&gt;Bacterial fermentation (bread) -->
+<g id="edge11" class="edge">
+<title>market for neutralising agent&#45;&gt;Bacterial fermentation (bread)</title>
+<path fill="none" stroke="black" d="M389.75,-473.51C389.75,-473.51 389.75,-411.22 389.75,-411.22"/>
+<polygon fill="white" stroke="black" points="393.25,-411.22 389.75,-401.22 386.25,-411.22 393.25,-411.22"/>
+<text text-anchor="middle" x="377.75" y="-444.56" font-family="Times,serif" font-size="6.00">0.11 kg</text>
+</g>
+<!-- market for magnesium oxide -->
+<g id="node9" class="node">
+<title>market for magnesium oxide</title>
+<polygon fill="darkolivegreen" stroke="black" points="244.5,-510 57.5,-510 57.5,-474 244.5,-474 244.5,-510"/>
+<text text-anchor="middle" x="151" y="-488.3" font-family="Comic Sans MS" font-size="14.00" fill="white">market for magnesium oxide</text>
+</g>
+<!-- market for magnesium oxide&#45;&gt;Bacterial fermentation (bread) -->
+<g id="edge12" class="edge">
+<title>market for magnesium oxide&#45;&gt;Bacterial fermentation (bread)</title>
+<path fill="none" stroke="black" d="M222.5,-473.51C222.5,-442.41 222.5,-383 222.5,-383 222.5,-383 297.8,-383 297.8,-383"/>
+<polygon fill="white" stroke="black" points="297.8,-386.5 307.8,-383 297.8,-379.5 297.8,-386.5"/>
+<text text-anchor="middle" x="210.5" y="-392.8" font-family="Times,serif" font-size="6.00">0.15 kg</text>
+</g>
+<!-- market for carbon dioxide -->
+<g id="node10" class="node">
+<title>market for carbon dioxide</title>
+<polygon fill="darkolivegreen" stroke="black" points="701.5,-510 530.5,-510 530.5,-474 701.5,-474 701.5,-510"/>
+<text text-anchor="middle" x="616" y="-488.3" font-family="Comic Sans MS" font-size="14.00" fill="white">market for carbon dioxide</text>
+</g>
+<!-- market for carbon dioxide&#45;&gt;Bacterial fermentation (bread) -->
+<g id="edge14" class="edge">
+<title>market for carbon dioxide&#45;&gt;Bacterial fermentation (bread)</title>
+<path fill="none" stroke="black" d="M530.3,-492C510.89,-492 495.88,-492 495.88,-492 495.88,-492 495.88,-411.49 495.88,-411.49"/>
+<polygon fill="white" stroke="black" points="499.38,-411.49 495.88,-401.49 492.38,-411.49 499.38,-411.49"/>
+<text text-anchor="middle" x="480.88" y="-464.16" font-family="Times,serif" font-size="6.00">0.32 kWh</text>
+</g>
+<!-- market for enzymes -->
+<g id="node11" class="node">
+<title>market for enzymes</title>
+<polygon fill="darkolivegreen" stroke="black" points="531,-691 397,-691 397,-655 531,-655 531,-691"/>
+<text text-anchor="middle" x="464" y="-669.3" font-family="Comic Sans MS" font-size="14.00" fill="white">market for enzymes</text>
+</g>
+<!-- market for enzymes&#45;&gt;Pre&#45;treatment (bread) -->
+<g id="edge17" class="edge">
+<title>market for enzymes&#45;&gt;Pre&#45;treatment (bread)</title>
+<path fill="none" stroke="black" d="M474.5,-654.51C474.5,-654.51 474.5,-592.22 474.5,-592.22"/>
+<polygon fill="white" stroke="black" points="478,-592.22 474.5,-582.22 471,-592.22 478,-592.22"/>
+<text text-anchor="middle" x="456" y="-625.56" font-family="Times,serif" font-size="6.00">3.68e&#45;03 kg</text>
 </g>
 <!-- Succinic acid production (bread) -->
-<g id="node14" class="node">
+<g id="node12" class="node">
 <title>Succinic acid production (bread)</title>
-<ellipse fill="#471a87" stroke="green" cx="766" cy="-56" rx="137.28" ry="18"/>
-<text text-anchor="middle" x="766" y="-52.3" font-family="Comic Sans MS" font-size="14.00" fill="white">Succinic acid production (bread)</text>
+<ellipse fill="#471a87" stroke="green" cx="266" cy="-56" rx="137.28" ry="18"/>
+<text text-anchor="middle" x="266" y="-52.3" font-family="Comic Sans MS" font-size="14.00" fill="white">Succinic acid production (bread)</text>
 </g>
 <!-- Purification (bread)&#45;&gt;Succinic acid production (bread) -->
-<g id="edge5" class="edge">
+<g id="edge1" class="edge">
 <title>Purification (bread)&#45;&gt;Succinic acid production (bread)</title>
-<path fill="none" stroke="black" d="M766,-183.8C766,-183.8 766,-84.43 766,-84.43"/>
-<polygon fill="black" stroke="black" points="769.5,-84.43 766,-74.43 762.5,-84.43 769.5,-84.43"/>
-<text text-anchor="middle" x="754" y="-136.31" font-family="Times,serif" font-size="6.00">1.00 kg</text>
-</g>
-<!-- Pre&#45;treatment (bread)&#45;&gt;Bacterial fermentation (bread) -->
-<g id="edge11" class="edge">
-<title>Pre&#45;treatment (bread)&#45;&gt;Bacterial fermentation (bread)</title>
-<path fill="none" stroke="black" d="M822.75,-545.98C822.75,-545.98 822.75,-411.21 822.75,-411.21"/>
-<polygon fill="black" stroke="black" points="826.25,-411.21 822.75,-401.21 819.25,-411.21 826.25,-411.21"/>
-<text text-anchor="middle" x="834.75" y="-480.8" font-family="Times,serif" font-size="6.00">1.00 kg</text>
+<path fill="none" stroke="black" d="M266,-183.8C266,-183.8 266,-84.43 266,-84.43"/>
+<polygon fill="black" stroke="black" points="269.5,-84.43 266,-74.43 262.5,-84.43 269.5,-84.43"/>
+<text text-anchor="middle" x="254" y="-136.31" font-family="Times,serif" font-size="6.00">1.00 kg</text>
 </g>
 <!-- Bacterial fermentation (bread)&#45;&gt;Purification (bread) -->
-<g id="edge15" class="edge">
+<g id="edge4" class="edge">
 <title>Bacterial fermentation (bread)&#45;&gt;Purification (bread)</title>
-<path fill="none" stroke="black" d="M805.5,-364.98C805.5,-364.98 805.5,-230.21 805.5,-230.21"/>
-<polygon fill="black" stroke="black" points="809,-230.21 805.5,-220.21 802,-230.21 809,-230.21"/>
-<text text-anchor="middle" x="793.5" y="-299.8" font-family="Times,serif" font-size="6.00">1.00 kg</text>
+<path fill="none" stroke="black" d="M307.93,-374C289.65,-374 276.17,-374 276.17,-374 276.17,-374 276.17,-230.08 276.17,-230.08"/>
+<polygon fill="black" stroke="black" points="279.67,-230.08 276.17,-220.08 272.67,-230.08 279.67,-230.08"/>
+<text text-anchor="middle" x="264.17" y="-320.12" font-family="Times,serif" font-size="6.00">1.00 kg</text>
+</g>
+<!-- Pre&#45;treatment (bread)&#45;&gt;Bacterial fermentation (bread) -->
+<g id="edge15" class="edge">
+<title>Pre&#45;treatment (bread)&#45;&gt;Bacterial fermentation (bread)</title>
+<path fill="none" stroke="black" d="M479.62,-545.98C479.62,-545.98 479.62,-411.21 479.62,-411.21"/>
+<polygon fill="black" stroke="black" points="483.13,-411.21 479.62,-401.21 476.13,-411.21 483.13,-411.21"/>
+<text text-anchor="middle" x="491.62" y="-480.8" font-family="Times,serif" font-size="6.00">1.00 kg</text>
+</g>
+<!-- Bread waste -->
+<g id="node16" class="node">
+<title>Bread waste</title>
+<ellipse fill="goldenrod" stroke="#000000" cx="97" cy="-673" rx="57.69" ry="18"/>
+<text text-anchor="middle" x="97" y="-669.3" font-family="Comic Sans MS" font-size="14.00" fill="white">Bread waste</text>
 </g>
 </g>
 </svg>

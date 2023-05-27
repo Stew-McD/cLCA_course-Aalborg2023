@@ -14,8 +14,6 @@ bd.projects.report()
 
 bd.databases
 
-for db in bd.databases()
-
 bi.bw2setup()
 
 db_name = "con391"

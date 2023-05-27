@@ -324,3 +324,213 @@
 	 WaterEfficient: For the FU: 'Succinic acid production (corn)' 1 kg 
 	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
 	the LCIA score is: 7.18 kg CO2-Eq
+
+*****************
+	 : For the FU: 'Succinic acid production (bread)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: -26.19 kg CO2-Eq
+
+*****************
+	 : For the FU: 'Succinic acid production (bread)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: -26.19 kg CO2-Eq
+
+*****************
+	 : For the FU: 'Succinic acid production (corn)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: 7.22 kg CO2-Eq
+
+*****************
+	 : For the FU: 'Succinic acid production (corn)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: 7.22 kg CO2-Eq
+
+*****************
+	 : For the FU: 'Succinic acid production (bread)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: -26.19 kg CO2-Eq
+
+*****************
+	 : For the FU: 'Succinic acid production (corn)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: 7.22 kg CO2-Eq
+
+*****************
+	 CoproductsToWaste: For the FU: 'Succinic acid production (bread)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: -4.93 kg CO2-Eq
+
+*****************
+	 CoproductsToWaste: For the FU: 'Succinic acid production (bread)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: -4.93 kg CO2-Eq
+
+*****************
+	 CoproductsToWaste: For the FU: 'Succinic acid production (corn)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: 9.7 kg CO2-Eq
+
+*****************
+	 CoproductsToWaste: For the FU: 'Succinic acid production (corn)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: 9.7 kg CO2-Eq
+
+*****************
+	 CoproductsToWaste: For the FU: 'Succinic acid production (bread)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: -4.93 kg CO2-Eq
+
+*****************
+	 CoproductsToWaste: For the FU: 'Succinic acid production (corn)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: 9.7 kg CO2-Eq
+
+*****************
+	 EnergyEfficient: For the FU: 'Succinic acid production (bread)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: -26.19 kg CO2-Eq
+
+*****************
+	 EnergyEfficient: For the FU: 'Succinic acid production (bread)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: -26.19 kg CO2-Eq
+
+*****************
+	 EnergyEfficient: For the FU: 'Succinic acid production (corn)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: 6.75 kg CO2-Eq
+
+*****************
+	 EnergyEfficient: For the FU: 'Succinic acid production (corn)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: 6.75 kg CO2-Eq
+
+*****************
+	 EnergyEfficient: For the FU: 'Succinic acid production (bread)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: -26.19 kg CO2-Eq
+
+*****************
+	 EnergyEfficient: For the FU: 'Succinic acid production (corn)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: 6.75 kg CO2-Eq
+
+*****************
+	 WaterEfficient: For the FU: 'Succinic acid production (bread)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: -26.19 kg CO2-Eq
+
+*****************
+	 WaterEfficient: For the FU: 'Succinic acid production (bread)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: -26.19 kg CO2-Eq
+
+*****************
+	 WaterEfficient: For the FU: 'Succinic acid production (corn)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: 7.18 kg CO2-Eq
+
+*****************
+	 WaterEfficient: For the FU: 'Succinic acid production (corn)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: 7.18 kg CO2-Eq
+
+*****************
+	 WaterEfficient: For the FU: 'Succinic acid production (bread)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: -26.19 kg CO2-Eq
+
+*****************
+	 WaterEfficient: For the FU: 'Succinic acid production (corn)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: 7.18 kg CO2-Eq
+
+*****************
+	 WaterEfficient: For the FU: 'Succinic acid production (bread)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: -26.19 kg CO2-Eq
+
+*****************
+	 WaterEfficient: For the FU: 'Succinic acid production (bread)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: -26.19 kg CO2-Eq
+
+*****************
+	 WaterEfficient: For the FU: 'Succinic acid production (corn)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: 6.7 kg CO2-Eq
+
+*****************
+	 WaterEfficient: For the FU: 'Succinic acid production (corn)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: 6.7 kg CO2-Eq
+
+*****************
+	 WaterEfficient: For the FU: 'Succinic acid production (bread)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: -26.19 kg CO2-Eq
+
+*****************
+	 WaterEfficient: For the FU: 'Succinic acid production (corn)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: 6.7 kg CO2-Eq
+
+*****************
+	 EnergyEfficient: For the FU: 'Succinic acid production (bread)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: -26.19 kg CO2-Eq
+
+*****************
+	 EnergyEfficient: For the FU: 'Succinic acid production (bread)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: -26.19 kg CO2-Eq
+
+*****************
+	 EnergyEfficient: For the FU: 'Succinic acid production (corn)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: 6.75 kg CO2-Eq
+
+*****************
+	 EnergyEfficient: For the FU: 'Succinic acid production (corn)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: 6.75 kg CO2-Eq
+
+*****************
+	 EnergyEfficient: For the FU: 'Succinic acid production (bread)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: -26.19 kg CO2-Eq
+
+*****************
+	 EnergyEfficient: For the FU: 'Succinic acid production (corn)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: 6.75 kg CO2-Eq
+
+*****************
+	 WaterEfficient: For the FU: 'Succinic acid production (bread)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: -4.93 kg CO2-Eq
+
+*****************
+	 WaterEfficient: For the FU: 'Succinic acid production (bread)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: -4.93 kg CO2-Eq
+
+*****************
+	 WaterEfficient: For the FU: 'Succinic acid production (corn)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: 9.66 kg CO2-Eq
+
+*****************
+	 WaterEfficient: For the FU: 'Succinic acid production (corn)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: 9.66 kg CO2-Eq
+
+*****************
+	 WaterEfficient: For the FU: 'Succinic acid production (bread)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: -4.93 kg CO2-Eq
+
+*****************
+	 WaterEfficient: For the FU: 'Succinic acid production (corn)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: 9.66 kg CO2-Eq

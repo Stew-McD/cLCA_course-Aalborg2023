@@ -23,9 +23,6 @@ from make_process_diagram import extract_nodes_edges, write_process_diagram
 #%%
 
 #%% 
-bd.projects.set_current('cLCA-aalborg')
-ei = bd.Database('con391')
-
 # Set up models
 models = []
 models.append("bread") 
@@ -34,7 +31,10 @@ models.append('corn')
 # set to True if you want to run that function
 remove = False
 rebuild = True
-redo_diagrams = False
+# Load the packages we will need
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
 recalculate = True
 recalculate_MC = True
 revisualise = True
@@ -44,7 +44,7 @@ if remove == True and os.path.exists('results'):
     shutil.rmtree('results')
 
 # set parameters for Monte Carlo analysis
-iterations = 100
+iterations = 10000
 scale_percent = 0.3
 dist_id = 3 # normal - 2 is lognormal 
 mc_type = ""
@@ -55,11 +55,12 @@ elif dist_id == 2: mc_type = "Lognormal_"+str(iterations)
 # set scenarios for testing sensitivity
 
 scenarios = {
-    "CoproductsToWaste": True,
+    "CoproductsToWaste": False,
     "EnergyEfficient": False,
-    "WaterEfficient": False
+    "WaterEfficient": False,
+    "CoproductsToLowerMarket": True,
 }
-
+#%%
 # Write databases from csv files, add uncertainties, inspect and export, make process diagrams
 if rebuild == True:
     for model in models:
@@ -92,6 +93,19 @@ for model in models:
                 edge[0]['input'] = ('con391', waste['code'])
                 edge[0].save()
                 scenario_name = f'{k}'
+
+            if k == 'CoproductsToLowerMarket':
+                print("\n***************** Scenario: {} *****************\n".format(k))
+                act = bd.get_node(name=f'Purification ({model})')
+                if model == 'bread': waste = bd.get_node(code='16b7ce830141a933f9537e199cbd608e') # 'treatment of biowaste, industrial composting'
+                # if model == 'corn': waste = bd.get_node(code='6e199e3cc577ca27b046f0a9898192c2') # 'treatment of inert waste, sanitary landfill' 
+                edge = [x for x in list(act.technosphere()) if x['amount'] < 0]
+                print(f"Changed co-products destination from market to waste: {edge} --> {waste}")
+                edge[0]['amount'] *= -1
+                edge[0]['input'] = ('con391', waste['code'])
+                edge[0].save()
+                scenario_name = f'{k}'
+
             if k == 'EnergyEfficient':
                 print("\n***************** Scenario: {} *****************\n".format(k))
                 for act in fg:

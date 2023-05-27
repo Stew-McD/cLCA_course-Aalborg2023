@@ -1,3 +1,5 @@
+# From B Steubing, trying to adapt it to brightway25
+
 # -*- coding: utf-8 -*-
 
 # =============================================================================
