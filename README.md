@@ -8,6 +8,15 @@ The course files are in the folder 'moodle'
 See the interactive notebook main.ipynb to view the code and results from a previous run.
 
 
+**** QUICK START ****
+** it should work with just running main.py (change the montecarlo iterations to low if you are running it in the cloud) **
+
+if not:
+1. drag the .gz file of the project backup into the folder
+2. restore the project with backup_and_restore.py
+3. run main.py
+
+
 # Contents
 * Usage
 * Code explanation

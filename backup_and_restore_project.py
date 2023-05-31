@@ -49,11 +49,11 @@ print("Date: 27/05/2023\n")
 
 # Set the following variables to the project name, whether you want to backup or restore, the directory locations and the file name
 project_name = "cLCA-aalborg"
-backup = True
-restore = False
-delete_project = False
+backup = False
+restore = True
+delete_project = True
 custom_project_dir = False
-project_archive = "brightway2-project-default-backup.27-May-2023-12-31PM.tar.gz"  # Change file name
+project_archive = "brightway2-project-cLCA-aalborg-backup.31-May-2023-07-22PM.tar.gz"  # Change file name
 
 # Set the environment variable to the current directory so that the backup is saved here
 os.environ["HOME"] = os.getcwd()
@@ -73,7 +73,7 @@ if backup:
 if restore:
     print(f"\nRestoring {project_archive}...")
     try:
-        bi.restore_project_directory(project_archive)
+        bi.restore_project_directory(project_archive,overwrite_existing=True)
         print("Restore complete.")
     except AssertionError:
         print("Project archive not found. Please check file name and location.")
@@ -87,4 +87,4 @@ if restore:
     except Exception as e:
         print("Something went wrong. Please check the error message below.")
         print(e)
-    
+

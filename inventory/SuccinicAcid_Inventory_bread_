@@ -26,11 +26,11 @@ digraph {
 	}
 	subgraph cluster_bio {
 	}
+	"Purification (bread)" -> "Succinic acid production (bread)" [dir=forward fontcolor=black fontsize=6 minlen=3 penwidth=1 shape=ellipse style=filled weight=10 xlabel="1.00 kg" xlabelcolor=white xlabelfillcolor=white]
 	"market for enzymes" -> "Pre-treatment (bread)" [color=black dir=forward fillcolor=white fontcolor=black fontsize=6 minlen=2 penwidth=1 shape=ellipse style=filled weight=1 xlabel="3.68e-03 kg" xlabelfillcolor=white]
 	"market group for electricity" -> "Pre-treatment (bread)" [color=black dir=forward fillcolor=white fontcolor=black fontsize=6 minlen=2 penwidth=1 shape=ellipse style=filled weight=1 xlabel="0.18 kWh" xlabelfillcolor=white]
 	"market for tap water" -> "Pre-treatment (bread)" [color=black dir=forward fillcolor=white fontcolor=black fontsize=6 minlen=2 penwidth=1 shape=ellipse style=filled weight=1 xlabel="6.00 kg" xlabelfillcolor=white]
 	"market for steam" -> "Pre-treatment (bread)" [color=black dir=forward fillcolor=white fontcolor=black fontsize=6 minlen=2 penwidth=1 shape=ellipse style=filled weight=1 xlabel="7.20 kg" xlabelfillcolor=white]
-	"Purification (bread)" -> "Succinic acid production (bread)" [dir=forward fontcolor=black fontsize=6 minlen=3 penwidth=1 shape=ellipse style=filled weight=10 xlabel="1.00 kg" xlabelcolor=white xlabelfillcolor=white]
 	"treatment of biowaste" -> "Bacterial fermentation (bread)" [color=black dir=forward fillcolor=white fontcolor=black fontsize=6 minlen=2 penwidth=1 shape=ellipse style=filled weight=1 xlabel="0.50 kg" xlabelfillcolor=white]
 	"market for neutralising agent" -> "Bacterial fermentation (bread)" [color=black dir=forward fillcolor=white fontcolor=black fontsize=6 minlen=2 penwidth=1 shape=ellipse style=filled weight=1 xlabel="0.11 kg" xlabelfillcolor=white]
 	"market for magnesium oxide" -> "Bacterial fermentation (bread)" [color=black dir=forward fillcolor=white fontcolor=black fontsize=6 minlen=2 penwidth=1 shape=ellipse style=filled weight=1 xlabel="0.15 kg" xlabelfillcolor=white]
