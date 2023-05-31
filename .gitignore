@@ -1,0 +1,5 @@
+__pycache__/
+.archive
+*.mp4
+*.gz
+*exio/data
