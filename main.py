@@ -82,6 +82,17 @@ for model in models:
     scenario_name = ""
     for k, v in scenarios.items():
         if v == True:
+            if k == 'LessSubsitution':
+                print("\n***************** Scenario: {} *****************\n".format(k))
+                act = bd.get_node(name=f'Purification ({model})')
+                if model == 'bread': waste = bd.get_node(code='e343521ccabc453ec59738b1d5678118') # 'treatment of biowaste, industrial composting'
+                if model == 'corn': waste = bd.get_node(code='6e199e3cc577ca27b046f0a9898192c2') # 'treatment of inert waste, sanitary landfill'
+                edge = [x for x in list(act.technosphere()) if x['amount'] < 0]
+                print(f"Changed co-products destination from market to waste: {edge} --> {waste}")
+                edge[0]['amount'] *= -1
+                edge[0]['input'] = ('con391', waste['code'])
+                edge[0].save()
+                scenario_name = f'{k}'
             if k == 'CoproductsToWaste':
                 print("\n***************** Scenario: {} *****************\n".format(k))
                 act = bd.get_node(name=f'Purification ({model})')

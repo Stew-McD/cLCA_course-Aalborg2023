@@ -48,7 +48,7 @@ print("Author: Stew-McD")
 print("Date: 27/05/2023\n")
 
 # Set the following variables to the project name, whether you want to backup or restore, the directory locations and the file name
-project_name = "cLCA-aalborg"
+project_name = "cLCAaalborg"
 backup = True
 restore = False
 delete_project = False
