@@ -1,0 +1,31 @@
+
+
+*****************
+	 SubstitutionAmountsSensitivity: For the FU: 'Succinic acid production (bread)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: -12.9 kg CO2-Eq
+
+*****************
+	 SubstitutionAmountsSensitivity: For the FU: 'Succinic acid production (corn)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: 6.3 kg CO2-Eq
+
+*****************
+	 SubstitutionAmountsSensitivity: For the FU: 'Succinic acid production (bread)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: -12.6 kg CO2-Eq
+
+*****************
+	 SubstitutionAmountsSensitivity: For the FU: 'Succinic acid production (corn)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: 4.98 kg CO2-Eq
+
+*****************
+	 SubstitutionAmountsSensitivity: For the FU: 'Succinic acid production (bread)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: -24.16 kg CO2-Eq
+
+*****************
+	 SubstitutionAmountsSensitivity: For the FU: 'Succinic acid production (corn)' 1 kg 
+	 with the method '('IPCC 2013', 'climate change', 'global warming potential (GWP100)')' 
+	the LCIA score is: 3.66 kg CO2-Eq

@@ -1,6 +1,6 @@
 *** Welch's t-test
-stat = -7.69
-p = 2.04e-04
+stat = -6.17
+p = 1.47e-03
 *** Mann-Whitney U test
 stat = 0.00
 p = 7.94e-03

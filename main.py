@@ -41,7 +41,7 @@ if remove == True and os.path.exists('results'):
     shutil.rmtree('results')
 
 # set parameters for Monte Carlo analysis
-iterations = 5 # because running on codespace (see the results for 10000 iterations)
+iterations = 100 # because running on codespace (see the results for 10000 iterations)
 scale_percent = 0.3
 dist_id = 3 # normal - 2 is lognormal 
 mc_type = ""
@@ -50,8 +50,9 @@ elif dist_id == 2: mc_type = "Lognormal_"+str(iterations)
 
 
 # set scenarios for testing sensitivity
-
+scenario_name = "base_case"
 scenarios = {
+    'SubstitutionAmountsSensitivity': True,
     "CoproductsToWaste": False,
     "EnergyEfficient": False,
     "WaterEfficient": False,
@@ -79,15 +80,13 @@ for model in models:
     scenario_name = ""
     for k, v in scenarios.items():
         if v == True:
-            if k == 'LessSubsitution':
+            if k == 'SubstitutionAmountsSensitivity':
+                factor = 0.5
                 print("\n***************** Scenario: {} *****************\n".format(k))
                 act = bd.get_node(name=f'Purification ({model})')
-                if model == 'bread': waste = bd.get_node(code='e343521ccabc453ec59738b1d5678118') # 'treatment of biowaste, industrial composting'
-                if model == 'corn': waste = bd.get_node(code='6e199e3cc577ca27b046f0a9898192c2') # 'treatment of inert waste, sanitary landfill'
                 edge = [x for x in list(act.technosphere()) if x['amount'] < 0]
-                print(f"Changed co-products destination from market to waste: {edge} --> {waste}")
-                edge[0]['amount'] *= -1
-                edge[0]['input'] = ('con391', waste['code'])
+                edge[0]['amount'] *= factor
+                print(f"Changed co-products substitution amout by a factor of {factor}: {edge}")
                 edge[0].save()
                 scenario_name = f'{k}'
             if k == 'CoproductsToWaste':
@@ -144,8 +143,9 @@ for model in models:
                             print(f"Changed edge amount from {amount1} to {amount2} for \n{edge}")
                             scenario_name = f'{k}'
 
-            else:
-                print("No scenario selected")
+if scenario_name == 'base_case':
+    print("No scenario selected, running base case")
+
 
     # nodes, edges, model = extract_nodes_edges(model)
     # write_process_diagram(nodes, edges, model, scenario_name)
