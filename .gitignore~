@@ -3,5 +3,6 @@
 *.gz
 *.7z
 *.mp4
-exio
+exio/
 __*
+*__pycache__*

@@ -1,6 +1,0 @@
-#%%
-
-import pymrio as io
-
-#%%
-
