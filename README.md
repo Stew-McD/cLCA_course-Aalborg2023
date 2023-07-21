@@ -1,14 +1,15 @@
 # Consequential Life Cycle Assessment Course
 ##  Aalborg University - May '23
 
-This repository contains the code for the cLCA group project at Aalborg University.
+This repository contains the code and course contents for the cLCA course at Aalborg University.
 
-The course files are in the folder 'moodle'
+## The following readme refers to the case study group project 
 
 See the interactive notebook main.ipynb to view the code and results from a previous run.
 
 
-**** QUICK START ****
+**** QUICK START ****  
+
 ** it should work with just running main.py (change the montecarlo iterations to low if you are running it in the cloud) **
 
 if not:
