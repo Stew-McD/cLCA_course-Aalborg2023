@@ -1,8 +1,0 @@
-.cache
-.archive
-*.gz
-*.7z
-*.mp4
-exio/
-__*
-*__pycache__*
